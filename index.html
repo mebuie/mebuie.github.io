@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mark Buie</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans|Roboto:700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="scripts/mark-buie.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<!-- BEGIN NAVBAR AREA -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="heading navbar-brand" href="#"><b>MB</b></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a class="heading" href="#navBio">ABOUT</a></li>
+                <li><a class="heading" href="#navProjects">PROJECTS</a></li>
+                <li><a class="heading" href="#navExp">EXPERIENCE</a></li>
+                <li><a class="heading" href="#navSkill">SKILLS</a></li>
+                <li><a class="heading" href="#navContact">CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- END NAVBAR AREA -->
+
+<!-- BEGIN ABOUT AREA -->
+<div id="navBio" class="cnt_about container-fluid text-center">
+    <div class="row">
+        <div class="col-sm-1 col-lg-2"></div>
+        <div class="col-sm-10 col-lg-8 text-left">
+        	<div class="about-wrapper">
+              <div class="container-fluid text-center">
+                      <img class="img-responsive img-profile" src="img/me.jpg" alt="A Picture of Me">
+                      <p class="bio text-left">
+                          Hi I’m Mark. GIS specialist and archaeologist with demonstrated experience in Unmanned Aerial System (UAS)
+                          mapping, GIS analysis, and programming. Currently employed as GIS Coordinator with the City of Mesquite, providing
+                          GIS services to city departments through spatial analysis, web map development, and cartography. I take a
+                          proactive approach by seeking out new GIS opportunities within the City, which has helped multiple departments
+                          realize new potential for meeting their goals. My two most notable accomplishments include solving workload
+                          imbalance by performing a multi-criteria analysis to equate Environmental Code inspector boundaries, as well
+                          as developing and managing the City’s UAS program, which has been a cost-effective tool for policy-making and engineering design.
+                      </p>
+                      <p class="bio text-left">
+                          I follow my passion for GIS and programming through various Raspberry Pi, Python, and web map projects.
+                          When I need a break, I enjoy camping, traveling, hitting the trails on my mountain bike, and cooking
+                          delicious meals.
+                      </p>
+              </div>
+          </div>
+        </div>
+        <div class="col-sm-1 col-lg-2"></div>
+    </div>
+</div>
+<!-- END ABOUT AREA -->
+
+<!--BEGIN PROJECT LINKS AREA-->
+<div id="navProjects" class="container-fluid">
+	<div class="row text-center" style="padding-bottom: 1%;"><hr><h1>PROJECTS</h1><hr></div>
+	<div class="col-sm-3"></div>
+	<div class="col-sm-6 text-center" style="padding-bottom: 2%;">
+		<div class="col-md-4 text-center"></div>
+		<div id="uasQuickGuide" class="col-md-4 text-center projectbtn exp-hover">Quick Start Guide<br>UAS in local government</div>
+		<div class="col-md-4 text-center"></div>	
+	</div>
+	<div class="col-sm-3"></div>
+</div>
+<!--END PROJECT LINKS AREA-->
+
+<!--BEGIN PROJECT MODALS-->
+<div class="modal fade" id="modal_uasQuickGuide" role="dialog">
+    <div id="modalWidth" class="modal-dialog text-left" style="width:95%;">
+
+        <div class="modal-content" >
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="modal-title text-center">Quick Start Guide: UAS For Local Government</h2>
+                </p>
+            </div>
+            <div class="modal-body">
+                <div class="intrinsic-container intrinsic-container-aspect">
+                    <iframe src="scripts/uasQuickGuide.html"></iframe>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="text-left">
+                	<h3  class="text-center">Resources</h3>
+                    <h4>FAA</h4>
+                    <ul>
+                        <li><a href="https://www.faa.gov/uas/" target="_blank">Unmanned Aircraft Systems</a></li>
+                    </ul>
+                    <h4>Airspace</h4>
+                    <ul>
+                        <li><a href="https://skyvector.com/?ll=32.746962778,-96.530417222&chart=108&zoom=3" target="_blank">Check your airspace at SkyVector</a></li>
+                    </ul>
+                    <h4>Public COA</h4>
+                    <ul>
+                        <li><a href="https://www.skyfireconsulting.com/skyfire-drone-blog/certificate-of-authorization-guid-coa" target="_blank">So, What's a COA?</a></li>
+                        <li><a href="https://www.maxsur.com/blogs/news/faa-coa-and-part-107-faa-authorization-for-your-dept-s-drones" target="_blank">Getting a FAA COA for Your Agency</a></li>
+                    </ul>
+
+                </div>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--END PROJECT MODALS-->
+
+<!--BEGIN EXPERIENCE LOGOS AREA-->
+<!--when clicked each logo calls the relevant modal from the modal section below, event handled by <insert script>-->
+<div class="container-fluid">
+    <!--experience header-->
+    <div id="navExp" class="row cnt_cv_header text-center">
+        <h1><b><hr>EXPERIENCE<hr></b></h1>
+    </div>
+
+    <!--experience logos-->
+    <div class="row">
+        <div class="col-sm-0 col-md-2 col-lg-2"></div>
+        <div class="col-sm-12 col-md-8 col-lg-8 text-center">
+             <a id="gisCord" class="exp" href="#gisCord" >
+                 <div class="leftaccent exp-hover text-center" >
+                    <img src="img\logos\mesquite200.png" style="max-width: 100%; height: auto;">
+                    <h5><b>GIS Coordinator</b></h5>
+                    <h6>October 2016 - Present</h6>
+                 </div>
+            </a>
+            <a id="gisTech" class="exp" href="#gisTech" >
+                 <div class="leftaccent exp-hover text-center" >
+                    <img src="img\logos\mesquite200.png" style="max-width: 100%; height: auto;">
+                    <h5><b>GIS Technician</b></h5>
+                    <h6>April 2016 - October 2016</h6>
+                 </div>
+            </a>
+            <a id="euresearch" class="exp" href="#euresearch" >
+                <div class="leftaccent exp-hover text-center" >
+                    <img src="img\logos\eu200.png" style="max-width: 100%; height: auto;">
+                    <h5><b>Research Assistant</b></h5>
+                    <h6>May 2015 - January 2016</h6>
+                </div>
+            </a>
+            <a id="eu" class="exp" href="#eu" >
+                <div class="leftaccent exp-hover text-center" >
+                    <img src="img\logos\eu200.png" style="max-width: 100%; height: auto;">
+                    <h5><b>MSc GIS and Archaeology</b></h5>
+                    <h6>September 2014 - August 2015</h6>
+                </div>
+            </a>
+            <a id="trc" class="exp" href="#trc" >
+                <div class="leftaccent exp-hover text-center">
+                    <img src="img\logos\trc200.png" style="max-width: 100%; height: auto;">
+                    <h5><b>Archaeologist</b></h5>
+                    <h6>July 2014 - August 2014</h6>
+                </div>
+            </a>
+            <a id="hdr" class="exp" href="#hdr" >
+                <div class="leftaccent exp-hover text-center">
+                    <img src="img\logos\hdr200.png" style="max-width: 100%; height: auto;">
+                    <h5><b>Archaeologist</b></h5>
+                    <h6>May 2011 - July 2014</h6>
+                </div>
+            </a>
+            <a id="sp3" class="exp" href="#sp3" >
+                <div class="leftaccent exp-hover text-center">
+                    <img src="img\logos\sp3200.png" style="max-width: 100%; height: auto;">
+                    <h5><b>Archaeologist</b></h5>
+                    <h6>May 2010 - May 2011</h6>
+                </div>
+            </a>
+            <a id="atm" class="exp" href="#atm" >
+                <div class="leftaccent exp-hover text-center">
+                    <img src="img\logos\atm200.png" style="max-width: 100%; height: auto;">
+                    <h5><b>B.A. Anthropology</b></h5>
+                    <h6>August 2005 - December 2009</h6>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-0 col-md-2 col-8-lg"></div>
+    </div>
+</div>
+<!--END EXPERIENCE LOGOS AREA-->
+
+<!-- BEGIN MODAL AREA  -->
+<!-- experience gis coordinator modal -->
+    <div class="modal fade" id="modal_gisCord" role="dialog">
+        <div id="modalWidth" class="modal-dialog" style="width:60%; min-width: 400px;">
+
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <p class="modal-title text-center">
+                        <img src="img\logos\mesquite200.png" style="max-width: 50%; height: auto;">
+                        <h2 class="modal-title text-center">City of Mesquite</h2>
+                        <h3 class="modal-title text-center">GIS Coordinator</h3>
+                        <h5 class="modal-title text-center">October 2016 - Present</h5>
+                    </p>
+                </div>
+                <div class="modal-body">
+                    <ul style="padding-top: 3%;">
+                        <li class="exp">Develop and manage the City's Unmanned Aerial System(UAS) program, which has provided a
+                            cost-effective solution for acquiring high-resolution GIS data, such as centimeter level Digital
+                            Elevation Models and orthomosaic imagery, resulting in cost savings on engineering projects with
+                            budgetary constraints and facilitating policy-making for department heads and city council.
+                        </li>
+                        <li class="exp">Streamlined communications between employees and management through the implementation and use
+                            of Kanban, and other Agile project management methodologies.
+                        <li class="exp">Develop and maintain GIS services to help departments achieve their goals, such
+                            as creating a custom web editor using ArcGIS API for JavaScript 3.23 to assist the Police
+                            Department deploy, track, and analyze the efficacy of crime prevention operations.
+                        </li>
+                        <li class="exp">Developed custom geoprocessing tools using the ArcPy Python library to automate GIS tasks, such
+                            as creating an ArcMap Geoprocessing Tool to assist with engineering as-built record requests. When
+                            benchmarked against a request that previously took a day's work, this script was able to provide a
+                            30-minute turnaround, and identified previously missing records.
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<!-- experience gis technician modal -->
+    <div class="modal fade" id="modal_gisTech" role="dialog">
+        <div id="modalWidth" class="modal-dialog" style="width:60%; min-width: 400px;">
+
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <p class="modal-title text-center">
+                        <img src="img\logos\mesquite200.png" style="max-width: 50%; height: auto;">
+                        <h2 class="modal-title text-center">City of Mesquite</h2>
+                        <h3 class="modal-title text-center">GIS Technician</h3>
+                        <h5 class="modal-title text-center">April 2016 - October 2016</h5>
+                    </p>
+                </div>
+                <div class="modal-body">
+                    <ul>
+		                <li class="exp">Developed metrics using Python and R to assist the City in data-driven decision making, such as
+		                    performing a multi-criteria analysis to redistrict ECODE inspector boundaries based on a projected
+		                    caseload score, with the objective of addressing workload imbalance. To-date, the resulting
+		                    boundaries have been in effect for 16 months with positive feedback from all inspectors.
+		                </li>
+		                <li class="exp">Used skills in GIS and T-SQL to facilitate departmental projects, such as assisting the finance
+		                    department in developing a methodology for calculating Drainage Utility District (DUD) fees, which
+		                    has created significant additional revenue for maintenance and capital improvements.
+		                </li>
+		                <li class="exp">Introduced new GIS technologies and analytical methodologies aimed to increase productivity and
+		                    decrease City expenditures, such as promoting the use of UAS remote sensing technologies to
+		                    supplement surveys and reduce the cost of GIS data acquisition.
+		                </li>
+            		</ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<!-- experience research assistant modal -->
+    <div class="modal fade" id="modal_euresearch" role="dialog">
+        <div id="modalWidth" class="modal-dialog" style="width:60%; min-width: 400px;">
+
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <p class="modal-title text-center">
+                        <img src="img\logos\eu200.png" style="max-width: 50%; height: auto;">
+                        <h2 class="modal-title text-center">University of Edinburgh</h2>
+                        <h3 class="modal-title text-center">Research Assistant</h3>
+                        <h5 class="modal-title text-center">May 2015 - January 2016</h5>
+                    </p>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li class="exp">Developed cost effective UAS aerial mapping techniques using small scale UASs
+                            without compromising data quality, allowing for more investment towards research. These
+                            findings made it possible to secure long-term UAS permissions from the Icelandic Transport
+                            Authority, facilitating future research planning.
+                        </li>
+                        <li class="exp">Piloted UASs and processed the resulting aerial imagery using Agisoft Photoscan
+                            for multiple university research projects, including agriculture impact assessments,
+                            archaeological surveys, and geomorphology research of mega floods in Iceland. Proud to have
+                            piloted the first UAS survey of Sólheimajökull glacier for mass balance studies.</li>
+                        <li class="exp">Developed curriculum in Python programming and UAS photogrammetry using structure-from-motion
+                                software for a new Master's level course in
+                                <a href="http://www.drps.ed.ac.uk/16-17/dpt/cxpgge11215.htm" target="_blank">Near-ground Earth
+                                    Observations: new platforms and sensors
+                                </a>
+                        </li>
+                        <li class="exp">As Teacher's Assistant, demonstrated the use of ESRI software and graded
+                            assignments on relational databases. As well as, coordinated and led field trips introducing
+                            fundamentals of glaciology, geomorphology, and biomass estimation.
+                        </li>
+            		    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- experience masters degree modal -->
+    <div class="modal fade" id="modal_eu" role="dialog">
+        <div id="modalWidth" class="modal-dialog" style="width:60%; min-width: 400px;">
+             <div class="modal-content" >
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <p class="modal-title text-center">
+                        <img src="img\logos\eu200.png" style="max-width: 50%; height: auto;">
+                    <h2 class="modal-title text-center">University of Edinburgh</h2>
+                    <h3 class="modal-title text-center">MSc GIS and Archaeology</h3>
+                    <h5 class="modal-title text-center">September 2014 - August 2015</h5>
+                    </p>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-0 col-lg-1"></div>
+                        <div class="col-sm-6 col-lg-5">
+                            <h4><b>Courses</b></h4>
+                            <p><a href="http://www.drps.ed.ac.uk/14-15_Archive_at_01-09-2014/dpt/cxpgge11091.htm" target="_blank">
+                                Introduction to Spatial Analysis</a></p>
+                            <p><a href="http://www.drps.ed.ac.uk/14-15_Archive_at_01-09-2014/dpt/cxpgge11085.htm" target="_blank">
+                                Further Spatial Analysis</a></p>
+                            <p><a href="http://www.drps.ed.ac.uk/14-15_Archive_at_01-09-2014/dpt/cxpgge11084.htm" target="_blank">
+                                Distributed GIS</a></p>
+                            <p><a href="http://www.drps.ed.ac.uk/14-15_Archive_at_01-09-2014/dpt/cxpgge11087.htm" target="_blank">
+                                GeoVisualization</a></p>
+                            <p><a href="http://www.drps.ed.ac.uk/14-15_Archive_at_01-09-2014/dpt/cxpgge11092.htm" target="_blank">
+                                Spatial Modeling</a></p>
+                            <p><a href="http://www.drps.ed.ac.uk/14-15/dpt/cxpgge11210.htm" target="_blank">
+                                Business Geographics</a></p>
+                            <p><a href="http://www.drps.ed.ac.uk/14-15/dpt/cxpgge11181.htm" target="_blank">
+                                Principles of GIS for Archaeologists</a></p>
+                            <p><a href="http://www.drps.ed.ac.uk/14-15/dpt/cxpgge11118.htm" target="_blank">
+                                Integrated Resource Planning</a></p>
+                            <p><a href="http://www.drps.ed.ac.uk/14-15_Archive_at_01-09-2014/dpt/cxpgge11138.htm" target="_blank">
+                                Research Practice and Project Planning</a></p>
+                        </div>
+                        <div class="col-sm-6 col-lg-5">
+                            <h4><b>Dissertation</b></h4>
+
+                            <a href="https://www.era.lib.ed.ac.uk/handle/1842/11796" target="_blank">
+                                <i>Planning Efficient Unmanned Aerial Surveys</i>
+                            </a>
+                            <p>Optimizing the quality of Digital Elevation Models (DEM) in UAS mapping through the
+                                evaluation of ground control point distribution, flight height, and image distortion
+                                correction using Python OpenCV. </p>
+
+                            <h4><b>Extracurricular</b></h4>
+                            <ul>
+                                <li><p>Edinburgh University Cycling Club</p></li>
+                                <li><p>Late Antique and Medieval Postgraduate Society</p></li>
+                            </ul>
+
+                            <h4><b>Awards</b></h4>
+                            <ul>
+                                <li>
+                                    <p>
+                                        <a href="https://www.ed.ac.uk/research-support-office/funders-and-funding/internal-funding-opportunities/moray-endowment-fund" target="_blank">
+                                            Moray Endowment Fund</a>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-0 col-lg-1"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- experience trc environmental modal -->
+    <div class="modal fade" id="modal_trc" role="dialog">
+        <div id="modalWidth" class="modal-dialog" style="width:60%; min-width: 400px;">
+
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <p class="modal-title text-center">
+                        <img src="img\logos\trc.png" style="max-width: 50%; height: auto;">
+                    <h2 class="modal-title text-center">TRC Environmental</h2>
+                    <h3 class="modal-title text-center">Archaeologist</h3>
+                    <h5 class="modal-title text-center">July 2014 - August 2014</h5>
+                    </p>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li class="exp">Managed an archaeology team of six providing environmental consultancy for a
+                            transcontinental pipeline, ensuring the project remained within schedule, while maintaining
+                            the integrity of the company and client.
+                        </li>
+                        <li class="exp">Commended on the quality and detail of scientific reports that communicated findings, progress,
+                            and preventative measures to management and the client.
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- experience hdr engineering modal -->
+    <div class="modal fade" id="modal_hdr" role="dialog">
+        <div id="modalWidth" class="modal-dialog" style="width:60%; min-width: 400px;">
+
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <p class="modal-title text-center">
+                        <img src="img\logos\hdr.png" style="max-width: 50%; height: auto;">
+                    <h2 class="modal-title text-center">HDR Engineering</h2>
+                    <h3 class="modal-title text-center">Archaeologist</h3>
+                    <h5 class="modal-title text-center">May 2011 - July 2014</h5>
+                    </p>
+                </div>
+                <div class="modal-body">
+                    <ul> <!--TODO: Consolidate bullet points and focuse on accomplishments rather than responsibilites. -->
+                        <li class="exp">Conducted archaeological survey and monitoring for multiple oil and gas, transportation, disaster relief,
+                            and government contracts.
+                        </li>
+                        <li class="exp">Commended for effective communication and on-site problem solving between team members and
+                            sub-contractors during the Deepwater Horizon Coastal Cleanup Effort.
+                        </li>
+                        <li class="exp">Promoted to Logistics Coordinator of the Deepwater Horizon Coastal Cleanup Effort and managed
+                            the deployment of 30 archaeology teams during the disaster response.
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- experience sphere3 environmental modal -->
+    <div class="modal fade" id="modal_sp3" role="dialog">
+        <div id="modalWidth" class="modal-dialog" style="width:60%; min-width: 400px;">
+
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <p class="modal-title text-center">
+                        <img src="img\logos\sp3.png" style="max-width: 50%; height: auto;">
+                    <h2 class="modal-title text-center">Sphere3 Environmental</h2>
+                    <h3 class="modal-title text-center">Archaeologist</h3>
+                    <h5 class="modal-title text-center">May 2010 - May 2011</h5>
+                    </p>
+                </div>
+                <div class="modal-body">
+                    <ul> <!--TODO: Consolidate bullet points and focuse on accomplishments rather than responsibilites. -->
+                        <li class="exp">Established myself as a self-motivated individual with a willingness to learn and an ability to
+                            streamline workflows by identifying problems and recommending solutions. Such as, modifying
+                            projects maps to facilitate in-field communications and developing a scheduling system,
+                            which allowed multiple crews to work simultaneously in remote environments.
+                        </li>
+                        <li class="exp">Promoted to Crew Chief and managed a team of ten archaeologists.</li>
+                        <li class="exp">Volunteered responsibility for project logistics, data archiving, and background research.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- experience texas a&m modal -->
+    <div class="modal fade" id="modal_atm" role="dialog">
+        <div id="modalWidth" class="modal-dialog" style="width:60%; min-width: 400px;">
+
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <p class="modal-title text-center">
+                        <img src="img\logos\atm.png" style="max-width: 50%; height: auto;">
+                    <h2 class="modal-title text-center">Texas A&M University</h2>
+                    <h3 class="modal-title text-center">B.A. Anthropology</h3>
+                    <h5 class="modal-title text-center">August 2005 - December 2009</h5>
+                    </p>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li class="exp">Coming Soon </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--END MODAL SECTION-->
+
+
+<!--BEGIN SKILLS SECTION-->
+<!--created using chart.js, see script scripts/experience.js-->
+    <div id="navSkill" class="container-fluid">
+      <div class="row text-center" style="padding-bottom: 1%;"><hr><h1>SKILLS</h1><hr></div>
+      <div id="legend-width text-center" class="col-sm-12" style="padding-bottom: 1%;">
+          <div id="legend-div" class="text-center" style="padding-bottom: 1%">
+              <p class="skills">10-30: Beginner</p>
+              <p class="skills"><span>30-60: Intermediate</span></p>
+              <p class="skills">60-90: Expert</p>
+              <p class="skills">90-100: Proficient</p>
+          </div>
+      </div>
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10">
+          <div id="experience" style="width: 100%;">
+              <canvas id="marksChart"></canvas>
+          </div>
+      </div>
+      <div class="col-sm-1"></div>
+	</div>
+<!--END SKILLS SECTION-->
+
+<!--BEGIN CONTACT SECTION-->
+	<div id="navContact" class="container-fluid">
+      <div class="row text-center" style="padding-bottom: 1%;"><hr><h1>CONTACT</h1><hr></div>
+      <div class="col-sm-12 text-center" style="padding-bottom: 1%;">
+        <a href="https://www.linkedin.com/in/markbuie/">
+            <img src="img/linkedinlg.png" alt="Follow Me on LinkedIn">
+        </a>
+      </div>
+      <div class="col-sm-0 col-md-2 col-lg-3 text-center" style="padding-bottom: 1%;"></div>
+      <div class="col-sm-12 col-md-8 col-lg-6 text-center" style="padding-bottom: 1%;">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeWfopG6S3fSz9icotgR2CEt9HK4JjvLg05tUgZKozuTAVI_Q/viewform?embedded=true" width="100%" height="1200" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+      </div>
+      <div class="col-sm-0 col-md-2 col-lg-3 text-center" style="padding-bottom: 1%;"></div>
+    </div>
+<!--END CONTACT SECTION-->
+
+<script>
+    //Experience Highlight
+    $(document).ready(function(){
+        $(".exp-hover").hover(function(){
+              $(this).css({
+                  "box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+               })
+          },
+          function(){
+              $(this).css({
+                  "box-shadow": "none"
+              });
+          });
+
+        /* Event listener on company logos to show modal */
+        /* TODO: Can I create one function to handle all? */
+		$("#gisCord").click(function(){
+		    $("#modal_gisCord").modal();
+		});
+		
+		$("#gisTech").click(function(){
+		    $("#modal_gisTech").modal();
+		});
+
+	    $("#euresearch").click(function(){
+	        $("#modal_euresearch").modal();
+	    });
+
+		$("#eu").click(function(){
+		    $("#modal_eu").modal();
+		});
+		
+		$("#trc").click(function(){
+		    $("#modal_trc").modal();
+		});
+		
+		$("#hdr").click(function(){
+		    $("#modal_hdr").modal();
+		});
+		
+		$("#sp3").click(function(){
+		    $("#modal_sp3").modal();
+		});
+		
+		$("#atm").click(function(){
+		    $("#modal_atm").modal();
+		});
+		
+	    $("#uasQuickGuide").click(function(){
+	        $("#modal_uasQuickGuide").modal();
+	    });
+
+    });
+</script>
+<script>
+
+
+	//	DEFINE THE DIMENSIONS OF THE RADAR CHART 
+    //    This works but functionality is not fully understood - could cause issues if not rendered in correct order?
+    //    This is needed to render the radar chart in experience.js at an aspect ratio using the width of col-sm-10
+    chartw = $( "#experience" ).width(); //find current width of bootstrap column col-sm-10
+    charth = chartw * 1 // Aspect ration in %: 
+    windowh = $( window ).height();
+    windowW = $( window ).width();
+
+//    main_div_width = $("#legend-width").width();
+//    span_width = $("#legend-div").width();
+//    legend_width = (main_div_width/2)-(span_width/2);
+//    $("#legend-div").css('padding-left', legend_width);
+
+    var test = charth; //development purposes 
+    if (charth > windowh) {
+    	//TODO: Subtrack the height of the navbar then take the %.
+        charth = windowh * 0.8; //if the chart is rendered larger than the window, resize the chart to the given % of the window. 
+    }
+    $('#experience').css('height', charth); //parse the height to #experience div
+
+</script>
+<script src="scripts/Chart.bundle.min.js"></script>
+<script defer src="scripts/experience.js"></script>
+</body>
+
+
+</html>
