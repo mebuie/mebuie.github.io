@@ -641,6 +641,10 @@
         charth = windowh * 0.8; //if the chart is rendered larger than the window, resize the chart to the given % of the window. 
     }
     $('#experience').css('height', charth); //parse the height to #experience div
+    
+    if (windowW >= 2000) {
+    	alert("Oops, I'm sorry, I haven't optimized this website for high resolution monitors. I apologise for the disruption");
+    }
 
 </script>
 <script src="scripts/Chart.bundle.min.js"></script>

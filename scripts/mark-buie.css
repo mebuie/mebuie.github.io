@@ -2,6 +2,8 @@ body, p, a, ul, li {
 	font-family: 'Lora', serif;
 	line-height: 1.4;
 	font-size: 20px;
+	max-width: 1920px;
+	margin: auto;
 }
 
 li.exp {
@@ -12,6 +14,7 @@ li.exp {
 
 p.bio, a.heading {
 	font-family: 'Open Sans', sans-serif;
+	padding-bottom: 2%;
 }
 
 p.skills {
@@ -31,6 +34,7 @@ h1 {
 	background-color: aliceblue;
 	border-radius: 5px 5px 5px 5px;
 	padding: 1%;
+	max-width: 1250px;
 }
 
 .projectbtn {
