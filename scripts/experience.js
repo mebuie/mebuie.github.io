@@ -47,7 +47,7 @@
 			var color2016 = "rgb(129, 83, 164)";
             var marksData = {
                 labels: ["ArcMap 10", "Spatial Analyst", "Network Analyst", "3D Analyst",   "ArcGIS Pro", "Cartography",
-                	"Python 2.7", "T-SQL", "R", "HTML5", "CSS3", "JavaScript", "JQuery", "Dojo", "ArcGIS APIJavaScript API 3.23",
+                	"Python 2.7", "T-SQL", "R", "HTML5", "CSS3", "JavaScript", "JQuery", "Dojo", "ArcGIS JavaScript API 3.23",
                 	"Portal/ArcGIS Online","Enterprise Deployment", "Database Design", "SSMS", "Toad",
                 	"UAS Mapping", "Agisoft Photoscan", "Pix4D", "Drone2Map", "Trimble Pathfinder", "GPS Data Collection"
                 	],
