@@ -65,7 +65,7 @@
 	                   	pointHoverBackgroundColor: "#fff",
 	                   	pointHoverBorderColor: color2018,
 	                   	lineTension: 0.25,
-	                    data: [95,	      85, 				65,					40,				20,			  70,  70, 
+	                    data: [95,	      85, 				65,					40,				20,   70, 
 	                    	50,			  40,	   15,	 40,	 40,	 30, 			35, 	  20, 	 35,            
 	                    	30, 					30, 						   40, 				 20,	 50,
 	                    	95,				 100,				  60, 	    70,			60,					  80 ]
