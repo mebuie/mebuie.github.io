@@ -51,10 +51,7 @@
                 	"Portal/ArcGIS Online","Enterprise Deployment", "Database Design", "SSMS", "Toad",
                 	"UAS Mapping", "Agisoft Photoscan", "Pix4D", "Drone2Map", "Trimble Pathfinder", "GPS Data Collection"
                 	],
-                datasets: [95,	      85, 		65,		    35,		    30,	          70,	
-			   50,	      40,	15,   40,     40,     30, 	    35,       20,     35,  
-			   40, 			40, 			       40, 		 20,	 50,
-			   95,		 100,		      60,      70,	   60,			 80 
+                datasets: [
 	            	{
 						//255, 204, 0, 0.1
 	                    label: "2018",
@@ -67,9 +64,11 @@
 	                   	pointHoverBackgroundColor: "#fff",
 	                   	pointHoverBorderColor: color2018,
 	                   	lineTension: 0.25,
-	                    data: [					 
-			    
-			    ]
+	                    data: [95,	      85, 		65,		    35,		    30,	          70,	
+			   50,	      40,	15,   40,     40,     30, 	    35,       20,     35,  
+			   40, 			40, 			       40, 		 20,	 50,
+			   95,		 100,		      60,      70,	   60,			 80 	 
+			   ]
 	            	},	
 	            	{
 						//60, 141, 47, 0.2
