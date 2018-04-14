@@ -18,28 +18,43 @@
             
             
             
-//            0 - 10: Interested
-//            10 - 30: Beginner
-//            30 - 60: Intermediate
-//            60 - 90: Expert
-//            100: Assasin 
-//
-//			"ArcMap 10", "Spatial Analyst", "Network Analyst", "3D Analyst",   "ArcGIS Pro", "Cartography",
-//          		95,	      85, 		65,		   35,		    25,		 70,			
-//			95,           85,               65,                 35,             20,           70,
-//			90,           60,               30,                 30,              0,           60,
-//			"Python 2.7", "T-SQL", "R", "HTML5", "CSS3", "JavaScript", "JQuery", "Dojo", "ArcGIS API for JavaScript 3.23",
-//			50,			  40,	   15,	 40,	 40,	 30, 			35, 	  20, 	 35,            
-//			50,           40,	   20,   30,     30,     20,       		30,       10,	 10,
-//			30,           30,	   20,   20,     20,     10,       		10,       0,	  0,
-//			"Portal/ArcGIS Online","Enterprise Deployment/Admin", "Database Design", "SSMS", "Toad",
-//			30, 					30, 						   40, 				 20,	 50,
-//			20, 					20,                            40,               20,     50,
-//			0, 						10,                            40, 			  	 20,     30, 
-//			"UAS Mapping",  "Agisoft Photoscan", "Pix4D", "Drone2Map", "Trimble Pathfinder", "GPS Data Collection"
-//			95,				 100,				  60, 	    70,			60,					  80 		
-//			95,            	 100,                 60,       50,         60,                   80
-//			70,              90, 			      50,       10,         40, 				  70
+//           0 - 10: Interested
+//           10 - 30: Beginner
+//           30 - 60: Intermediate
+//           60 - 90: Expert
+//           100: Assasin 
+
+            let label0 = [	"ArcMap 10.6", "Spatial Analyst", "Network Analyst", "3D Analyst",   "ArcGIS Pro", "Cartography"]
+			let data2018a = [95,	      	 85, 			   65,		   		  35,		      25,		 	70];			
+			let data2017a = [95,             85,               65,                35,             20,           70];
+			let data2016a = [90,             60,               30,                30,              0,           60];
+			
+            let label1 = [	"Python 2.7", "T-SQL", "R", "HTML5", "CSS3", "JavaScript", "JQuery", "Dojo", "ArcGIS API for JavaScript 3.23", "Web AppBuilder"]
+			let data2018b = [50,		   45,	   15,	 40,	 40,	 30, 			35, 	  20, 	 35,            					40];
+			let data2017b = [50,           40,	   20,   30,     30,     20,       		30,       10,	 10,								20];
+			let data2016b = [30,           30,	   20,   20,     20,     10,       		10,       0,	  0,								 0];
+			
+			let label2 = [	"Portal/ArcGIS Online","Enterprise Deployment/Admin", "SSMS", "Toad"]
+			let data2018c = [30, 					30, 						   35,	   55];
+			let data2017c = [20, 					20,                            20,     50];
+			let data2016c = [0, 					10,                            20,     30];
+			
+			let label3 = [	"UAS Mapping",  "Agisoft Photoscan", "Pix4D", "Drone2Map", "Trimble Pathfinder", "GPS Data Collection"]
+			let data2018d = [95,			 100,				  60, 	   70,			70,					  80];
+			let data2017d = [95,             100,                 60,      50,          60,                   80];
+			let data2016d = [70,             90, 			      50,      10,          40, 				  70];
+			
+			let labels = label0.concat(label1, label2, label3);
+			let data2018 = data2018a.concat(data2018b, data2018c, data2018d);
+			let data2017 = data2017a.concat(data2017b, data2017c, data2017d);
+			let data2016 = data2016a.concat(data2016b, data2016c, data2016d);
+			
+			console.log(labels);
+			console.log(data2018);
+			console.log(data2017);
+			console.log(data2016);
+			
+			
 			var color2018a = "rgba(245, 219, 115, 0.0)";
 			var color2018 = "rgb(245, 219, 115)";
 			var color2017a = "rgba(55, 87, 139, 0.2)";
@@ -47,11 +62,7 @@
 			var color2016a = "rgba(129, 83, 164, 0.2)";
 			var color2016 = "rgb(129, 83, 164)";
             var marksData = {
-                labels: ["ArcMap 10", "Spatial Analyst", "Network Analyst", "3D Analyst",   "ArcGIS Pro", "Cartography",
-                	"Python 2.7", "T-SQL", "R", "HTML5", "CSS3", "JavaScript", "JQuery", "Dojo", "ArcGIS JavaScript API 3.23",
-                	"Portal/ArcGIS Online","Enterprise Deployment", "Database Design", "SSMS", "Toad",
-                	"UAS Mapping", "Agisoft Photoscan", "Pix4D", "Drone2Map", "Trimble Pathfinder", "GPS Data Collection"
-                	],
+                labels: labels,
                 datasets: [
 	            	{
 						//255, 204, 0, 0.1
@@ -65,10 +76,7 @@
 	                   	pointHoverBackgroundColor: "#fff",
 	                   	pointHoverBorderColor: color2018,
 	                   	lineTension: 0.25,
-	                    data: [95,	      85, 				65, 35,	25,   70, 
-	                    	50,			  40,	   15,	 40,	 40,	 30, 			35, 	  20, 	 35,            
-	                    	30, 					30, 						   40, 				 20,	 50,
-	                    	95,				 100,				  60, 	    70,			60,					  80 ]
+	                    data: data2018
 	            	},	
 	            	{
 						//60, 141, 47, 0.2
@@ -82,10 +90,7 @@
 	                   	pointHoverBackgroundColor: "#fff",
 	                   	pointHoverBorderColor: color2017,
 	                   	lineTension: 0.25,
-	                   	data: [95,           85,               65,                 35,             20,           70,
-	                   		50,           40,	   20,   30,     30,     20,       		30,       10,	 10,
-	                   		20, 					20,                            40,               20,     50,
-	                   		95,            	 100,                 60,       50,         60,                   80]
+	                   	data: data2017
 	            	}, 
 	            	{
 						//29, 151, 224, 0.2
@@ -99,10 +104,7 @@
 	                   	pointHoverBackgroundColor: "#fff",
 	                   	pointHoverBorderColor: color2016,
 	                   	lineTension: 0.25,
-	                    data: [90,           60,               30,                 30,              0,           60, 
-	                    	30,           30,	   20,   20,     20,     10,       		10,       0,	  0,
-	                    	0, 						10,                            40, 			  	 20,     30,
-	                    	70,              90, 			      50,       10,         40, 				  70]
+	                    data: data2016
 	                }
             	]
             };
