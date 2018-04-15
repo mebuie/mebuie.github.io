@@ -31,7 +31,7 @@ h1 {
 }
 
 .about-wrapper {
-	background-color: aliceblue;
+	background-color: rgb(240, 240, 240, 0.80);
 	border-radius: 5px 5px 5px 5px;
 	padding: 1%;
 	max-width: 1250px;
