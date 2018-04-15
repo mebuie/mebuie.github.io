@@ -1,0 +1,161 @@
+body, p, a, ul, li {
+	font-family: 'Lora', serif;
+	line-height: 1.4;
+	font-size: 20px;
+	max-width: 1920px;
+	margin: auto;
+}
+
+li.exp {
+	font-size: 18px;
+	line-height: 1.4;
+	padding-bottom: 2%;
+}
+
+p.bio, a.heading {
+	font-family: 'Open Sans', sans-serif;
+	padding-bottom: 2%;
+}
+
+p.skills {
+		font-size: 16px;
+}
+
+ h1, h2, h3, h4, h5, h6  {
+	font-family: 'Roboto', sans-serif;
+	line-height: 1;
+}
+
+h1 {
+	color: #777;
+}
+
+.about-wrapper {
+	background-color: rgb(240, 240, 240, 0.80);
+	border-radius: 5px 5px 5px 5px;
+	padding: 1%;
+	max-width: 1250px;
+}
+
+.projectbtn {
+	background-color: aliceblue;
+	background: rgb(240, 240, 240);
+	border-radius: 5px 5px 5px 5px;
+	padding: 1%;
+}
+
+.intrinsic-container {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+}
+
+.intrinsic-container-aspect {
+    /*padding-bottom: 377%;*/
+    padding-bottom: 100%;
+}
+
+
+
+.intrinsic-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.cnt_about {
+	background-image: url("../img/background_flip.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	/*background-color: #1abc9c; /!* Green *!/*/
+	/*color: #ffffff;*/
+	padding-top: 13%;
+	padding-bottom: 11%;
+}
+
+.cnt_exp {
+	opacity: 0.1;
+	background-image: url("img/topo.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+}
+
+.cnt_cv_header {
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+.navbar {
+	border: 0;
+	border-radius: 0;
+	margin-bottom: 0;
+	font-size: 12px;
+	letter-spacing: 5px;
+}
+ 
+.navbar-nav  li a:hover {
+	color: #1abc9c !important;
+}
+
+a.exp {
+	display: inline-block;
+	padding: 0.75%;
+}
+
+a.exp:link, a.exp:visited {
+	color: black;
+}
+
+a:link, a:visited {
+	color: #1abc9c;
+	text-decoration: none;
+}
+
+
+a:hover {
+	color: #1abc9c;
+}
+
+.test{
+	
+	font-color: black;
+}
+
+.leftaccent {
+	background: rgb(240, 240, 240);
+	border-radius: 0px;
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+
+.img-profile {
+	float:none;
+	margin: 0 auto 0;
+	padding: 25px;
+	max-width: 50%;
+}
+
+@media screen and (min-width: 992px) {
+	.cnt_about {
+	    background-position: right;
+	 }
+	
+	.leftaccent {
+	    background: rgb(240, 240, 240);
+	    border-radius: 30px 0px 30px 0px;
+	    padding-top: 0%;
+	    padding: 0% 0% 2% 0%;
+	}
+	
+	.img-profile {
+	    float:left;
+			max-width: 30%;
+	}
+}
