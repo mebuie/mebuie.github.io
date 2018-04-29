@@ -2,7 +2,7 @@ body, p, a, ul, li {
 	font-family: 'Lora', serif;
 	line-height: 1.4;
 	font-size: 20px;
-	max-width: 1920px;
+	/*max-width: 1920px;*/
 	margin: auto;
 }
 
@@ -18,7 +18,7 @@ p.bio, a.heading {
 }
 
 p.skills {
-		font-size: 16px;
+	font-size: 16px;
 }
 
  h1, h2, h3, h4, h5, h6  {
@@ -37,13 +37,6 @@ h1 {
 	max-width: 1250px;
 }
 
-.projectbtn {
-	background-color: aliceblue;
-	background: rgb(240, 240, 240);
-	border-radius: 5px 5px 5px 5px;
-	padding: 1%;
-}
-
 .intrinsic-container {
     position: relative;
     height: 0;
@@ -55,8 +48,6 @@ h1 {
     padding-bottom: 100%;
 }
 
-
-
 .intrinsic-container iframe {
     position: absolute;
     top:0;
@@ -64,7 +55,6 @@ h1 {
     width: 100%;
     height: 100%;
 }
-
 
 .cnt_about {
 	background-image: url("../img/background_flip.jpg");
@@ -76,6 +66,26 @@ h1 {
 	/*color: #ffffff;*/
 	padding-top: 13%;
 	padding-bottom: 11%;
+}
+
+.project-wrapper {
+	padding: 0px !important;
+}
+
+.project-mason {
+    column-count: 1;
+    column-gap: 1em;
+}
+
+.project-item {
+    display: inline-block;
+    margin: 0 0 1em;
+    width: 100%;
+}
+
+.project-text {
+	padding: 1em;
+	color: #777;
 }
 
 .cnt_exp {
@@ -104,13 +114,10 @@ h1 {
 	color: #1abc9c !important;
 }
 
-a.exp {
+a.exp-inline-block {
+	width: 49%;
 	display: inline-block;
-	padding: 0.75%;
-}
-
-a.exp:link, a.exp:visited {
-	color: black;
+	padding: 1%;
 }
 
 a:link, a:visited {
@@ -118,21 +125,21 @@ a:link, a:visited {
 	text-decoration: none;
 }
 
-
 a:hover {
 	color: #1abc9c;
+	text-decoration: none;
 }
 
-.test{
-	
-	font-color: black;
+.experience-toggle {
+	padding: 0; 
+	display: inline;
 }
 
 .leftaccent {
 	background: rgb(240, 240, 240);
 	border-radius: 0px;
 	padding-top: 1%;
-	padding-bottom: 1%;
+	padding-bottom: 1%;	
 }
 
 .img-profile {
@@ -146,16 +153,30 @@ a:hover {
 	.cnt_about {
 	    background-position: right;
 	 }
+	 
+	.project-mason {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+    
+    .project-wrapper {
+    	padding: 15px !important;
+    }
+	 
+	 a.exp-inline-block {
+		width: 24%;
+		display: inline-block;
+		padding: 1%;
+	}
 	
-	.leftaccent {
-	    background: rgb(240, 240, 240);
-	    border-radius: 30px 0px 30px 0px;
-	    padding-top: 0%;
-	    padding: 0% 0% 2% 0%;
+	.experience-toggle {
+		display: none;
 	}
 	
 	.img-profile {
 	    float:left;
 			max-width: 30%;
 	}
+	
 }
