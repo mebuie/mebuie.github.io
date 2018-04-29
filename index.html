@@ -18,10 +18,11 @@
     <link rel="stylesheet" href="scripts/mark-buie.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Welcome to my webpage and thank you for having a look at my code. This website serves as a sandbox to learn new skills, as well as showcase my experience. -->
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
-
+<!-- TODO: Low Priority: Projects in a dropdown box --!>
 <!-- BEGIN NAVBAR AREA -->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
@@ -78,16 +79,49 @@
 <!-- END ABOUT AREA -->
 
 <!--BEGIN PROJECT LINKS AREA-->
-<!-- TODO: Projects should be showcased as thumbnails, maybe with description underneath, in columns -->
+<!-- In this section I learn about using columns to create a masonry effect --!>
+<!-- TODO: High Priority: Add ECODE Project, URISA Texas, and UAV guide -->
 <div id="navProjects" class="container-fluid">
 	<div class="row text-center" style="padding-bottom: 1%;"><hr><h1>PROJECTS</h1><hr></div>
-	<div class="col-sm-3"></div>
-	<div class="col-sm-6 text-center" style="padding-bottom: 2%;">
-		<div class="col-md-4 text-center"></div>
-		<div id="uasQuickGuide" class="col-md-4 text-center projectbtn exp-hover">Quick Start Guide<br>UAS in local government</div>
-		<div class="col-md-4 text-center"></div>	
+	<div class="row">
+        <div class="col-sm-0 col-md-0 col-lg-2"></div>
+        <div class="col-sm-12 col-md-12 col-lg-8 project-wrapper text-center">
+        	<div class="project-mason">
+	        	<!-- GitHub -->
+	            <a class="project-item" href="https://github.com/mebuie">
+	                 <div class="leftaccent exp-hover text-center">
+	                    <img src="img\projects\thumbnails\GitHub-Mark-120px-plus.png"  style="max-width: 25%; height: auto;">
+	                    <div class="project-text text-left">
+	                    	<h4 class="text-center"><b>This Website!</b></h4>
+	                    	<h5 class="text-center">and other coding projects on GitHub.</h5>
+                    	</div>
+                    </div>
+	            </a>
+	        	<!-- URISA Texas Virtual Speaker Series -->
+	             <a class="project-item" href="https://urisatexas.org/event-2842110">
+	                 <div class="leftaccent exp-hover text-center">
+	                    <img src="img\projects\thumbnails\URISA_Speaker_Series.png"  style="max-width: 100%; height: auto;">
+	                    <div class="project-text text-left">
+	                    	<h5 class="text-center"><b>URISA Texas Virtual Speaker Series:</b></h5>
+	                    	<h4 class="text-center">Lessons Learned Developing a Drone Program for Local Government</h4>
+                    	</div>	                    	                                        
+	                 </div>
+	            </a>
+              	<!-- Getting Started: UAS in Local Government  -->
+	            <a class="project-item" href="https://infograph.venngage.com/publish/a63ade8a-3f32-4928-8f62-d495522cc1d1">
+	                 <div class="leftaccent exp-hover text-center">
+	                    <img src="img\projects\thumbnails\Getting_Started_UAS_in_Local_Government.png"  style="max-width: 100%; height: auto;">
+	                    <div class="project-text text-left">
+	                    	<h4 class="text-center"><b>Getting Started: UAS in Local Government</b></h4>
+	                    	<h5>I wish everything came with a quick start guide, so here's one I made based on my experiences developing the City of Mesquite UAS program in 2016.</h5>
+	                    	<h5>Inspired by Alberto Cairo's discussion, Visual Trumpery - hosted by DFW Data Visualization & Infographics</h5>
+	                    </div>
+	                 </div>
+	            </a>         
+            </div>
+		</div>
+		<div class="col-sm-0 col-md-0 col-lg-2"></div>
 	</div>
-	<div class="col-sm-3"></div>
 </div>
 <!--END PROJECT LINKS AREA-->
 
@@ -116,67 +150,75 @@
 <!--END PROJECT MODALS-->
 
 <!--BEGIN EXPERIENCE LOGOS AREA-->
+<!-- In this section I begin to move away from Boostrap and learn how to make my own responsive websites using media queries and javascript. 
+It's at this time I begin to regret starting with Boostrap, as the iconic Boostrap grid layout is fairly easy to code. I will, at some point,
+replace Bootstrap entirely... -->
 <!--when clicked each logo calls the relevant modal from the modal section below, event handled by <insert script>-->
+<!-- TODO: Experience should be two side by side on mobile and max four side by side -->
 <div class="container-fluid">
     <!--experience header-->
-    <div id="navExp" class="row cnt_cv_header text-center">
-        <h1><b><hr>EXPERIENCE<hr></b></h1>
-    </div>
+	    <div id="navExp" class="row cnt_cv_header text-center">
+	        <h1><b><hr>EXPERIENCE<hr></b></h1>
+	    </div>
+
 
     <!--experience logos-->
     <div class="row">
-        <div class="col-sm-0 col-md-2 col-lg-2"></div>
-        <div class="col-sm-12 col-md-8 col-lg-8 text-center">
-             <a id="gisCord" class="exp" href="#gisCord" >
-                 <div class="leftaccent exp-hover text-center" >
+        <div class="col-sm-0 col-md-0 col-lg-2"></div>
+        <div class="col-sm-12 col-md-12 col-lg-8 text-center" style="padding: 0%;">
+             <a id="gisCord" class="exp-inline-block" href="#gisCord">
+                 <div class="leftaccent exp-hover text-center">
                     <img src="img\logos\mesquite200.png" style="max-width: 100%; height: auto;">
                     <h5><b>GIS Coordinator</b></h5>
                     <h6>October 2016 - Present</h6>
                  </div>
             </a>
-            <a id="gisTech" class="exp" href="#gisTech" >
+            <a id="gisTech" class="exp-inline-block" href="#gisTech">
                  <div class="leftaccent exp-hover text-center" >
                     <img src="img\logos\mesquite200.png" style="max-width: 100%; height: auto;">
                     <h5><b>GIS Technician</b></h5>
                     <h6>April 2016 - October 2016</h6>
                  </div>
             </a>
-            <a id="euresearch" class="exp" href="#euresearch" >
+            <div class="experience-toggle"></div>
+            <a id="euresearch" class="exp-inline-block" href="#euresearch">
                 <div class="leftaccent exp-hover text-center" >
                     <img src="img\logos\eu200.png" style="max-width: 100%; height: auto;">
                     <h5><b>Research Assistant</b></h5>
                     <h6>May 2015 - January 2016</h6>
                 </div>
             </a>
-            <a id="eu" class="exp" href="#eu" >
+            <a id="eu" class="exp-inline-block" href="#eu">
                 <div class="leftaccent exp-hover text-center" >
                     <img src="img\logos\eu200.png" style="max-width: 100%; height: auto;">
                     <h5><b>MSc GIS and Archaeology</b></h5>
                     <h6>September 2014 - August 2015</h6>
                 </div>
             </a>
-            <a id="trc" class="exp" href="#trc" >
+            <div class="experience-toggle"></div>
+            <a id="trc" class="exp-inline-block" href="#trc" >
                 <div class="leftaccent exp-hover text-center">
                     <img src="img\logos\trc200.png" style="max-width: 100%; height: auto;">
                     <h5><b>Archaeologist</b></h5>
                     <h6>July 2014 - August 2014</h6>
                 </div>
             </a>
-            <a id="hdr" class="exp" href="#hdr" >
+            <a id="hdr" class="exp-inline-block" href="#hdr" >
                 <div class="leftaccent exp-hover text-center">
                     <img src="img\logos\hdr200.png" style="max-width: 100%; height: auto;">
                     <h5><b>Archaeologist</b></h5>
                     <h6>May 2011 - July 2014</h6>
                 </div>
             </a>
-            <a id="sp3" class="exp" href="#sp3" >
+            <div class="experience-toggle"></div>
+            <a id="sp3" class="exp-inline-block" href="#sp3" >
                 <div class="leftaccent exp-hover text-center">
                     <img src="img\logos\sp3200.png" style="max-width: 100%; height: auto;">
                     <h5><b>Archaeologist</b></h5>
                     <h6>May 2010 - May 2011</h6>
                 </div>
             </a>
-            <a id="atm" class="exp" href="#atm" >
+            <a id="atm" class="exp-inline-block" href="#atm" >
                 <div class="leftaccent exp-hover text-center">
                     <img src="img\logos\atm200.png" style="max-width: 100%; height: auto;">
                     <h5><b>B.A. Anthropology</b></h5>
@@ -184,7 +226,7 @@
                 </div>
             </a>
         </div>
-        <div class="col-sm-0 col-md-2 col-8-lg"></div>
+        <div class="col-sm-0 col-md-0 col-8-lg"></div>
     </div>
 </div>
 <!--END EXPERIENCE LOGOS AREA-->
@@ -514,6 +556,7 @@
 
 <!--BEGIN SKILLS SECTION-->
 <!--created using chart.js, see script scripts/experience.js-->
+<!-- This is my first dive into javascript libraries, which opended up a whole new set of capabilities. -->
     <div id="navSkill" class="container-fluid">
       <div class="row text-center" style="padding-bottom: 1%;"><hr><h1>SKILLS</h1><hr></div>
       <div id="legend-width text-center" class="col-sm-12" style="padding-bottom: 1%;">
