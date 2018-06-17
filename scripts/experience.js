@@ -30,12 +30,12 @@
 			let data2016a = [90,             60,               30,                30,              0,           60];
 			
             let label1 = [	"Python 2.7", "T-SQL", "R", "HTML5", "CSS3", "JavaScript", "JQuery", "Dojo", "ArcGIS API for JavaScript 3.23", "Web AppBuilder"]
-			let data2018b = [50,   45,	15,  55,      55,      45, 	    35,       35,     45,            			70];
-			let data2017b = [50,           40,	   20,   30,     30,     20,       		30,       10,	 10,						20];
-			let data2016b = [30,           30,	   20,   20,     20,     10,       		10,       0,	  0,						 0];
+			let data2018b = [50,		   45,	   15,	 40,	 40,	 30, 			35, 	  20, 	 35,            					40];
+			let data2017b = [50,           40,	   20,   30,     30,     20,       		30,       10,	 10,								20];
+			let data2016b = [30,           30,	   20,   20,     20,     10,       		10,       0,	  0,								 0];
 			
 			let label2 = [	"Portal/ArcGIS Online","Enterprise Deployment/Admin", "SSMS", "Toad"]
-			let data2018c = [55, 					30, 						   35,	   55];
+			let data2018c = [30, 					30, 						   35,	   55];
 			let data2017c = [20, 					20,                            20,     50];
 			let data2016c = [0, 					10,                            20,     30];
 			

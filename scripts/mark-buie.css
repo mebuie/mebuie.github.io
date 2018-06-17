@@ -83,6 +83,12 @@ h1 {
     width: 100%;
 }
 
+.project-item-50 {
+    display: inline-block;
+    margin: 0 0 1em;
+    width: 49.5%;
+}
+
 .project-text {
 	padding: 1em;
 	color: #777;
