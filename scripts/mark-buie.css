@@ -34,7 +34,7 @@ h1 {
 	background-color: rgb(240, 240, 240, 0.80);
 	border-radius: 5px 5px 5px 5px;
 	padding: 1%;
-	max-width: 1250px;
+	/*max-width: 1250px;*/
 }
 
 .intrinsic-container {
@@ -64,8 +64,9 @@ h1 {
 	background-attachment: fixed;
 	/*background-color: #1abc9c; /!* Green *!/*/
 	/*color: #ffffff;*/
-	padding-top: 13%;
-	padding-bottom: 11%;
+	/*padding-top: 13%;*/
+	/*padding-bottom: 11%;*/
+	height: 100vh;
 }
 
 .project-wrapper {
@@ -150,7 +151,7 @@ a:hover {
 
 .img-profile {
 	float:none;
-	margin: 0 auto 0;
+	/*margin: 0 auto 0;*/
 	padding: 25px;
 	max-width: 50%;
 }
