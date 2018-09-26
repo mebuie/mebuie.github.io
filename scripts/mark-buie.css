@@ -57,12 +57,12 @@ h1 {
 }
 
 .cnt_about {
-	background-image: url("../img/background_flip.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
-	/*background-color: #1abc9c; /!* Green *!/*/
+/* 	background-image: url("../img/background_flip.jpg"); */
+/* 	background-repeat: no-repeat; */
+/* 	background-size: cover; */
+/* 	background-position: center; */
+/* 	background-attachment: fixed; */
+	background-color: #777;
 	/*color: #ffffff;*/
 	/*padding-top: 13%;*/
 	/*padding-bottom: 11%;*/
