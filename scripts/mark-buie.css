@@ -1,8 +1,7 @@
 body, p, a, ul, li {
 	font-family: 'Lora', serif;
-	line-height: 1.4;
-	font-size: 20px;
-	/*max-width: 1920px;*/
+	font-size: 8px;
+	/*max-width: 1080px;*/
 	margin: auto;
 }
 
@@ -31,10 +30,29 @@ h1 {
 }
 
 .about-wrapper {
+	font-family: 'proxima-nova', proxima-nova;
 	background-color: rgb(240, 240, 240, 0.80);
-	border-radius: 5px 5px 5px 5px;
+	/*border-radius: 5px 5px 5px 5px;*/
 	padding: 1%;
 	/*max-width: 1250px;*/
+}
+
+.about-phrase {
+	font-size: 2vw;
+}
+
+.about-gis, .about-skills {
+	font-size: 10vw;
+	width: 40%;
+		height: 100%;
+		display: inline-block;
+		vertical-align: top;
+		margin: 0px;
+
+}
+
+.about-skills {
+	font-size: 3vw;
 }
 
 .intrinsic-container {
@@ -156,6 +174,7 @@ a:hover {
 	max-width: 50%;
 }
 
+
 @media screen and (min-width: 992px) {
 	.cnt_about {
 	    background-position: left center;
@@ -186,4 +205,40 @@ a:hover {
 			max-width: 30%;
 	}
 	
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px ) {
+		.about-phrase {
+				font-size: 20px;
+		}
+
+		.about-gis, .about-skills {
+				font-size: 200px;
+		}
+
+		.about-skills {
+				font-size: 60px;
+		}
+
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+
+
+}
+
+@media screen and (min-width: 0px) and (max-width: 575px) {
+		.about-phrase {
+				font-size: 5px;
+		}
+
+		.about-gis, .about-skills {
+				font-size: 100px;
+				line-height: 70px;
+		}
+
+		.about-skills {
+				font-size: 30px;
+				line-height: 30px;
+		}
 }
