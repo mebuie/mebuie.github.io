@@ -38,20 +38,25 @@ h1, h2, h5 {
 }
 
 .about-phrase {
-	font-size: 2vw;
+	font-size: 30px;
+	font-family: "Courier New", sans-serif;
 }
 
 .about-gis {
-	font-size: 175px;
+	font-size: 170px;
 		display: inline-block;
 		vertical-align: top;
 }
 
 .about-skills {
-	font-size: 70px;
+	font-size: 65px;
 		display: inline-block;
 		vertical-align: top;
 		margin-top: 20px;
+}
+
+.about-skills-last {
+	color: #1abc9c;
 }
 
 .intrinsic-container {
@@ -208,15 +213,16 @@ a:hover {
 
 @media screen and (min-width: 768px) and (max-width: 991px ) {
 		.about-phrase {
-				font-size: 20px;
+			font-size: 20px;
 		}
 
 		.about-gis {
-				font-size: 152px;
+				font-size: 100px;
 		}
 
 		.about-skills {
-				font-size: 60px;
+				font-size: 40px;
+			margin-top: 12px;
 		}
 
 }
