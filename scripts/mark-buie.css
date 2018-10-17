@@ -190,8 +190,19 @@ a:hover {
 
 .footer {
     font-family: 'Open Sans', sans-serif;
+    color: rgb(240, 240, 240);
     font-size: 12px;
-    line-height: 1.5;
+    background: #777;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+p.footer-heading {
+    font-size: 65px;
+}
+
+.footer-footer {
+    font-size: 20px;
 }
 
 
@@ -261,6 +272,14 @@ a:hover {
 				font-size: 26px;
 				margin-top: 8px;
 		}
+
+        p.footer-heading {
+            font-size: 35px;
+        }
+
+        .footer-footer {
+            font-size: 18px;
+        }
 }
 
 @media screen and (min-width: 0px) and (max-width: 384px) {
@@ -276,4 +295,11 @@ a:hover {
 		font-size: 16px;
 		margin-top: 8px;
 	}
+    p.footer-heading {
+        font-size: 35px;
+    }
+
+    .footer-footer {
+        font-size: 18px;
+    }
 }
