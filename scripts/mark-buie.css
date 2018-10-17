@@ -1,7 +1,7 @@
 body, p, a, ul, li {
 	font-family: 'Lora', serif;
 	font-size: 8px;
-	/*max-width: 1080px;*/
+	max-width: 1920px;
 	margin: auto;
 }
 
@@ -27,6 +27,18 @@ p.skills {
 
 h1, h2, h5 {
 	color: #777;
+}
+
+.navbar {
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+
+.navbar-nav  li a:hover {
+    color: #1abc9c !important;
 }
 
 .about-wrapper {
@@ -139,17 +151,7 @@ h1, h2, h5 {
 	padding-bottom: 2%;
 }
 
-.navbar {
-	border: 0;
-	border-radius: 0;
-	margin-bottom: 0;
-	font-size: 12px;
-	letter-spacing: 5px;
-}
- 
-.navbar-nav  li a:hover {
-	color: #1abc9c !important;
-}
+
 
 a.exp-inline-block {
 	width: 49%;
@@ -184,6 +186,12 @@ a:hover {
 	/*margin: 0 auto 0;*/
 	padding: 25px;
 	max-width: 50%;
+}
+
+.footer {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
 }
 
 
