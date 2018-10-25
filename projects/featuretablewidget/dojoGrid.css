@@ -1,0 +1,15 @@
+/*All dojo grid classes can be found on the dojo github at https://github.com/SitePen/dgrid/blob/v1.2.1/css/dgrid.css*/
+
+body {
+    font: 12px Myriad, Helvetica, Tahoma, Arial, clean, sans-serif;
+}
+
+.dgrid {
+    border: none;
+}
+
+.dgrid-header {
+    border-color: #bba;
+    background: -webkit-linear-gradient(top, #ffffff 0%,#e8e8e8 100%);
+}
+
