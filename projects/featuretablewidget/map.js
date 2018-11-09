@@ -19,10 +19,13 @@ require([
   'esri/layers/FeatureLayer',
   'esri/tasks/support/Query',
   'dojo/domReady!'
-], function (declare, OnDemandGrid, Memory, ColumnHider, ColumnResizer, ColumnReorder, Selection, array, Map, WebScene, SceneView, WebMap, MapView, SceneLayer, Legend, FeatureLayer, Query, dom) {
+], function (declare, OnDemandGrid, Memory, ColumnHider,
+             ColumnResizer, ColumnReorder, Selection, array,
+             Map, WebScene, SceneView, WebMap,
+             MapView, SceneLayer, Legend, FeatureLayer,
+             Query, dom) {
 
-
-  //Layers variables
+  // Layers variables
   var FeatureLayer = new FeatureLayer({
     portalItem: {
       id: '87eefb4c13c242349af2cc2b7e4df19b'
@@ -55,56 +58,7 @@ require([
 
   view.ui.add(legend, 'bottom-right')
 
-  // Make a client-side query to the layer. Query will inherit outfields and definition expressions set.
-
- CreateFeatureTable(FeatureLayer, "feature-table-grid");
-
-
-
-
-
-  // view.on("click", function(event) {
-  //     view.hitTest(event)
-  //         .then(function(response){
-  //             var BikeStartGraphic = response.results.filter(function(result){
-  //                 return result.graphic.layer === FeatureLayer;
-  //             });
-  //
-  //             var BikeStartStationID = BikeStartGraphic[0].graphic.attributes.start_stat;
-  //
-  //             BikeRoutes.definitionExpression = "bluebikes_ = " + BikeStartStationID;
-  //
-  //             var BikeRoutesQuery = BikeRoutes.createQuery();
-  //             BikeRoutesQuery.where = "bluebikes_ = " + BikeStartStationID;
-  //             BikeRoutesQuery.outFields = [ "bluebikes1" ];
-  //             BikeRoutesQuery.returnDistinctValues = true;
-  //
-  //             BikeRoutes.queryFeatures(BikeRoutesQuery)
-  //                 .then(function(response){
-  //                     var BikeRoutesQueryResults = [];
-  //
-  //                     response.features.forEach(function(result){
-  //
-  //                         BikeRoutesQueryResults.push(result.attributes.bluebikes1);
-  //
-  //                         }
-  //
-  //                     );
-  //                     console.log(BikeRoutesQueryResults.toString());
-  //                     BikeStop.definitionExpression = "end_statio IN ( " + BikeRoutesQueryResults.toString() + ")";
-  //                     BikeStop.visible = true;
-  //                     BikeRoutes.visible = true;
-  //                     console.log(BikeStop.definitionExpression);
-  //                 });
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //     })
-  // });
+  // Create a feature table by passing a feature layer and the target div id where the grid will be rendered.
+  CreateFeatureTable(FeatureLayer, "grid-wrapper");
 
 })
-
