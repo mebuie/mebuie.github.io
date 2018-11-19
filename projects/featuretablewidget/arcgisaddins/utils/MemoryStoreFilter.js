@@ -1,176 +1,55 @@
-// TODO: Add array of options to function (gutters, input fields, indexid, default sort field for grid).
-// TODO: Add ability to select features and have them hilighted in table / also the reverse - map to highlight feature.
-// TODO: Test domains and subtypes.
-// TODO: Test table horizontal overun.
+define([
+  'dojo/_base/declare',
+  'dojo/on',
+  'dojo/dom',
+  'dojo/query',
+  'dijit/layout/BorderContainer',
+  'dijit/layout/ContentPane',
+  'dijit/form/Button',
+  'dojo/_base/array'
+], function (declare, on, dom, query, BorderContainer, ContentPane, Button, array) {
 
-function CreateFeatureTable (layer, divID) {
+  // TODO: Filter popup can no longer be reopened after destroy - add hide method.
+  // TODO: Dojo _Templated was not used. Convert to this?
+  // TODO: Reorganize functions - move to top?
 
-  require([
-    'dojo/on',
-    'dojo/dom',
-    'dojo/_base/declare',
-    'dgrid/OnDemandGrid',
-    'dstore/Memory',
-    // 'dstore/extensions/RqlQuery', //Not finding a requred module.
-    'dgrid/extensions/ColumnHider',
-    'dgrid/extensions/ColumnResizer',
-    'dgrid/extensions/ColumnReorder',
-    'dgrid/Selection',
-    'esri/tasks/support/Query',
-    'dijit/layout/BorderContainer',
-    'dijit/layout/ContentPane',
-    'dijit/Toolbar',
-    'dijit/form/Button',
-    'dijit/form/DropDownButton',
-    'dijit/DropDownMenu',
-    'dijit/MenuItem',
-    'dojo/_base/array',
-    'dojo/domReady!'
-  ], function (on, dom, declare, OnDemandGrid, Memory, ColumnHider, ColumnResizer, ColumnReorder, Selection, Query, BorderContainer, ContentPane, Toolbar, Button, DropDownButton, DropDownMenu, MenuItem, array) {
-
-    // BEGIN LAYOUT...
-    // Creates the containers that will house the dgrid. A border container is created with a child top and center
-    // content pane, which is placed inside the user defined divID. The the top content pane is the container for the
-    // dgrid toolbar, which has the filter,export to CSV, and any future option icons. The center content pane is the
-    // container for the dgrid.
-    // TODO: HTML elements need to be in their own function, so that they are only created once when table refresh is implemented.
-    // TODO: Add attribute table reset button to popup
-    // TODO: Add refresh button in case user updates definition query - can this be an event listener?
-    var bc = new BorderContainer({
-      gutters: false,
-      style: 'height: 100%; width: 100%;, padding: 0; margin: 0;',
-      id: 'feature-table-container'
-    })
-
-    var cpTop = new ContentPane({
-      region: 'top',
-      style: 'width: 100%; height: 26px; padding: 0; margin: 0;',
-      content: '<span id=\'test\'></span>',
-      id: 'feature-table-options'
-    })
-
-    // create a ContentPane as the center pane in the BorderContainer
-    var cpCenter = new ContentPane({
-      region: 'center',
-      id: 'feature-table-grid',
-      style: 'height: 100%; width: 100%; padding: 0; margin: 0;'
-
-    })
-    bc.addChild(cpTop)
-    bc.addChild(cpCenter)
-    bc.placeAt(divID) //divID defined by user from function parameter.
-    bc.startup()
-
-    //Create a toolbar above the dgrid and add some buttons.
-    var toolbar = new Toolbar({
-      id: 'feature-table-toolbar',
-      style: 'padding: 0; padding-left: 2px; padding-right: 2px; margin: 0;'
-    }, 'test')
-
-    // TODO iconClass is not behaving as expected. Should be displaying grayed out icon, but it's in color.
-    var FilterButton = new Button({
-      label: 'Filter',
-      showLabel: true,
-      iconClass: 'dijitDisabled dijitIconFilter',
-      id: 'feature-table-toolbar-filter',
-    })
-
-    var CSVButton = new Button({
-      label: 'Export all to CSV',
-      showLabel: true,
-      iconClass: 'dijitEditorIcon dijitEditorIconUndo',
-      id: 'feature-table-toolbar-export',
-      style: 'float: right;'
-    })
-
-    toolbar.addChild(FilterButton)
-    toolbar.addChild(CSVButton)
-    toolbar.startup()
-    // END LAYOUT.
+  return declare([], {
+    store: null,
+    grid: null,
+    isVisible: null,
 
 
-    // BEGIN CREATE TABLE
-    // Query the user defined feature layer, then map the response to the correct dstore/dgrid formats.
-    layer.queryFeatures()
-      .then(function (response) {
+    constructor: function (options) {
+      this.store = options.store;
+      this.grid = options.grid;
+      this.isVisible = options.isVisible;
+    },
 
-        //Map the fields to the correct format.
-        var QueryFields = array.map(response.fields, function (field) {
-          return {
-            field: field.name,
-            label: field.alias
-          }
-        })
+    hidden: function () {
+      query('.table-popup-container').style("visibility", "hidden");
+      this.isVisible = false
+      console.log(this.isVisible)
+    },
 
-        // Map the attributes to the correct format.
-        // For each feature in the layer, we get the fields for that feature using object.keys. Then, for each key we
-        // find the corresponding attribute and add the resulting field:attribute object pair to TableAttributes. Once
-        // all field:attributes object pairs are added for the feature, the TableAttribute object is pushed to the
-        // TableFeature array, which is passed to the dgrid collection.
-        var TableFeatures = []
-        array.forEach(response.features, function (feature) {
+    visible: function () {
+      query('.table-popup-container').style("visibility", "visible");
+      this.isVisible = true
+      console.log(this.isVisible)
+    },
 
-          // field:attribute object pairs. Resets after each feature in the feature layer.
-          var TableAttributes = {}
+    startup: function () {
 
-          // Get the fields for the feature.
-          var TableFields = Object.keys(feature.attributes)
+      var dstore = this.store;
+      var grid = this.grid;
+      this.isVisible = true;
+      var closeFilter = this.hidden;
+      // TODO: should only startup if user sets to true
 
-          // For each field, get the corresponding attribute and add the field:attribute object pair to TableAttributes.
-          for (var i = 0; i < TableFields.length; i++) {
-            TableAttributes[TableFields[i]] = feature.attributes[TableFields[i]]
-          }
-
-          // Once all field:attribute object pairs are added to TableAttributes, push the object to TableFeatures.
-          TableFeatures.push(TableAttributes)
-        })
-
-        // Create the dstore.
-        // The store must have a unique id column assigned or various problems will result. The default is 'id'. Here,
-        // we change it to ObjectID.
-        // TODO: programmatically find the id column of the feature layer and set it here - in case ObjectID or FID is used.
-        var DataStore = new  Memory({
-          data: TableFeatures,
-          idProperty: 'OBJECTID',
-        })
-
-        // Create the grid.
-        // TODO: the grid auto adjusts columns to fit div. This can cause things to get squished. Find way to scroll horizontally.
-        // TODO: ColumnReorder interferes with ColumnResizer. Make toggle button for ColumnResizer.
-        var grid = new (declare([OnDemandGrid, Selection, ColumnHider, ColumnResizer, ColumnReorder]))({
-          bufferRows: Infinity,
-          selectionMode: 'extended',
-          columns: QueryFields
-        }, 'feature-table-grid')
-
-        grid.set('collection', DataStore)
-
-        on(dom.byId('feature-table-toolbar-filter'), 'click', function (event) {
-          // FilterFeatureTable(DataStore, grid)
-          FilterTablePopup(DataStore, grid)
-        })
-      })
-    // END CREATE TABLE
-
-    // BEGIN EXPORT TO CSV
-    function ExportToCSV (event) {
-      alert('Oops, still working on this feature...')
-    }
-    // END EXPORT TO CSV
-
-
-    // BEGIN FILTER TABLE POPUP
-    // TODO: Style title
-    // TODO: Add attribute table reset button to popup
-    // TODO: All attributes are being converted to string, which makes it impossible to dynamically add single quotes - necessary for query builder.
-    // A GUI that is created when the user clicks the Filter button and allows the user to filter the results of the
-    // dgrid.
-    function FilterTablePopup (dstore, grid) {
-      console.log(dstore)
       // BEGIN FILTER POPUP LAYOUT
       PopUpBC = new BorderContainer({
         gutters: true,
-        style: 'height: 400px; width: 350px;, padding: 0; margin: 0; overflow: hidden; background-color: gray; z-index: 99; position: absolute; left: 30%; top: 20%; font: 10px Myriad, Helvetica, Tahoma, Arial, clean, sans-serif;',
+        class: 'table-popup-container',
+        style: 'height: 400px; width: 350px; padding: 0; margin: 0; overflow: hidden; background-color: gray; z-index: 99; position: absolute; left: 30%; top: 20%; font: 10px Myriad, Helvetica, Tahoma, Arial, clean, sans-serif;',
         id: 'table-popup-container'
       })
 
@@ -181,18 +60,20 @@ function CreateFeatureTable (layer, divID) {
         id: 'table-popup-header'
       })
 
-      var ClosePopup = new Button ({
+      //TODO: can no longer open filter after destroy.
+      var ClosePopup = new Button({
         label: '<b>X</b>',
         showLabel: true,
         id: 'table-popup-button-destroy',
-        class: "test",
+        class: 'test',
         style: 'float: right; margin: 0; border: none;',
         onClick: function () {
-          PopUpBC.destroy()
+          // TODO: How to change isVisible variable?
+          closeFilter()
         }
       })
 
-      PopUpHeader.addChild(ClosePopup);
+      PopUpHeader.addChild(ClosePopup)
 
       // create a ContentPane as the center pane in the BorderContainer
       var PopUpCenter = new ContentPane({
@@ -204,74 +85,66 @@ function CreateFeatureTable (layer, divID) {
 
       // REFERENCE: https://www.sitepen.com/blog/2009/02/25/styling-dijit-form-elements/
       var gtButton = new Button({
-        title: ".gt( field, value )",
+        title: '.gt( field, value )',
         label: '>',
         showLabel: true,
         id: 'table-popup-button-gt',
-        class: "button-operator-a",
-        // onClick: function () {
-        //         //   dom.byId("table-popup-textarea").value += ".gt( , )"
-        //         // }
+        class: 'button-operator-a',
         onClick: function () {
-          var field = ".gt( , )"
-          var targetarea = dom.byId("table-popup-textarea")
-          console.log(field)
+          var field = '.gt( , )'
+          var targetarea = dom.byId('table-popup-textarea')
           PopupAppendFields(targetarea, field)
         }
       })
 
       var gteButton = new Button({
-        title: ".gte( field, value )",
+        title: '.gte( field, value )',
         label: '>=',
         showLabel: true,
         id: 'table-popup-button-gte',
-        class: "button-operator-a",
+        class: 'button-operator-a',
         onClick: function () {
-          var field = ".gte( , )"
-          var targetarea = dom.byId("table-popup-textarea")
-          console.log(field)
+          var field = '.gte( , )'
+          var targetarea = dom.byId('table-popup-textarea')
           PopupAppendFields(targetarea, field)
         }
       })
 
       var ltButton = new Button({
-        title: ".lt( field, value )",
+        title: '.lt( field, value )',
         label: '<',
         showLabel: true,
         id: 'table-popup-button-lt',
-        class: "button-operator-a",
+        class: 'button-operator-a',
         onClick: function () {
-          var field = ".lt( , )"
-          var targetarea = dom.byId("table-popup-textarea")
-          console.log(field)
+          var field = '.lt( , )'
+          var targetarea = dom.byId('table-popup-textarea')
           PopupAppendFields(targetarea, field)
         }
       })
 
       var lteButton = new Button({
-        title: ".lte( field, value )",
+        title: '.lte( field, value )',
         label: '<=',
         showLabel: true,
         id: 'table-popup-button-lte',
-        class: "button-operator-a",
+        class: 'button-operator-a',
         onClick: function () {
-          var field = ".lte( , )"
-          var targetarea = dom.byId("table-popup-textarea")
-          console.log(field)
+          var field = '.lte( , )'
+          var targetarea = dom.byId('table-popup-textarea')
           PopupAppendFields(targetarea, field)
         }
       })
 
       var eqButton = new Button({
-        title: ".eq( field, value )",
+        title: '.eq( field, value )',
         label: '=',
         showLabel: true,
         id: 'table-popup-button-eq',
-        class: "button-operator-b",
+        class: 'button-operator-b',
         onClick: function () {
-          var field = ".eq( , )"
-          var targetarea = dom.byId("table-popup-textarea")
-          console.log(field)
+          var field = '.eq( , )'
+          var targetarea = dom.byId('table-popup-textarea')
           PopupAppendFields(targetarea, field)
         }
       })
@@ -281,7 +154,7 @@ function CreateFeatureTable (layer, divID) {
         label: 'IN',
         showLabel: true,
         id: 'table-popup-button-in',
-        class: "button-operator-b",
+        class: 'button-operator-b',
       })
 
       // TODO: Add title with tip
@@ -290,7 +163,7 @@ function CreateFeatureTable (layer, divID) {
         label: 'AND',
         showLabel: true,
         id: 'table-popup-button-and',
-        class: "button-operator-b"
+        class: 'button-operator-b'
       })
 
       // TODO: Add title with tip
@@ -299,7 +172,7 @@ function CreateFeatureTable (layer, divID) {
         label: 'OR',
         showLabel: true,
         id: 'table-popup-button-or',
-        class: "button-operator-b"
+        class: 'button-operator-b'
       })
 
       // TODO: Not needed until new filter engine implemented.
@@ -318,32 +191,29 @@ function CreateFeatureTable (layer, divID) {
       // })
 
       var quoteButton = new Button({
-        title: "'TEXT'",
-        label: "''",
+        title: '\'TEXT\'',
+        label: '\'\'',
         showLabel: true,
         id: 'table-popup-button-quote',
-        class: "button-operator-a",
+        class: 'button-operator-a',
         onClick: function () {
-          var field = "''"
-          var targetarea = dom.byId("table-popup-textarea")
-          console.log(field)
+          var field = '\'\''
+          var targetarea = dom.byId('table-popup-textarea')
           PopupAppendFields(targetarea, field)
         }
       })
 
-      PopUpCenter.addChild(gtButton);
-      PopUpCenter.addChild(gteButton);
-      PopUpCenter.addChild(inButton);
+      PopUpCenter.addChild(gtButton)
+      PopUpCenter.addChild(gteButton)
+      PopUpCenter.addChild(inButton)
       // PopUpCenter.addChild(andButton);
-      PopUpCenter.addChild(ltButton);
-      PopUpCenter.addChild(lteButton);
+      PopUpCenter.addChild(ltButton)
+      PopUpCenter.addChild(lteButton)
       // PopUpCenter.addChild(orButton);
       // PopUpCenter.addChild(noteqButton);
-
-      PopUpCenter.addChild(eqButton);
+      PopUpCenter.addChild(eqButton)
       // PopUpCenter.addChild(perButton);
-      PopUpCenter.addChild(quoteButton);
-
+      PopUpCenter.addChild(quoteButton)
 
       var PopUpFeatures = new ContentPane({
         region: 'right',
@@ -362,9 +232,9 @@ function CreateFeatureTable (layer, divID) {
         region: 'bottom',
         id: 'table-popup-bottom',
         style: 'height: 15%; width: 100%; padding: 0; margin: 0; overflow: hidden;',
-        content: "<textarea id='table-popup-textarea' " +
-          "style='width: 100%; height: 100%; overflow-x: hidden; overflow-y: auto; resize: none;' " +
-          "placeholder=\"EXAMPLE .eq('FIELD','TEXT').gt('FIELD',INT)\">"
+        content: '<textarea id=\'table-popup-textarea\' ' +
+          'style=\'width: 100%; height: 100%; overflow-x: hidden; overflow-y: auto; resize: none;\' ' +
+          'placeholder="EXAMPLE .eq(\'FIELD\',\'TEXT\').gt(\'FIELD\',INT)">'
       })
 
       var PopUpFooter = new ContentPane({
@@ -381,7 +251,7 @@ function CreateFeatureTable (layer, divID) {
         onClick: PopupSubmitFilter
       })
 
-      PopUpFooter.addChild(PopUpFormSubmit);
+      PopUpFooter.addChild(PopUpFormSubmit)
 
       PopUpBC.addChild(PopUpHeader)
       PopUpBC.addChild(PopUpCenter)
@@ -392,7 +262,6 @@ function CreateFeatureTable (layer, divID) {
       PopUpBC.placeAt(document.body)
       PopUpBC.startup()
       // END FILTER POPUP LAYOUT
-
 
       // BEGIN POPULATE FILTER POPUP FIELDS
       // An array of fields in the dstore.
@@ -417,7 +286,7 @@ function CreateFeatureTable (layer, divID) {
           cells[i].addEventListener('click', PopupFindDistinctAttributes)
           cells[i].addEventListener('dblclick', function () {
             var field = this.textContent
-            var targetarea = dom.byId("table-popup-textarea")
+            var targetarea = dom.byId('table-popup-textarea')
             console.log(field)
 
             PopupAppendFields(targetarea, field)
@@ -434,7 +303,7 @@ function CreateFeatureTable (layer, divID) {
 
         // Create an array of unique attributes for the clicked field.
         // This could be done using an RQL Distincty query, but having trouble setting up.
-        var PopupUniqueAttributes = [];
+        var PopupUniqueAttributes = []
         array.forEach(dstore.data, function (row, index) {
           if (PopupUniqueAttributes.includes(row[PopupField]) === false) {
             PopupUniqueAttributes.push(row[PopupField])
@@ -448,12 +317,12 @@ function CreateFeatureTable (layer, divID) {
         // Create the initial table where the unique attributes will be appended as rows.
         // Also clears any previous queries.
         dom.byId('table-popup-features')
-          .innerHTML = "<table id='table-popup-features-table' style='width: 100%; cursor: copy'></table>"
+          .innerHTML = '<table id=\'table-popup-features-table\' style=\'width: 100%; cursor: copy\'></table>'
 
         // For each attribute in the array of unique attributes, insert the attribute in a table cell.
         array.forEach(PopupUniqueAttributes, function (field, index) {
-          var PopupAttributeRow = dom.byId('table-popup-features-table').insertRow(index);
-          var PopupAttributeCell = PopupAttributeRow.insertCell(0);
+          var PopupAttributeRow = dom.byId('table-popup-features-table').insertRow(index)
+          var PopupAttributeCell = PopupAttributeRow.insertCell(0)
           PopupAttributeCell.innerHTML = field
         })
 
@@ -464,7 +333,7 @@ function CreateFeatureTable (layer, divID) {
           if (cells[i]) {
             cells[i].addEventListener('dblclick', function () {
               var field = this.textContent
-              var targetarea = dom.byId("table-popup-textarea")
+              var targetarea = dom.byId('table-popup-textarea')
               console.log(field)
 
               PopupAppendFields(targetarea, field)
@@ -472,8 +341,8 @@ function CreateFeatureTable (layer, divID) {
           }
         }
       }
-      //END POPULATE FILTER POPUP FIELDS
 
+      //END POPULATE FILTER POPUP FIELDS
 
       // BEGIN APPEND VALUES TO TEXTAREA
       // Append the value of the double clicked field to the text area box.
@@ -481,42 +350,42 @@ function CreateFeatureTable (layer, divID) {
       function PopupAppendFields (input, textToInsert) {
         // dom.byId("table-popup-textarea").innerHTML += this.textContent
         // get current text of the input
-        const value = input.value;
-        console.log(typeof value);
+        const value = input.value
+        console.log(typeof value)
 
         // save selection start and end position
-        const start = input.selectionStart;
-        const end = input.selectionEnd;
+        const start = input.selectionStart
+        const end = input.selectionEnd
 
         // update the value with our text inserted
-        input.value = value.slice(0, start) + textToInsert + value.slice(end);
+        input.value = value.slice(0, start) + textToInsert + value.slice(end)
 
         // update cursor to be at the end of insertion
-        input.selectionStart = input.selectionEnd = start + textToInsert.length;
+        input.selectionStart = input.selectionEnd = start + textToInsert.length
       }
-      // END APPEND VALUES TO TEXTAREA
 
+      // END APPEND VALUES TO TEXTAREA
 
       // BEGIN SUBMIT FILTER
       // TODO: Change filter to RQL once I figure it out...
       function PopupSubmitFilter () {
         // Get value of text area
-        var query = dom.byId("table-popup-textarea").value
+        var query = dom.byId('table-popup-textarea').value
 
         // TODO: Fix evil code
         // TODO: Use regex to parse from SQL
         // I know this is evil code, but it's the only way I know how to accomplish this right now...
         var filter = new dstore.Filter()
 
-        var parameters = eval("filter" + query)
-        console.log("parameters", parameters)
+        var parameters = eval('filter' + query)
+        console.log('parameters', parameters)
 
         var update = dstore.filter(parameters)
 
         grid.set('collection', update)
       }
-      // END SUBMIT FILTER
 
+      // END SUBMIT FILTER
 
       //BEGIN REPOSITION TABLE FILTER POPUP
       // Allows the user to reposition the table filter popup by dragging.
@@ -552,9 +421,8 @@ function CreateFeatureTable (layer, divID) {
           PopupContainer.style.left = (PopupMousePosition.x + PopupOffsets[0]) + 'px'
           PopupContainer.style.top = (PopupMousePosition.y + PopupOffsets[1]) + 'px'
         }
-      })
-      // END REPOSITION TABLE FILTER POPUP
-    }
-    // END FEATURE TABLE POPUP
-  })
-}
+      }) // END REPOSITION TABLE FILTER POPUP
+    } // End startup method
+
+  }) // End declare
+}) // End define
