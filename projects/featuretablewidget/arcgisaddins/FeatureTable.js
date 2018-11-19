@@ -3,6 +3,7 @@ define([
   'dstore/extensions/RqlQuery',
   'arcgisaddins/utils/MemoryStoreFilter',
   'arcgisaddins/utils/RQLStoreFilter',
+  'arcgisaddins/utils/ExportCSV',
   'dojo/on',
   'dojo/dom',
   'dgrid/OnDemandGrid',
@@ -19,7 +20,7 @@ define([
   'dijit/form/Button',
   'dijit/MenuItem',
   'dojo/_base/array',
-], function (declare, RqlQuery, MemoryStoreFilter, RQLStoreFilter, on, dom, OnDemandGrid, Memory, ColumnHider, ColumnResizer, ColumnReorder, Selection, Query, BorderContainer, ContentPane, Toolbar, Button, MenuItem, array) {
+], function (declare, RqlQuery, MemoryStoreFilter, RQLStoreFilter, ExportCSV, on, dom, OnDemandGrid, Memory, ColumnHider, ColumnResizer, ColumnReorder, Selection, Query, BorderContainer, ContentPane, Toolbar, Button, MenuItem, array) {
   return declare([], {
     divId: null,
     layer: null,
@@ -180,6 +181,10 @@ define([
               FilterPopUp.visible()
               console.log(FilterPopUp.isVisible)
             }
+          })
+
+          on(dom.byId('feature-table-toolbar-export'), 'click', function () {
+            ExportCSV().exportCSV({filename: "export.csv"}, grid.collection.data)
           })
 
         }) // End query layer.
