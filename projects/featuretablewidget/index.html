@@ -1,1 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NFHXMVR');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <title>Mark Buie | Feature Table Widget</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.9/esri/css/main.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.9/dijit/themes/claro/claro.css">
+    <script src="arcgisaddins/dojoConfig.js"></script>
+    <script src="https://js.arcgis.com/4.9/"></script>
+    <link rel="stylesheet" href="samples.css">
 
+    <script>
+      require([
+        'arcgisaddins/MapLayout',
+        'arcgisaddins/FeatureTable',
+        'esri/Map',
+        'esri/WebScene',
+        'esri/WebMap',
+        'esri/views/MapView',
+        "esri/layers/FeatureLayer",
+        "dojo/ready"
+      ], function (MapLayout, FeatureTable, Map, WebScene, WebMap, MapView, FeatureLayer) {
+
+        // Instantiate the MapLayout custom module.
+        var layout = new MapLayout({
+          divId: "viewDiv", // div ID where layout will placed
+          bottomPane: {
+            splitter: true, //define if splitters are included.
+            bottomHeight: "40%" //define starting height of bottom div
+          }
+        });
+
+        // Create html layout with header, body, and table pane.
+        layout.TwoPane()
+
+        var FeatureLayer = new FeatureLayer({
+          portalItem: {
+            id: '87eefb4c13c242349af2cc2b7e4df19b'
+          },
+          title: 'Earthquake Locations',
+          popupEnabled: true
+        })
+
+        // Map variables
+        var map = new Map({
+          basemap: {
+            portalItem: {
+              id: '4f2e99ba65e34bb8af49733d9778fb8e'
+            }
+          },
+          layers: [FeatureLayer]
+        })
+
+        var view = new MapView({
+          container: 'layout-container-center-map',
+          map: map,
+          center: [-20.351097, 65.108774],
+          zoom: 3
+        })
+
+        var table = new FeatureTable({
+          divId: 'layout-container-bottom',
+          layer: FeatureLayer
+        })
+
+        table.startup();
+      })
+    </script>
+</head>
+<body class="claro">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFHXMVR"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <div id="viewDiv"></div>
+</body>
+</html>
