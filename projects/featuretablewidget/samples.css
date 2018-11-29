@@ -29,3 +29,59 @@ html, body {
     background-image: none;
     box-shadow: none;
 }
+
+.field-OBJECTID {
+    width: 74px
+}
+
+.field-Magnitude {
+    width: 71px
+}
+
+.field-DateTime {
+    width: 136px
+}
+
+.field-Latitude {
+    width: 59px
+}
+
+.field-Longitude {
+    width: 68px
+}
+
+.field-Depth {
+    width: 49px
+}
+
+.field-MagType {
+    width: 65px
+}
+
+.field-NbStations {
+    width: 74px
+}
+
+.field-Gap {
+    width: 41px
+}
+
+.field-Distance {
+    width: 63px
+}
+
+.field-RMS {
+    width: 44px
+}
+
+.field-Source {
+    width: 55px
+}
+
+.field-EventID {
+    width: 81px
+}
+
+.field-DateAndTime {
+    width: 100px
+}

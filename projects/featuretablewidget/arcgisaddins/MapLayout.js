@@ -11,7 +11,6 @@ define([
     },
 
     constructor: function (options) {
-      console.log(this.bottomPane.splitter)
       this.divId = options.divId || "viewDiv";
       this.bottomPane.bottomHeight = options.bottomPane.bottomHeight || "40%";
       this.bottomPane.splitter = options.bottomPane.splitter;

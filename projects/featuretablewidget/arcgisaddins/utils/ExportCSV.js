@@ -1,6 +1,6 @@
 //Export dgrid collection to CSV.
 // TODO: Test subtypes and domains.
-// TODO: Test date fields.
+// TODO: Test date fields. 
 
 //Modified from following example:
 //https://halistechnology.com/2015/05/28/use-javascript-to-export-your-data-as-csv/

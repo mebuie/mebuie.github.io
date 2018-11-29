@@ -67,7 +67,8 @@
 
         var table = new FeatureTable({
           divId: 'layout-container-bottom',
-          layer: FeatureLayer
+          layer: FeatureLayer,
+          findCellWidth: false// setting to true will print the max column in pixels at the expense of performance.
         })
 
         table.startup();

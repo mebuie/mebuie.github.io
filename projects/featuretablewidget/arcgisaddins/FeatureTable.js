@@ -27,6 +27,7 @@ define([
     toolbar: true,
     exportCSV: true,
     filter: true,
+    findCellWidth: false,
 
     constructor: function (options) {
       this.divId = options.divId || 'table-div';
@@ -34,6 +35,7 @@ define([
       this.toolbar = options.toolbar;
       this.exportCSV = options.exportCSV;
       this.filter = options.filter;
+      this.findCellWidth = options.findCellWidth
     },
 
     startup: function () {
@@ -100,42 +102,200 @@ define([
     },
 
     refresh: function() {
+      var returnCellWidth = this.findCellWidth
+      var printCellWidth = this.FindMaxCellWidth
+      var inputLayer = this.layer
 
-      // BEGIN CREATE GRID
-      // Query the user defined feature layer, then map the response to the correct dstore/dgrid formats.
-      this.layer.queryFeatures()
+
+
+      // Query the user defined feature layer and create a dgrid from results.
+      inputLayer.queryFeatures()
         .then(function (response) {
 
-          //Map the fields to the correct format.
+          console.log(inputLayer)
+          console.log(response.features)
+
+          // Map the feature fields to the memory store format.
           var QueryFields = array.map(response.fields, function (field) {
+
             return {
               field: field.name,
-              label: field.alias
-            }
-          })
-
-          // Map the attributes to the correct format.
-          // For each feature in the layer, we get the fields for that feature using object.keys. Then, for each key we
-          // find the corresponding attribute and add the resulting field:attribute object pair to TableAttributes. Once
-          // all field:attributes object pairs are added for the feature, the TableAttribute object is pushed to the
-          // TableFeature array, which is passed to the dgrid collection.
-          var TableFeatures = []
-          array.forEach(response.features, function (feature) {
-
-            // field:attribute object pairs. Resets after each feature in the feature layer.
-            var TableAttributes = {}
-
-            // Get the fields for the feature.
-            var TableFields = Object.keys(feature.attributes)
-
-            // For each field, get the corresponding attribute and add the field:attribute object pair to TableAttributes.
-            for (var i = 0; i < TableFields.length; i++) {
-              TableAttributes[TableFields[i]] = feature.attributes[TableFields[i]]
+              label: field.alias,
             }
 
-            // Once all field:attribute object pairs are added to TableAttributes, push the object to TableFeatures.
-            TableFeatures.push(TableAttributes)
           })
+
+
+          // BEGIN ADD CODED VALUES
+          // TODO: This needs to be modulerized
+          // TODO: Add user option to toggle replacement - preferably by field.
+          // TODO: Dates are not being returned correcly.
+          var featureAttributes = []
+          var subtypes = inputLayer.types
+          var subtypeField = inputLayer.typeIdField
+          var fieldDomains = inputLayer.fields.filter( function ( field ) {
+
+            return field.domain != null && field.domain.codedValues
+
+          }).map( function ( field ) {
+
+            return {
+              field: field.name,
+              codedValues: field.domain.codedValues
+            }
+
+          })
+
+
+          // If a subtype exists, replace the subtype/domain codes with their coded value.
+          if (subtypeField !== "" && subtypeField != null ) {
+            console.log("has subtype")
+
+            // Create an array of feature attributes, replacing the subtype id with the coded value if present.
+            array.forEach(response.features, function (feature) {
+
+              var featureRow = {}  // Empty object to take the new attributes of the feature
+              var featureRowField = Object.keys(feature.attributes)  // Get the fields for the current feature.
+              var subtype = subtypes.filter( function (subtype) {
+
+                return subtype.id === feature.attributes[inputLayer.typeIdField]
+
+              })
+
+              var subtypeDomains = subtype[0].domains
+              var subtypeCodedDomains = Object.keys(subtypeDomains).filter(function (key) {
+
+                    return subtypeDomains[key].codedValues != null
+
+                }).map(function(key) {
+
+                  return {
+                    // [key]: subtypeDomains[key]
+                    field: key,
+                    codedValues: subtypeDomains[key].codedValues
+                  }
+                })
+
+
+
+
+              // For each field, get the corresponding attribute, replacing the subtype/domain with the coded value if present.
+              // TODO: Change this to forEach()
+              for (var i = 0; i < featureRowField.length; i++) {
+                var currentField = featureRowField[i]
+
+                var subtypeCodedDomain = subtypeCodedDomains.filter( function ( domain ) {
+                  return domain.field === currentField
+                })
+
+                var fieldDomain = fieldDomains.filter( function ( domain ) {
+                  return domain.field === currentField
+                })
+
+
+                // If the field has a subtype dependent domain return the domains coded value.
+                if (subtypeCodedDomain.length > 0) {
+
+                  // TODO: I tried replacing this with a for loop so we could break once the code if found, but it doesn't work for some reason.
+                  array.forEach(subtypeCodedDomain[0].codedValues, function ( value ) {
+
+                    if (feature.attributes[currentField] === value.code) {
+                      featureRow[currentField] = value.name
+                    }
+
+                  })
+                }
+
+                // If the field has an assigned domain (not a subtype defined domain), replace the code with the coded value.
+                else if (fieldDomain.length > 0) {
+
+                  array.forEach(fieldDomain[0].codedValues, function ( value ) {
+
+                    if (feature.attributes[currentField] === value.code) {
+                      featureRow[currentField] = value.name
+                    }
+
+                  })
+
+                }
+
+                // If the field is a subtype, return the coded value.
+                else if (currentField === inputLayer.typeIdField && subtype.length > 0 ) {
+
+                  if (subtype[0].id === feature.attributes[currentField]) {
+                    featureRow[currentField] = subtype[0].name
+                  }
+
+                }
+
+                // Otherwise, make no changes to the attribute value.
+                else {
+
+                  featureRow[currentField] = feature.attributes[currentField]
+
+                }
+              }
+
+              // Push the new feature object as a new item in the array of attributes.
+              featureAttributes.push(featureRow)
+
+            })
+          }
+          // If there are domains assigned to fields, but no subtype, then replace the code with the coded value.
+          else if (fieldDomains && subtypes === null) {
+            console.log("no subtype, but has field domain")
+
+
+
+            // Iterate through each feature's attributes and replace any domain codes with the coded value.
+            array.forEach(response.features, function (feature) {
+
+              var featureRow = {}  // Empty object to take the new attributes of the feature
+              var featureRowField = Object.keys(feature.attributes)  // Get the fields for the current feature.
+
+
+              // For each field in the feature's attributes, check if it has domain
+              array.forEach(featureRowField, function (field) {
+
+                var fieldDomain = fieldDomains.filter( function ( domain ) {
+                  return domain.field === field
+                })
+
+                // if a domain is present, change the code to the coded value.
+                if (fieldDomain.length > 0) {
+
+                  array.forEach(fieldDomain[0].codedValues, function ( value ) {
+
+                    if (feature.attributes[field] === value.code) {
+                      featureRow[field] = value.name
+
+                      console.log(feature.attributes[field], "to", value.name )
+                    }
+
+                  })
+
+                }
+                // Otherwise return the original attribute value.
+                else {
+
+                  featureRow[field] = feature.attributes[field]
+
+                }
+              })
+              // Push the new feature object as a new item in the array of attributes.
+              featureAttributes.push(featureRow)
+            })
+          }
+          // If there is no subtype field detected and no domains for any attributes, no manipulation of the data is
+          // required and we can use the attributes from the attribute object.
+          else {
+
+            featureAttributes = array.map(response.features, function ( feature ) {
+                return feature.attributes
+            })
+
+          } // END ADD CODED VALUES
+
 
           // Create the dstore.
           // The store must have a unique id column assigned or various problems will result. The default is 'id'. Here,
@@ -144,12 +304,12 @@ define([
           var RQL = declare([ Memory, RqlQuery]);
 
           var DataStore = new RQL({
-            data: TableFeatures,
+            data: featureAttributes,
             idProperty: 'OBJECTID',
           })
 
+
           // Create the grid.
-          // TODO: the grid auto adjusts columns to fit div. This can cause things to get squished. Find way to scroll horizontally.
           // TODO: ColumnReorder interferes with ColumnResizer. Make toggle button for ColumnResizer.
           var grid = new (declare([OnDemandGrid, Selection, ColumnHider, ColumnResizer, ColumnReorder]))({
             bufferRows: Infinity,
@@ -157,9 +317,19 @@ define([
             columns: QueryFields
           }, 'feature-table-grid')
 
+
           grid.set('collection', DataStore)
 
-          // TODO: Add option to choose between filters / datastores?
+
+          if (returnCellWidth) {
+            // TODO: Allow user to set font
+            // TODO: Test if variables return correct font when user changes font through css file.
+            var fontname = dom.byId('feature-table-grid').style.fontFamily
+            var fontsize = dom.byId('feature-table-grid').style.fontSize
+            printCellWidth(featureAttributes, fontname, fontsize)
+          }
+
+
           var FilterPopUp = new RQLStoreFilter({
             store: DataStore,
             grid: grid
@@ -188,6 +358,43 @@ define([
           })
 
         }) // End query layer.
-    } // End refresh method.
+    }, // End refresh method.
+
+
+    // Tool for finding the max width in pixels of each dgrid column. Results are printed to console log and can be
+    // used to set the css of the columns. In theory, the css could be set programmatically. However, per Dojo this is
+    // not recommended as this causes severe performance issues.
+    FindMaxCellWidth: function (data, fontname, fontsize) {
+
+      var columnWidth = {}
+      var columnCSS = ""
+      columnWidth.tempSpan = document.createElement('span')
+      columnWidth.tempSpan.style = "none"
+      columnWidth.tempSpan.style.fontSize = fontsize
+      columnWidth.tempSpan.style.fontFamily = fontname
+      document.body.appendChild(columnWidth.tempSpan)
+
+      console.log("using fontsize:", columnWidth.tempSpan.style.fontSize )
+      console.log("using fontname:", columnWidth.tempSpan.style.fontFamily )
+
+      var columns = Object.keys(data[0])
+
+      array.forEach(columns, function (column) {
+        columnWidth.tempSpan.innerText = column
+        columnWidth.maxWidth = columnWidth.tempSpan.offsetWidth
+        columnWidth.className = ".field-" + column
+
+        array.forEach(data, function (row) {
+          columnWidth.tempSpan.innerText = row[column]
+          columnWidth.maxWidth = Math.max(columnWidth.maxWidth, columnWidth.tempSpan.offsetWidth )
+        })
+
+        columnCSS += String(columnWidth.className) + " {\n    width: " + String(columnWidth.maxWidth + 20) + "px\n}\n\n"
+
+      })
+
+      console.log(columnCSS)
+    } // END FindMaxCellWidth
+
   }) // End declare.
 }) // End define.
