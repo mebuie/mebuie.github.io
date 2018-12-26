@@ -222,7 +222,7 @@ define([
       PopUpBC = new BorderContainer({
         gutters: true,
         class: 'table-popup-container',
-        style: 'height: 400px; width: 350px; padding: 0; margin: 0; overflow: hidden; background-color: gray; z-index: 99; position: absolute; left: 30%; top: 20%; font: 10px Myriad, Helvetica, Tahoma, Arial, clean, sans-serif;',
+        style: 'height: 400px; width: 350px; padding: 0; margin: 0; overflow: hidden; background-color: gray; z-index: 99; position: absolute; left: 15px; top: 20%; font: 10px Myriad, Helvetica, Tahoma, Arial, clean, sans-serif;',
         id: 'table-popup-container'
       })
 
