@@ -1,8 +1,15 @@
-body, p, a, ul, li {
+body, a, ul, li {
 	font-family: 'Lora', serif;
 	font-size: 8px;
 	max-width: 1920px;
 	margin: auto;
+}
+
+p {
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    font-weight: 400;
 }
 
 li.exp {
@@ -11,9 +18,15 @@ li.exp {
 	padding-bottom: 2%;
 }
 
-p.bio, a.heading {
+p.bio {
 	font-family: 'Open Sans', sans-serif;
 	padding-bottom: 2%;
+}
+
+a.heading {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    padding-bottom: 2%;
 }
 
 p.skills {
