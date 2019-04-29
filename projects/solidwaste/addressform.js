@@ -54,7 +54,7 @@ function clearTable() {
 
 function checkJobProgress( jobId ) {
   var parameters = "?f=json"
-  var jobUrl = "https://gisportal.cityofmesquite.com/gisportal/rest/services/Public/IdentifyRecycleDateByAddress/GPServer/Identify%20Recycle%20Date%20By%20Address/jobs/" + jobId + parameters
+  var jobUrl = "https://gisservices.cityofmesquite.com/gisportal/rest/services/Public/IdentifyRecycleDateByAddress/GPServer/Identify%20Recycle%20Date%20By%20Address/jobs/" + jobId + parameters
 
   return fetch(jobUrl).then(function (response) {
     return response.json();
@@ -65,7 +65,7 @@ function checkJobProgress( jobId ) {
 
 
 function getJobResults( jobId ) {
-  var url = "https://gisportal.cityofmesquite.com/gisportal/rest/services/Public/IdentifyRecycleDateByAddress/GPServer/Identify%20Recycle%20Date%20By%20Address/jobs/"
+  var url = "https://gisservices.cityofmesquite.com/gisportal/rest/services/Public/IdentifyRecycleDateByAddress/GPServer/Identify%20Recycle%20Date%20By%20Address/jobs/"
   var outputLocation = "/results/output?f=json"
   var resultsUrl = url + jobId + outputLocation
 
