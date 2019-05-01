@@ -302,7 +302,7 @@ p.footer-heading {
 
 @media screen and (min-width: 385px) and (max-width: 767px) {
 		.about-phrase {
-				font-size: 12px;
+				font-size: 14px;
 		}
 
 		.about-gis {
@@ -337,7 +337,7 @@ p.footer-heading {
 
 @media screen and (min-width: 0px) and (max-width: 384px) {
 	.about-phrase {
-		font-size: 12px;
+		font-size: 14px;
 	}
 
 	.about-gis {
