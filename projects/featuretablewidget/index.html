@@ -16,6 +16,7 @@
     <script src="arcgisaddins/dojoConfig.js"></script>
     <script src="https://js.arcgis.com/4.9/"></script>
     <link rel="stylesheet" href="samples.css">
+    <link rel="stylesheet" href="./arcgisaddins/css/HomeUI.css">
 
     <script>
       require([
@@ -26,8 +27,9 @@
         'esri/WebMap',
         'esri/views/MapView',
         "esri/layers/FeatureLayer",
+        'arcgisaddins/HelpUI',
         "dojo/ready"
-      ], function (MapLayout, FeatureTable, Map, WebScene, WebMap, MapView, FeatureLayer) {
+      ], function (MapLayout, FeatureTable, Map, WebScene, WebMap, MapView, FeatureLayer, HelpUI) {
 
         // Instantiate the MapLayout custom module.
         var layout = new MapLayout({
@@ -73,6 +75,10 @@
         })
 
         table.startup();
+
+        var hintUI = new HelpUI();
+
+        view.ui.add(hintUI, "top-right");
       })
     </script>
 </head>
