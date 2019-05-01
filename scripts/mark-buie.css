@@ -5,6 +5,22 @@ body, a, ul, li {
 	margin: auto;
 }
 
+.table {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #777;
+    border-bottom:0px !important;
+}
+
+.table th, .table td {
+    border: 1px !important;
+    width: 50%; !important
+}
+
+.fixed-table-container {
+    border:0px !important;
+}
+
 p {
     font-family: Verdana, sans-serif;
     font-size: 16px;
@@ -265,6 +281,18 @@ p.footer-heading {
 			margin-top: 12px;
 		}
 
+        .table {
+            margin-bottom: 0px; !important;
+        }
+
+        .table td {
+            font-size: 16px; !important;
+        }
+
+        .footer {
+            margin-top: 20px;
+        }
+
 }
 
 /*@media screen and (min-width: 576px) and (max-width: 767px) {*/
@@ -274,7 +302,7 @@ p.footer-heading {
 
 @media screen and (min-width: 385px) and (max-width: 767px) {
 		.about-phrase {
-				font-size: 5px;
+				font-size: 12px;
 		}
 
 		.about-gis {
@@ -293,11 +321,23 @@ p.footer-heading {
         .footer-footer {
             font-size: 18px;
         }
+
+        .table {
+            margin-bottom: 0px; !important;
+        }
+
+        .table td {
+            font-size: 14px; !important;
+        }
+
+        .footer {
+            margin-top: 20px;
+        }
 }
 
 @media screen and (min-width: 0px) and (max-width: 384px) {
 	.about-phrase {
-		font-size: 5px;
+		font-size: 12px;
 	}
 
 	.about-gis {
@@ -314,5 +354,17 @@ p.footer-heading {
 
     .footer-footer {
         font-size: 18px;
+    }
+
+    .table {
+        margin-bottom: 0px; !important;
+    }
+
+    .table td {
+        font-size: 12px; !important;
+    }
+
+    .footer {
+        margin-top: 20px;
     }
 }
