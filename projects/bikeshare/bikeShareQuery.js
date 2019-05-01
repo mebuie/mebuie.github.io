@@ -9,8 +9,9 @@ require([
     "esri/views/MapView",
     "esri/widgets/Legend",
     "esri/layers/FeatureLayer",
-    "esri/tasks/support/Query"
-], function(Map, WebMap, MapView, Legend, FeatureLayer, Query) {
+    "esri/tasks/support/Query",
+    "modules/HelpUI"
+], function (Map, WebMap, MapView, Legend, FeatureLayer, Query, HelpUI) {
 
 
     //Layers variables
@@ -57,20 +58,13 @@ require([
         zoom: 14
     });
 
-    //Map Elements
-    //TODO Prevent legend from rendering before layer is visible
-    //TODO restyle legend to make smaller.
-    // var legend = new Legend({
-    //     view: view,
-    //     type: "card",
-    //     layout: "auto"
-    // });
+    var hintUI = new HelpUI();
 
-    // view.ui.add(legend, "bottom-right");
+    view.ui.add(hintUI, "top-right");
 
-    view.on("click", function(event) {
+    view.on("click", function (event) {
         view.hitTest(event)
-            .then(function(response){
+            .then(function (response) {
                 var BikeStartGraphic = response.results.filter(function(result){
                     return result.graphic.layer === BikeStart;
                 });
