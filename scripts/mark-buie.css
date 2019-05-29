@@ -1,3 +1,8 @@
+
+/*As we transition away from boostrap, all new css will go in here.*/
+@import "style-update.css";
+
+/*Old css*/
 body, a, ul, li {
 	font-family: 'Lora', serif;
 	font-size: 8px;

@@ -1,0 +1,117 @@
+
+.flex-container-columns {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.project-row {
+    display: block;
+    margin-top: 15px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.project-margin {
+    width: 0;
+}
+
+.project-container,
+.project-image,
+.project-summary {
+    width: 100%
+}
+
+.project-container {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 0;
+}
+
+.project-container a h4, p {
+     color: #666666;
+}
+
+.project-summary, .project-image {
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+    color: #666666;
+    padding: 10px 15px 10px 15px;
+}
+
+.project-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+.project-summary h4 {
+    text-align: center;
+}
+
+
+@media (min-width: 550px ) {
+
+    .project-row {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .project-margin {
+        width: calc(100% / 12 * 1)
+    }
+
+    .project-container {
+        display: flex;
+        align-items: center;
+        width: calc(100% / 12 * 10);
+        padding: 15px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 0;
+    }
+
+    .project-image {
+        padding: 0 10px 0 10px;
+        width: calc(100% / 12 * 4);
+    }
+
+    .project-image img {
+        width: 100%;
+        height: 200px;
+        object-fit: contain;
+    }
+
+    .project-summary {
+        padding: 0 10px 0 10px;
+        width: calc(100% / 12 * 8)
+    }
+
+    .project-summary h4 {
+        text-align: left;
+    }
+}
+
+@media (min-width: 1170px ) {
+
+    .project-margin {
+        width: calc(100% / 12 * 2)
+    }
+
+    .project-container {
+        width: calc(100% / 12 * 8)
+        /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+        /*border-radius: 0;*/
+    }
+
+    .project-image {
+        width: calc(100% / 12 * 4)
+    }
+
+    .project-summary {
+        width: calc(100% / 12 * 8)
+    }
+}
