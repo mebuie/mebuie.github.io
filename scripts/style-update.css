@@ -22,10 +22,8 @@
 }
 
 .project-row {
-    display: block;
-    margin-top: 15px;
-    margin-left: 0;
-    margin-right: 0;
+    display: flex;
+    margin: 15px 10px 5px 10px;
 }
 
 .project-margin {
@@ -160,6 +158,7 @@
 
     .project-row {
         width: calc(100% / 12 * 6);
+        margin: 15px 0 5px 0;
     }
 
     .project-margin {
