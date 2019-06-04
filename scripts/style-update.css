@@ -22,6 +22,7 @@
 }
 
 .project-row {
+    position: relative;
     display: flex;
     margin: 15px 10px 5px 10px;
 }
@@ -67,6 +68,10 @@
     color: #666666;
 }
 
+.project-link {
+    font-family: Verdana, sans-serif;
+    font-size: 14px;
+}
 
 @media (min-width: 550px ) {
 
