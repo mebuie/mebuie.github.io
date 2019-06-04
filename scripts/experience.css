@@ -33,7 +33,7 @@
     text-align: center;
 }
 
-.job-title p {
+.job-title p, .job-summary-container li {
     font-family: Verdana, sans-serif;
     font-size: 16px;
     line-height: 1.5em;
@@ -95,6 +95,7 @@
     .job-title {
         width: calc(100% / 12 * 8);
     }
+
 }
 
 @media ( min-width: 1700px ) {
