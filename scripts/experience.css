@@ -1,4 +1,8 @@
 
+.experience-quote {
+    font-family: Georgia serif
+}
+
 .job-row {
     position: relative;
     display: flex;
