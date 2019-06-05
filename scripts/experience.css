@@ -1,10 +1,28 @@
 
-.job-container  {
-    width: 100%
+.job-row {
+    position: relative;
+    display: flex;
+    margin: 15px 10px 5px 10px;
+}
+
+.job-row p {
+    margin: 0 5px 10px 0;
+}
+
+.experience-margin {
+    width: 0;
+}
+
+.experience-container {
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 0;
 }
 
 .job-container {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: calc(100% / 12 * 12);
+    margin: 10px 0 10px 0;
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
     border-radius: 0;
 }
 
@@ -50,13 +68,25 @@
 
 @media (min-width: 550px ) {
 
-    .job-container {
+    .job-row {
         display: flex;
-        align-items: center;
-        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .experience-margin {
+        width: calc(100% / 12 * 1);
+    }
+
+    .experience-container {
         width: calc(100% / 12 * 10);
         padding: 15px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 0;
+    }
+
+    .job-container {
+        width: calc(100% / 12 * 12);
+        padding: 15px;
         border-radius: 0;
     }
 
@@ -102,15 +132,24 @@
 
 @media ( min-width: 900px ) {
 
-    .job-container {
+    .experience-margin{
+        width: calc(100% / 12 * 2);
+    }
+
+    .experience-container {
         width: calc(100% / 12 * 8);
     }
+
 }
 
 @media ( min-width: 1280px ) {
 
+    .experience-margin {
+        width: calc(100% / 12 * 3);
+    }
 
-    .job-container {
+
+    .experience-container {
         width: calc(100% / 12 * 6);
     }
 
@@ -118,18 +157,28 @@
 
 @media ( min-width: 1700px ) {
 
+    .experience-margin {
+        width: calc(100% / 12 * 3);
+    }
+
+    .experience-container {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        width: calc(100% / 12 * 6);
+    }
+
     .job-container {
-        width: calc(100% / 12 * 12);
-        height: 100%;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        width: calc(100% / 12 * 8);
     }
 
-    .job-margin {
-        display: block;
-        width: calc(100% / 12 * 1);
+    .job-summary-container {
+        width: calc(100% / 12 * 11)
     }
 
-    .job-header, .job-summary-container {
-        width: calc(100% / 12 * 10);
-    }
+
 
 }
