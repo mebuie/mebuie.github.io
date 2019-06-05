@@ -1,7 +1,5 @@
 
-.job-container,
-.job-image,
-.job-title {
+.job-container  {
     width: 100%
 }
 
@@ -14,9 +12,14 @@
     padding: 10px 15px 10px 15px;
 }
 
+.job-image {
+    display: flex;
+    justify-content: center;
+}
+
 .job-image img {
-    width: 100%;
-    height: 200px;
+    width: auto;
+    margin-bottom: 10px;
     object-fit: contain;
 }
 
@@ -40,10 +43,6 @@
     padding: 0 0 10px 20px;
 }
 
-.job-summary-margin-left, .job-summary-margin-right {
-     visibility: hidden;
- }
-
 .job-summary-container {
     width: calc(100% / 12 * 12);
 }
@@ -61,29 +60,44 @@
         border-radius: 0;
     }
 
+    .job-header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .job-margin {
+        display: none;
+    }
+
     .job-image {
-        padding: 0 10px 0 10px;
-        width: calc(100% / 12 * 4);
+        margin-bottom: 20px;
+        padding: 0 20px 0 10px;
+        justify-content: flex-start;
+        border-right: solid;
+        border-right-color: #999999;
+        border-right-width: 2px;
     }
 
     .job-image img {
-        width: 100%;
-        height: 200px;
+        margin: 10px 0 10px 0;
         object-fit: contain;
     }
 
     .job-title {
-        padding: 0 10px 0 10px;
-        width: calc(100% / 12 * 8);
-    }
-
-    .job-title h4 {
-        text-align: left;
+        padding: 0 10px 0 20px;
+        width: auto;
     }
 
     .job-summary-container p {
         margin-right: 40px;
     }
+
+    .job-title p, .job-title h4 {
+        text-align: left;
+        padding: 0 0 10px 0;
+    }
+
 }
 
 @media ( min-width: 900px ) {
@@ -100,14 +114,6 @@
         width: calc(100% / 12 * 6);
     }
 
-    .job-image {
-        width: calc(100% / 12 * 4);
-    }
-
-    .job-title {
-        width: calc(100% / 12 * 8);
-    }
-
 }
 
 @media ( min-width: 1700px ) {
@@ -117,20 +123,12 @@
         height: 100%;
     }
 
-    .job-image {
-        width: calc(100% / 12 * 5);
-    }
-
-    .job-title {
-        width: calc(100% / 12 * 5);
-    }
-
-    .job-summary-margin-left, .job-summary-margin-right {
-        visibility: visible;
+    .job-margin {
+        display: block;
         width: calc(100% / 12 * 1);
     }
 
-    .job-summary-container {
+    .job-header, .job-summary-container {
         width: calc(100% / 12 * 10);
     }
 
