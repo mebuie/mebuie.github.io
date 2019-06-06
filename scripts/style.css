@@ -2,6 +2,7 @@
 /*As we transition away from boostrap, all new css will go in here.*/
 @import "project.css";
 @import "experience.css";
+@import "education.css";
 
 /*Old css*/
 body, a, ul, li {
