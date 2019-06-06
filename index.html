@@ -30,7 +30,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans|Roboto:700" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <link rel="stylesheet" href="scripts/mark-buie.css">
+    <link rel="stylesheet" href="scripts/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 </head>
@@ -58,7 +58,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a class="heading" href="#navBio">ABOUT</a></li>
                 <li><a class="heading" href="#navbar-target-projects">PROJECTS</a></li>
-                <li><a class="heading" href="#navbar-target-experience">EXPERIENCE</a></li>
+                <li><a class="heading" href="#navbar-target-experience">RESUME</a></li>
                 <li><a class="heading" href="#navbar-target-skills">SKILLS</a></li>
                 <li><a class="heading" href="#navContact">CONTACT</a></li>
             </ul>
@@ -344,458 +344,249 @@
 </div>
 
 
-<!--BEGIN PROJECT MODALS-->
-<div class="modal fade" id="modal_uasQuickGuide" role="dialog">
-    <div id="modalWidth" class="modal-dialog text-left" style="width:95%;">
+<!--------------------------------------------------------------------------------------------------------------------->
+<!--                                   BEGIN EXPERIENCE
+<!--                                                                                                                 -->
+<!--  This section has been updated to not rely on Boostrap.                                                         -->
+<!--------------------------------------------------------------------------------------------------------------------->
 
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h2 class="modal-title text-center">Quick Start Guide: UAS For Local Government</h2>
-                </p>
-            </div>
-            <div class="modal-body">
-                <div class="intrinsic-container intrinsic-container-aspect">
-                    <iframe src="scripts/uasQuickGuide.html"></iframe>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
+<div id="navbar-target-experience" class="flex-container-columns">
+
+    <!--Header-->
+    <div class="header-gap"></div>
+    <div class="header-experience">
+        <blockquote>
+            <p>“We learn from failure, not from success!”</p>
+            <footer>Bram Stoker, Dracula</footer>
+        </blockquote>
     </div>
-</div>
+    <div class="header-gap"></div>
 
-<!--END PROJECT MODALS-->
-
-<!--BEGIN EXPERIENCE LOGOS AREA-->
-<!--when clicked each logo calls the relevant modal from the modal section below, event handled by-->
-<div class="container-fluid">
-    <!--experience header-->
-    <div id="navbar-target-experience" class="row cnt_cv_header text-center">
-        <h1><b>
-            <hr>
-            EXPERIENCE
-            <hr>
-        </b></h1>
+    <!--Experience-->
+    <div class="header-row">
+        <h2>Experience</h2>
     </div>
 
-    <!--experience logos-->
-    <div class="row">
-        <div class="col-sm-0 col-md-0 col-lg-2"></div>
-        <div class="col-sm-12 col-md-12 col-lg-8 text-center" style="padding: 0%;">
-            <a id="gisCord" class="exp-inline-block gisCord-Exp" href="#gisCord">
-                <div class="leftaccent exp-hover text-center gisCord-Exp">
-                    <img src="img\logos\mesquite200.png" class="gisCord-Exp" style="max-width: 100%; height: auto;">
-                    <h5 class="gisCord-Exp"><b>GIS Coordinator</b></h5>
-                    <h6 class="gisCord-Exp">October 2016 - Present</h6>
-                </div>
-            </a>
-            <a id="gisTech" class="exp-inline-block" href="#gisTech">
-                <div class="leftaccent exp-hover text-center">
-                    <img src="img\logos\mesquite200.png" style="max-width: 100%; height: auto;">
-                    <h5><b>GIS Technician</b></h5>
-                    <h6>April 2016 - October 2016</h6>
-                </div>
-            </a>
-            <div class="experience-toggle"></div>
-            <a id="euresearch" class="exp-inline-block" href="#euresearch">
-                <div class="leftaccent exp-hover text-center">
-                    <img src="img\logos\eu200.png" style="max-width: 100%; height: auto;">
-                    <h5><b>Research Assistant</b></h5>
-                    <h6>May 2015 - January 2016</h6>
-                </div>
-            </a>
-            <a id="eu" class="exp-inline-block" href="#eu">
-                <div class="leftaccent exp-hover text-center">
-                    <img src="img\logos\eu200.png" style="max-width: 100%; height: auto;">
-                    <h5><b>MSc GIS and Archaeology</b></h5>
-                    <h6>September 2014 - August 2015</h6>
-                </div>
-            </a>
-            <div class="experience-toggle"></div>
-            <a id="trc" class="exp-inline-block" href="#trc">
-                <div class="leftaccent exp-hover text-center">
-                    <img src="img\logos\trc200.png" style="max-width: 100%; height: auto;">
-                    <h5><b>Archaeologist</b></h5>
-                    <h6>July 2014 - August 2014</h6>
-                </div>
-            </a>
-            <a id="hdr" class="exp-inline-block" href="#hdr">
-                <div class="leftaccent exp-hover text-center">
-                    <img src="img\logos\hdr200.png" style="max-width: 100%; height: auto;">
-                    <h5><b>Archaeologist</b></h5>
-                    <h6>May 2011 - July 2014</h6>
-                </div>
-            </a>
-            <div class="experience-toggle"></div>
-            <a id="sp3" class="exp-inline-block" href="#sp3">
-                <div class="leftaccent exp-hover text-center">
-                    <img src="img\logos\sp3200.png" style="max-width: 100%; height: auto;">
-                    <h5><b>Archaeologist</b></h5>
-                    <h6>May 2010 - May 2011</h6>
-                </div>
-            </a>
-            <a id="atm" class="exp-inline-block" href="#atm">
-                <div class="leftaccent exp-hover text-center">
-                    <img src="img\logos\atm200.png" style="max-width: 100%; height: auto;">
-                    <h5><b>B.A. Anthropology</b></h5>
-                    <h6>August 2005 - December 2009</h6>
-                </div>
-            </a>
-        </div>
-        <div class="col-sm-0 col-md-0 col-8-lg"></div>
-    </div>
-</div>
-<!--END EXPERIENCE LOGOS AREA-->
+    <div class="job-row">
+        <div class="experience-margin"></div>
+        <div class="experience-container">
 
-<!-- BEGIN MODAL AREA  -->
-<!-- experience gis coordinator modal -->
-<div class="modal fade" id="modal_gisCord" role="dialog">
-    <div id="modalWidth" class="modal-dialog" style="width:60%; min-width: 400px;">
-
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <p class="modal-title text-center">
-                    <img src="img\logos\mesquite200.png" style="max-width: 50%; height: auto;">
-                <h2 class="modal-title text-center">City of Mesquite</h2>
-                <h3 class="modal-title text-center">GIS Coordinator</h3>
-                <h5 class="modal-title text-center">October 2016 - Present</h5>
-                </p>
-            </div>
-            <div class="modal-body">
-                <ul style="padding-top: 3%;">
-                    <li class="exp">Develop and manage the City's Unmanned Aerial System(UAS) program, which has
-                        provided a
-                        cost-effective solution for acquiring high-resolution GIS data, such as centimeter level Digital
-                        Elevation Models and orthomosaic imagery, resulting in cost savings on engineering projects with
-                        budgetary constraints and facilitating policy-making for department heads and city council.
-                    </li>
-                    <li class="exp">Streamlined communications between employees and management through the
-                        implementation and use
-                        of Kanban, and other Agile project management methodologies.
-                    <li class="exp">Develop and maintain GIS services to help departments achieve their goals, such
-                        as creating a custom web editor using ArcGIS API for JavaScript 3.23 to assist the Police
-                        Department deploy, track, and analyze the efficacy of crime prevention operations.
-                    </li>
-                    <li class="exp">Developed custom geoprocessing tools using the ArcPy Python library to automate GIS
-                        tasks, such
-                        as creating an ArcMap Geoprocessing Tool to assist with engineering as-built record requests.
-                        When
-                        benchmarked against a request that previously took a day's work, this script was able to provide
-                        a
-                        30-minute turnaround, and identified previously missing records.
-                    </li>
-                </ul>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- experience gis technician modal -->
-<div class="modal fade" id="modal_gisTech" role="dialog">
-    <div id="modalWidth" class="modal-dialog" style="width:60%; min-width: 400px;">
-
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <p class="modal-title text-center">
-                    <img src="img\logos\mesquite200.png" style="max-width: 50%; height: auto;">
-                <h2 class="modal-title text-center">City of Mesquite</h2>
-                <h3 class="modal-title text-center">GIS Technician</h3>
-                <h5 class="modal-title text-center">April 2016 - October 2016</h5>
-                </p>
-            </div>
-            <div class="modal-body">
-                <ul>
-                    <li class="exp">Developed metrics using Python and R to assist the City in data-driven decision
-                        making, such as
-                        performing a multi-criteria analysis to redistrict ECODE inspector boundaries based on a
-                        projected
-                        caseload score, with the objective of addressing workload imbalance. To-date, the resulting
-                        boundaries have been in effect for 16 months with positive feedback from all inspectors.
-                    </li>
-                    <li class="exp">Used skills in GIS and T-SQL to facilitate departmental projects, such as assisting
-                        the finance
-                        department in developing a methodology for calculating Drainage Utility District (DUD) fees,
-                        which
-                        has created significant additional revenue for maintenance and capital improvements.
-                    </li>
-                    <li class="exp">Introduced new GIS technologies and analytical methodologies aimed to increase
-                        productivity and
-                        decrease City expenditures, such as promoting the use of UAS remote sensing technologies to
-                        supplement surveys and reduce the cost of GIS data acquisition.
-                    </li>
-                </ul>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- experience research assistant modal -->
-<div class="modal fade" id="modal_euresearch" role="dialog">
-    <div id="modalWidth" class="modal-dialog" style="width:60%; min-width: 400px;">
-
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <p class="modal-title text-center">
-                    <img src="img\logos\eu200.png" style="max-width: 50%; height: auto;">
-                <h2 class="modal-title text-center">University of Edinburgh</h2>
-                <h3 class="modal-title text-center">Research Assistant</h3>
-                <h5 class="modal-title text-center">May 2015 - January 2016</h5>
-                </p>
-            </div>
-            <div class="modal-body">
-                <ul>
-                    <li class="exp">Developed cost effective UAS aerial mapping techniques using small scale UASs
-                        without compromising data quality, allowing for more investment towards research. These
-                        findings made it possible to secure long-term UAS permissions from the Icelandic Transport
-                        Authority, facilitating future research planning.
-                    </li>
-                    <li class="exp">Piloted UASs and processed the resulting aerial imagery using Agisoft Photoscan
-                        for multiple university research projects, including agriculture impact assessments,
-                        archaeological surveys, and geomorphology research of mega floods in Iceland. Proud to have
-                        piloted the first UAS survey of Sólheimajökull glacier for mass balance studies.
-                    </li>
-                    <li class="exp">Developed curriculum in Python programming and UAS photogrammetry using
-                        structure-from-motion
-                        software for a new Master's level course in
-                        <a href="http://www.drps.ed.ac.uk/16-17/dpt/cxpgge11215.htm" target="_blank">Near-ground Earth
-                            Observations: new platforms and sensors
-                        </a>
-                    </li>
-                    <li class="exp">As Teacher's Assistant, demonstrated the use of ESRI software and graded
-                        assignments on relational databases. As well as, coordinated and led field trips introducing
-                        fundamentals of glaciology, geomorphology, and biomass estimation.
-                    </li>
-                </ul>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- experience masters degree modal -->
-<div class="modal fade" id="modal_eu" role="dialog">
-    <div id="modalWidth" class="modal-dialog" style="width:60%; min-width: 400px;">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <p class="modal-title text-center">
-                    <img src="img\logos\eu200.png" style="max-width: 50%; height: auto;">
-                <h2 class="modal-title text-center">University of Edinburgh</h2>
-                <h3 class="modal-title text-center">MSc GIS and Archaeology</h3>
-                <h5 class="modal-title text-center">September 2014 - August 2015</h5>
-                </p>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-0 col-lg-1"></div>
-                    <div class="col-sm-6 col-lg-5">
-                        <h4><b>Courses</b></h4>
-                        <p><a href="http://www.drps.ed.ac.uk/14-15_Archive_at_01-09-2014/dpt/cxpgge11091.htm"
-                              target="_blank">
-                            Introduction to Spatial Analysis</a></p>
-                        <p><a href="http://www.drps.ed.ac.uk/14-15_Archive_at_01-09-2014/dpt/cxpgge11085.htm"
-                              target="_blank">
-                            Further Spatial Analysis</a></p>
-                        <p><a href="http://www.drps.ed.ac.uk/14-15_Archive_at_01-09-2014/dpt/cxpgge11084.htm"
-                              target="_blank">
-                            Distributed GIS</a></p>
-                        <p><a href="http://www.drps.ed.ac.uk/14-15_Archive_at_01-09-2014/dpt/cxpgge11087.htm"
-                              target="_blank">
-                            GeoVisualization</a></p>
-                        <p><a href="http://www.drps.ed.ac.uk/14-15_Archive_at_01-09-2014/dpt/cxpgge11092.htm"
-                              target="_blank">
-                            Spatial Modeling</a></p>
-                        <p><a href="http://www.drps.ed.ac.uk/14-15/dpt/cxpgge11210.htm" target="_blank">
-                            Business Geographics</a></p>
-                        <p><a href="http://www.drps.ed.ac.uk/14-15/dpt/cxpgge11181.htm" target="_blank">
-                            Principles of GIS for Archaeologists</a></p>
-                        <p><a href="http://www.drps.ed.ac.uk/14-15/dpt/cxpgge11118.htm" target="_blank">
-                            Integrated Resource Planning</a></p>
-                        <p><a href="http://www.drps.ed.ac.uk/14-15_Archive_at_01-09-2014/dpt/cxpgge11138.htm"
-                              target="_blank">
-                            Research Practice and Project Planning</a></p>
+            <!-- CITY OF MESQUITE | GIS COORDINATOR -->
+            <div class="job-container">
+                <div class="job-header">
+                    <div class="job-image">
+                        <img src="img\logos\mesquite_crop.png">
                     </div>
-                    <div class="col-sm-6 col-lg-5">
-                        <h4><b>Dissertation</b></h4>
-
-                        <a href="https://www.era.lib.ed.ac.uk/handle/1842/11796" target="_blank">
-                            <i>Planning Efficient Unmanned Aerial Surveys</i>
-                        </a>
-                        <p>Optimizing the quality of Digital Elevation Models (DEM) in UAS mapping through the
-                            evaluation of ground control point distribution, flight height, and image distortion
-                            correction using Python OpenCV. </p>
-
-                        <h4><b>Extracurricular</b></h4>
-                        <ul>
-                            <li><p>Edinburgh University Cycling Club</p></li>
-                            <li><p>Late Antique and Medieval Postgraduate Society</p></li>
-                        </ul>
-
-                        <h4><b>Awards</b></h4>
-                        <ul>
-                            <li>
-                                <p>
-                                    <a href="https://www.ed.ac.uk/research-support-office/funders-and-funding/internal-funding-opportunities/moray-endowment-fund"
-                                       target="_blank">
-                                        Moray Endowment Fund</a>
-                                </p>
-                            </li>
-                        </ul>
+                    <div class="job-title">
+                        <h4>City of Mesquite | <i>GIS Coordinator</i></h4>
+                        <p>October, 2016 - Present</p>
                     </div>
-                    <div class="col-md-0 col-lg-1"></div>
+                </div>
+                <div class="job-summary-container">
+                    <ul>
+                        <li>
+                            <p>
+                                Developed web GIS applications using the ArcGIS API for JavaScript
+                                and extended the functionality of Web AppBuilder with custom
+                                Widgets and Python Geoprocessing Tools.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Administered ArcGIS Enterprise ( ArcGIS Server, ArcSDE, AGOL, and Portal),
+                                including managing Users and Roles, publishing REST services, creating
+                                spatial views (T-SQL), scheduling stored procedures and scripts,
+                                and maintaining / troubleshooting Esri software.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Managed the GIS Drone Program which has helped several departments tell
+                                their story, increase productivity, and reduce expenditures. The success
+                                of this program has prompted a city wide UAS Department.
+                            </p>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+            <!-- CITY OF MESQUITE | GIS TECHNICIAN-->
+            <div class="job-container">
+                <div class="job-header">
+                    <div class="job-image">
+                        <img src="img\logos\mesquite_crop.png">
+                    </div>
+                    <div class="job-title">
+                        <h4>City of Mesquite | <i>GIS Technician</i></h4>
+                        <p>April, 2016 - October, 2016</p>
+                    </div>
+                </div>
+                <div class="job-summary-container">
+                    <ul>
+                        <li>
+                            <p>
+                                Solved workload imbalance for Environmental Code Officers
+                                by performing a Multi-Criteria Analysis, using Python and R,
+                                to redistrict patrol areas.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Generated additional revenue for capital improvements by
+                                assisting the Finance Department with the development of
+                                a GIS based method for calculating Drainage Utility District
+                                (DUD) fees.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Introduced new GIS technologies and analytical methodologies
+                                aimed to increase productivity and decrease City expenditures,
+                                such as implementing the use of UAS/Drone remote sensing technologies
+                                to reduce the cost of Engineering designs by 30%.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
             </div>
+
+            <!-- UNIVERSITY OF EDINBURGH | RESEARCH ASSISTANT -->
+            <div class="job-container">
+                <div class="job-header">
+                    <div class="job-image">
+                        <img src="img\logos\eu_crop.png">
+                    </div>
+                    <div class="job-title">
+                        <h4>University of Edinburgh | <i>Research Assistant</i></h4>
+                        <p>May, 2015 – January, 2016</p>
+                    </div>
+                </div>
+                <div class="job-summary-container">
+                    <ul>
+                        <li>
+                            <p>
+                                Developed curriculum in Python programming and UAS photogrammetry
+                                for a new master’s course in Remote Sensing, and taught undergraduates
+                                Spatial Analysis and relational databases (MySQL).
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Conducted research in UAS Aerial Mapping using small-scale UAS for
+                                agriculture impact assessments, archaeological surveys, and geomorphology
+                                research of mega floods in Iceland. These findings reduced expenditures
+                                and facilitate future research planning for the university.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- HDR | Contract Archaeologist -->
+            <div class="job-container">
+                <div class="job-header">
+                    <div class="job-image">
+                        <img src="img\logos\hdr_crop.png">
+                    </div>
+                    <div class="job-title">
+                        <h4>HDR & Various Companies | <i>Archaeologist</i></h4>
+                        <p>May, 2011 – August, 2014</p>
+                    </div>
+                </div>
+                <div class="job-summary-container">
+                    <ul>
+                        <li>
+                            <p>
+                                Conducted Phase 1, 2, and 3 archaeological surveys and monitoring for
+                                multiple oil and gas, transportation, disaster relief, and government
+                                projects.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Commended for effective communication, on-site problem solving, and
+                                the quality and detail of scientific reports that communicated findings,
+                                progress, and preventative measures to management and the client.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Promoted to Logistics Coordinator of the Deepwater Horizon Coastal
+                                Cleanup Effort and managed the deployment of 30 archaeology teams during
+                                the disaster response.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
         </div>
+        <div class="experience-margin"></div>
+
     </div>
-</div>
 
-<!-- experience trc environmental modal -->
-<div class="modal fade" id="modal_trc" role="dialog">
-    <div id="modalWidth" class="modal-dialog" style="width:60%; min-width: 400px;">
+    <!--Education-->
+    <div class="header-row">
+        <h2>Education</h2>
+    </div>
 
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <p class="modal-title text-center">
-                    <img src="img\logos\trc.png" style="max-width: 50%; height: auto;">
-                <h2 class="modal-title text-center">TRC Environmental</h2>
-                <h3 class="modal-title text-center">Archaeologist</h3>
-                <h5 class="modal-title text-center">July 2014 - August 2014</h5>
-                </p>
+    <div class="education-row">
+        <div class="experience-margin"></div>
+        <div class="experience-container">
+
+            <!-- UNIVERSITY OF EDINBURGH -->
+            <div class="education-container">
+                <div class="education-header">
+                    <div class="education-image">
+                        <img src="img\logos\eu_crop.png">
+                    </div>
+                    <div class="education-title">
+                        <h4>Master of Science (MSc), GIS & Archaeology</h4>
+                        <p>The University of Edinburgh</p>
+                        <p>2014 - 2016</p>
+                    </div>
+                </div>
+                <div class="education-summary-container">
+                    <h5>Dissertation</h5>
+                    <p>Planning Efficient Unmanned Aerial Surveys</p>
+                    <h5>Extracurricular</h5>
+                    <ul>
+                        <li>
+                            Edinburgh University Cycling Club
+                        </li>
+                        <li>
+                            Late Antique and Medieval Postgraduate Society
+                        </li>
+                    </ul>
+                    <h5>Awards</h5>
+                    <p>
+                        Awarded the Moray Endowment Fund to continue research
+                        in Small Unmanned Aerial System (sUAS) surveys.
+                    </p>
+                </div>
             </div>
-            <div class="modal-body">
-                <ul>
-                    <li class="exp">Managed an archaeology team of six providing environmental consultancy for a
-                        transcontinental pipeline, ensuring the project remained within schedule, while maintaining
-                        the integrity of the company and client.
-                    </li>
-                    <li class="exp">Commended on the quality and detail of scientific reports that communicated
-                        findings, progress,
-                        and preventative measures to management and the client.
-                    </li>
-                </ul>
+
+            <!-- Texas A&M University -->
+            <div class="education-container">
+                <div class="education-header">
+                    <div class="education-image">
+                        <img src="img\logos\atm_crop.png">
+                    </div>
+                    <div class="education-title">
+                        <h4>Bachelor of Arts (BA), Anthropology</h4>
+                        <p>Texas A&M University</p>
+                        <p>2005 - 2009</p>
+                    </div>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
+
         </div>
+        <div class="experience-margin"></div>
+
     </div>
+
 </div>
-
-<!-- experience hdr engineering modal -->
-<div class="modal fade" id="modal_hdr" role="dialog">
-    <div id="modalWidth" class="modal-dialog" style="width:60%; min-width: 400px;">
-
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <p class="modal-title text-center">
-                    <img src="img\logos\hdr.png" style="max-width: 50%; height: auto;">
-                <h2 class="modal-title text-center">HDR Engineering</h2>
-                <h3 class="modal-title text-center">Archaeologist</h3>
-                <h5 class="modal-title text-center">May 2011 - July 2014</h5>
-                </p>
-            </div>
-            <div class="modal-body">
-                <ul> <!--TODO: Consolidate bullet points and focuse on accomplishments rather than responsibilites. -->
-                    <li class="exp">Conducted archaeological survey and monitoring for multiple oil and gas,
-                        transportation, disaster relief,
-                        and government contracts.
-                    </li>
-                    <li class="exp">Commended for effective communication and on-site problem solving between team
-                        members and
-                        sub-contractors during the Deepwater Horizon Coastal Cleanup Effort.
-                    </li>
-                    <li class="exp">Promoted to Logistics Coordinator of the Deepwater Horizon Coastal Cleanup Effort
-                        and managed
-                        the deployment of 30 archaeology teams during the disaster response.
-                    </li>
-                </ul>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- experience sphere3 environmental modal -->
-<div class="modal fade" id="modal_sp3" role="dialog">
-    <div id="modalWidth" class="modal-dialog" style="width:60%; min-width: 400px;">
-
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <p class="modal-title text-center">
-                    <img src="img\logos\sp3.png" style="max-width: 50%; height: auto;">
-                <h2 class="modal-title text-center">Sphere3 Environmental</h2>
-                <h3 class="modal-title text-center">Archaeologist</h3>
-                <h5 class="modal-title text-center">May 2010 - May 2011</h5>
-                </p>
-            </div>
-            <div class="modal-body">
-                <ul> <!--TODO: Consolidate bullet points and focuse on accomplishments rather than responsibilites. -->
-                    <li class="exp">Established myself as a self-motivated individual with a willingness to learn and an
-                        ability to
-                        streamline workflows by identifying problems and recommending solutions. Such as, modifying
-                        projects maps to facilitate in-field communications and developing a scheduling system,
-                        which allowed multiple crews to work simultaneously in remote environments.
-                    </li>
-                    <li class="exp">Promoted to Crew Chief and managed a team of ten archaeologists.</li>
-                    <li class="exp">Volunteered responsibility for project logistics, data archiving, and background
-                        research.
-                    </li>
-                </ul>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- experience texas a&m modal -->
-<div class="modal fade" id="modal_atm" role="dialog">
-    <div id="modalWidth" class="modal-dialog" style="width:60%; min-width: 400px;">
-
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <p class="modal-title text-center">
-                    <img src="img\logos\atm.png" style="max-width: 50%; height: auto;">
-                <h2 class="modal-title text-center">Texas A&M University</h2>
-                <h3 class="modal-title text-center">B.A. Anthropology</h3>
-                <h5 class="modal-title text-center">August 2005 - December 2009</h5>
-                </p>
-            </div>
-            <div class="modal-body">
-                <ul>
-                    <li class="exp">Coming Soon</li>
-                </ul>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--END MODAL SECTION-->
 
 
 <!--BEGIN SKILLS SECTION-->
