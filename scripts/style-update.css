@@ -12,6 +12,7 @@
 .flex-container-columns {
     display: flex;
     flex-direction: column;
+    margin-bottom: 40px;
 }
 
 .header-row {
