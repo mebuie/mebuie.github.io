@@ -1,3 +1,5 @@
+@import "markos/hotbar/Folder/css/style.css";
+
 html, body {
 	height: 100%;
 	margin: 0;
@@ -9,10 +11,12 @@ html, body {
 	width: 100%;
 	height: calc(100% - 50px);
 	background-color: cyan;
+	display: flex;
 }
 
 .hotbar {
 	width: 100%;
 	height: 100px;
 	background-color: #666666;
+	display: flex;
 }

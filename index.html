@@ -50,7 +50,7 @@
         // package so we can load Dojo from the CDN whilst still
         // being able to load local modules
         packages: [{
-            name: "demo",
+            name: "markos",
             location: location.pathname.replace(/\/[^/]*$/, '') + '/markos'
         }]
     };
@@ -61,12 +61,18 @@
 <script>
     require([
         "dijit/layout/BorderContainer",
-        "dijit/layout/ContentPane"
+        "dijit/layout/ContentPane",
+        "markos/hotbar/Folder",
+        'dojo/dom',
+        'dojo/domReady!'
     ], function (
         BorderContainer,
-        ContentPane
+        ContentPane,
+        Folder,
+        dom
     ) {
 
+        // Let's create the desktop.
         var bc = new BorderContainer({
             gutters: false,
             style: "height: 100%; width: 100%;"
@@ -86,9 +92,19 @@
         });
         bc.addChild(cp2);
 
+        // Let's create a folder.
+        var folder = new Folder({
+            folderName: "This is a long folder name, and I mean really long..."
+        });
+        cp1.addChild(folder);
+
         // put the top level widget into the document, and then call startup()
         bc.placeAt(document.body);
         bc.startup();
+
+
+
+
 
 
 

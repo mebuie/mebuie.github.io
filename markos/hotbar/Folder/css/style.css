@@ -1,0 +1,46 @@
+.markos-folder {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.markos-folder .folder-image {
+    height: 75px;
+    width: 75px;
+}
+
+.markos-folder .folder-name {
+    text-align: center;
+    word-wrap: break-word;
+    font-size: 14px;
+}
+
+@media (min-width: 550px ) {
+
+}
+
+@media ( min-width: 900px ) {
+
+}
+
+@media ( min-width: 1280px ) {
+    .markos-folder {
+        width: 200px;
+        display: flex;
+    }
+
+    .markos-folder .folder-image {
+        height: 150px;
+        width: 150px;
+    }
+
+}
+
+@media ( min-width: 1700px ) {
+
+}
