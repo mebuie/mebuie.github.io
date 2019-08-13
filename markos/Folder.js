@@ -44,7 +44,7 @@ define([
 
         openFolder: function () {
             var openedFolder = new _FolderContainer();
-            openedFolder.placeAt(document.body);
+            openedFolder.placeAt("desktop");
             openedFolder.startup();
         }
     });
