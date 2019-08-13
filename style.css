@@ -10,7 +10,7 @@ html, body {
 
 .desktop {
 	width: 100%;
-	height: calc(100% - 50px);
+	height: calc(100% - 100px);
 	background-color: cyan;
 	display: flex;
 }
