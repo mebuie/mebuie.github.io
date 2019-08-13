@@ -92,11 +92,20 @@
         });
         bc.addChild(cp2);
 
-        // Let's create a folder.
+        // Let's create some folders.
         var folder = new Folder({
-            folderName: "This is a long folder name, and I mean really long..."
+            folderName: "This is a long folder name, and I mean really long...",
+            positionTop: "10px",
+            positionLeft: "10px"
         });
         cp1.addChild(folder);
+
+        var folder2 = new Folder({
+            folderName: "Another one",
+            positionTop: "127px",
+            positionLeft: "10px"
+        });
+        cp1.addChild(folder2);
 
         // put the top level widget into the document, and then call startup()
         bc.placeAt(document.body);
