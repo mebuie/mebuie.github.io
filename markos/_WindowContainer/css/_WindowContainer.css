@@ -1,0 +1,12 @@
+.markos-folder-container {
+    position: absolute;
+    top: 100px;
+    left: 10px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #3333CC;
+}

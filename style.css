@@ -1,4 +1,5 @@
-@import "markos/hotbar/Folder/css/style.css";
+@import "markos/Folder/css/style.css";
+@import "markos/_WindowContainer/css/_WindowContainer.css";
 
 html, body {
 	height: 100%;
