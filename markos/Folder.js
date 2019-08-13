@@ -1,5 +1,6 @@
 define([
     "dojo/dom",
+    "dojo/dom-style",
     "dojo/on",
     "dojo/_base/declare",
     "dijit/_WidgetBase",
@@ -7,17 +8,23 @@ define([
     "dojo/text!./Folder/templates/Folder.html",
     "require",
     "markos/_WindowContainer",
-], function(dom, on, declare, _WidgetBase, _TemplatedMixin, template, require, _FolderContainer) {
+], function(dom, domStyle, on, declare, _WidgetBase, _TemplatedMixin, template, require, _FolderContainer) {
 
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
         baseClass: "markos-folder",
         folderName: "Untitled",
         folderImage: require.toUrl("./Folder/images/default.png"),
+        positionTop: "10px",
+        positionLeft: "10px",
 
         postCreate: function () {
             // Get a DOM node reference for the root of our widget
             var domNode = this.domNode;
+            domStyle.set(domNode, {
+                "top": this.positionTop,
+                "left": this.positionLeft
+            });
 
             // Run any parent postCreate processes - can be done at any point
             this.inherited(arguments);
@@ -27,6 +34,7 @@ define([
         },
 
         startup: function() {
+
             // Add event handler to open folder
             var folderNode = dom.byId("folder-image");
             on(folderNode, "click", this.openFolder);
