@@ -11,7 +11,10 @@ html, body {
 .desktop {
 	width: 100%;
 	height: calc(100% - 100px);
-	background-color: cyan;
+	background-image: url("markos/Desktop/images/atari.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	display: flex;
 }
 
