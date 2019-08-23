@@ -12,6 +12,7 @@
 .markos-folder .folder-image {
     height: 50px;
     width: 50px;
+    cursor: pointer;
 }
 
 .markos-folder .folder-name {
