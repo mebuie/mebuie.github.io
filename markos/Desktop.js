@@ -57,7 +57,8 @@ define([
             var folder = new Folder({
                 folderName: item.folderName,
                 positionTop: item.positionTop,
-                positionLeft: item.positionLeft
+                positionLeft: item.positionLeft,
+                desktop: this.desktopNode
             });
             folder.placeAt(this.desktopNode)
         }

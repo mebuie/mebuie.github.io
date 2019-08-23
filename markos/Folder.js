@@ -17,6 +17,7 @@ define([
         folderImage: require.toUrl("./Folder/images/default.png"),
         positionTop: "10px",
         positionLeft: "10px",
+        desktop: null,
 
         postCreate: function () {
             // Get a DOM node reference for the root of our widget
@@ -37,7 +38,7 @@ define([
 
         openFolder: function () {
             var openedFolder = new _WindowContainer();
-            openedFolder.placeAt("desktop");
+            openedFolder.placeAt(this.desktop);
             openedFolder.startup();
         }
     });
