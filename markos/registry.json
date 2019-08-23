@@ -3,12 +3,12 @@
     {
       "folderName": "Projects",
       "positionTop": "10px",
-      "positionLeft": "5px"
+      "positionLeft": "10px"
     },
     {
       "folderName": "Test",
       "positionTop": "100px",
-      "positionLeft": "5px"
+      "positionLeft": "10px"
     }
   ]
 }
