@@ -8,7 +8,7 @@ define([
     "dojo/text!./Folder/templates/Folder.html",
     "require",
     "markos/_WindowContainer",
-], function(dom, domStyle, on, declare, _WidgetBase, _TemplatedMixin, template, require, _FolderContainer) {
+], function(dom, domStyle, on, declare, _WidgetBase, _TemplatedMixin, template, require, _WindowContainer) {
 
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
@@ -43,7 +43,7 @@ define([
         },
 
         openFolder: function () {
-            var openedFolder = new _FolderContainer();
+            var openedFolder = new _WindowContainer();
             openedFolder.placeAt("desktop");
             openedFolder.startup();
         }
