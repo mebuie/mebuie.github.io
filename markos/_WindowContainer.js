@@ -2,11 +2,12 @@ define([
     "dojo/dom",
     "dojo/on",
     "dojo/_base/declare",
+    "dojo/_base/lang",
     "dijit/_WidgetBase",
     "dijit/_TemplatedMixin",
     "dojo/text!./_WindowContainer/templates/_WindowContainer.html",
     "require",
-], function(dom, on, declare, _WidgetBase, _TemplatedMixin, template, require) {
+], function(dom, on, declare, lang, _WidgetBase, _TemplatedMixin, template, require) {
 
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
@@ -20,7 +21,11 @@ define([
             this.inherited(arguments);
         },
 
-        startup: function() {}
+        startup: function() {},
+
+        closeWindow() {
+            this.destroy();
+        }
 
     });
 

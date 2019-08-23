@@ -25,6 +25,21 @@
     box-sizing: border-box;
 }
 
+.markos-folder-container-header .close-button {
+    width: 40px;
+    height: 100%;
+    float: right;
+    background-color: whitesmoke;
+    border-left: 1px solid #a1a1a1;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .markos-folder-container-body {
     width: 100%;
     height: calc(100% - 40px);
@@ -50,7 +65,10 @@
 
     .markos-folder-container-header {
         height: 25px;
-        background-color: whitesmoke;
+    }
+
+    .markos-folder-container-header .close-button {
+        width: 25px;
     }
 
     .markos-folder-container-body {

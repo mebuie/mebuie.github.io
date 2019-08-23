@@ -33,14 +33,7 @@ define([
             this.folderImageNode.src = this.folderImage;
         },
 
-        startup: function() {
-
-            // Add event handler to open folder
-            var folderNode = dom.byId("folder-image");
-            on(folderNode, "click", this.openFolder);
-
-            // TODO: Add event handler to change folder name.
-        },
+        startup: function() {},
 
         openFolder: function () {
             var openedFolder = new _WindowContainer();
