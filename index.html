@@ -60,56 +60,62 @@
 
 <script>
     require([
+        'markos/Desktop',
         "dijit/layout/BorderContainer",
         "dijit/layout/ContentPane",
         "markos/Folder",
         'dojo/dom',
-        'dojo/domReady!'
+        'dojo/domReady!',
     ], function (
+        Desktop,
         BorderContainer,
         ContentPane,
         Folder,
         dom
     ) {
 
-        // Let's create the desktop.
-        var bc = new BorderContainer({
-            gutters: false,
-            style: "height: 100%; width: 100%;"
-        });
+        // // Let's create the desktop.
+        // var bc = new BorderContainer({
+        //     gutters: false,
+        //     style: "height: 100%; width: 100%;"
+        // });
+        //
+        // var cp1 = new ContentPane({
+        //     id: "desktop",
+        //     baseClass: "desktop",
+        //     region: "center",
+        // });
+        // bc.addChild(cp1);
+        //
+        // var cp2 = new ContentPane({
+        //     id: "hotbar",
+        //     baseClass: "hotbar",
+        //     region: "bottom",
+        // });
+        // bc.addChild(cp2);
+        //
+        // // Let's create some folders.
+        // var folder = new Folder({
+        //     folderName: "This is a long folder name, and I mean really long...",
+        //     positionTop: "10px",
+        //     positionLeft: "10px"
+        // });
+        // cp1.addChild(folder);
+        //
+        // var folder2 = new Folder({
+        //     folderName: "Another one",
+        //     positionTop: "127px",
+        //     positionLeft: "10px"
+        // });
+        // cp1.addChild(folder2);
+        //
+        // // put the top level widget into the document, and then call startup()
+        // bc.placeAt(document.body);
+        // bc.startup();
 
-        var cp1 = new ContentPane({
-            id: "desktop",
-            baseClass: "desktop",
-            region: "center",
-        });
-        bc.addChild(cp1);
-
-        var cp2 = new ContentPane({
-            id: "hotbar",
-            baseClass: "hotbar",
-            region: "bottom",
-        });
-        bc.addChild(cp2);
-
-        // Let's create some folders.
-        var folder = new Folder({
-            folderName: "This is a long folder name, and I mean really long...",
-            positionTop: "10px",
-            positionLeft: "10px"
-        });
-        cp1.addChild(folder);
-
-        var folder2 = new Folder({
-            folderName: "Another one",
-            positionTop: "127px",
-            positionLeft: "10px"
-        });
-        cp1.addChild(folder2);
-
-        // put the top level widget into the document, and then call startup()
-        bc.placeAt(document.body);
-        bc.startup();
+        var desktop = new Desktop();
+        desktop.placeAt(document.body);
+        desktop.startup();
 
 
 

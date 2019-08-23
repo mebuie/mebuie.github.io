@@ -1,0 +1,14 @@
+{
+  "folders": [
+    {
+      "folderName": "Projects",
+      "positionTop": "10px",
+      "positionLeft": "5px"
+    },
+    {
+      "folderName": "Test",
+      "positionTop": "100px",
+      "positionLeft": "5px"
+    }
+  ]
+}

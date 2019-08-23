@@ -1,3 +1,4 @@
+@import "markos/Desktop/css/style.css";
 @import "markos/Folder/css/style.css";
 @import "markos/_WindowContainer/css/_WindowContainer.css";
 
@@ -6,21 +7,4 @@ html, body {
 	margin: 0;
 	overflow: hidden;
 	padding: 0;
-}
-
-.desktop {
-	width: 100%;
-	height: calc(100% - 100px);
-	background-image: url("markos/Desktop/images/atari.jpg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	display: flex;
-}
-
-.hotbar {
-	width: 100%;
-	height: 100px;
-	background-color: #666666;
-	display: flex;
 }

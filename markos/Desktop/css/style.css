@@ -1,0 +1,14 @@
+.markos .desktop {
+	height: calc(100vh - 100px);
+	background-image: url("../images/atari.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+}
+
+.markos .hotbar {
+	height: 100px;
+	background-color: #666666;
+	display: flex;
+}
