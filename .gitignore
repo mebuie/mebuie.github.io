@@ -1,2 +1,7 @@
-.idea
+.idea\
 *.db
+dijit\
+dojo\
+dojox\
+dstore\
+dgrid\
