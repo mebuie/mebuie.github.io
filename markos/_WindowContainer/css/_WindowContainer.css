@@ -1,0 +1,82 @@
+.markos-folder-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: calc(100% - 100px);
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    border: 1px solid #3333CC;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.markos-folder-container-header {
+    width: 100%;
+    height: 40px;
+    background-color: whitesmoke;
+    border-bottom: 1px solid #a1a1a1;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.markos-folder-container-header .close-button {
+    width: 40px;
+    height: 100%;
+    float: right;
+    background-color: whitesmoke;
+    border-left: 1px solid #a1a1a1;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.markos-folder-container-body {
+    width: 100%;
+    height: calc(100% - 40px);
+    background-color: whitesmoke;
+}
+
+@media (min-width: 550px ) {
+
+}
+
+@media ( min-width: 900px ) {
+
+}
+
+@media ( min-width: 1280px ) {
+    .markos-folder-container {
+        position: absolute;
+        top: calc(100% / 4);
+        left: calc(100% / 4);
+        width: calc(100% / 2);
+        height: calc(100% / 2);
+    }
+
+    .markos-folder-container-header {
+        height: 25px;
+    }
+
+    .markos-folder-container-header .close-button {
+        width: 25px;
+    }
+
+    .markos-folder-container-body {
+        height: calc(100% - 25px);
+    }
+}
+
+@media ( min-width: 1700px ) {
+
+}

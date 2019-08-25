@@ -1,0 +1,228 @@
+
+.header-gap {
+    height: 100px;
+    width: 100%;
+    background-image: url(../img/map7.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left center;
+    background-attachment: fixed;
+    background-color: transparent;
+}
+
+.header-experience {
+    font-family: Georgia serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    background-color: #4dbba561;
+}
+
+.header-experience blockquote {
+    border: none;
+    font-family: Georgia serif;
+    font-size: 18px;
+}
+
+.header-experience blockquote p {
+    border: none;
+    font-family: Georgia serif;
+    font-size: 18px;
+    color: #666666;
+}
+
+.job-row {
+    position: relative;
+    display: flex;
+    margin: 0 10px 5px 10px;
+}
+
+.job-row p {
+    margin: 0 5px 10px 0;
+}
+
+.experience-margin {
+    width: 0;
+}
+
+.experience-container {
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 0;
+    margin-top: 20px;
+}
+
+.job-container {
+    width: calc(100% / 12 * 12);
+    margin: 10px 0 10px 0;
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+    border-radius: 0;
+}
+
+.project-title, .job-image {
+    padding: 10px 15px 10px 15px;
+}
+
+.job-image {
+    display: flex;
+    justify-content: center;
+}
+
+.job-image img {
+    width: auto;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+
+.job-title h4 {
+    font-family: 'Roboto', Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 1.75em;
+    font-weight: 600;
+    color: #666666;
+    margin: 0
+}
+
+.job-title p, .job-summary-container li {
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    color: #666666;
+}
+
+.job-title p, .job-title h4 {
+    padding: 0 0 10px 20px;
+}
+
+.job-summary-container {
+    width: calc(100% / 12 * 12);
+}
+
+
+@media (min-width: 550px ) {
+
+    .header-experience blockquote p {
+        border: none;
+        font-family: Georgia serif;
+        font-size: 40px;
+        color: #666666;
+    }
+
+    .job-row {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .experience-margin {
+        width: calc(100% / 12 * 1);
+    }
+
+    .experience-container {
+        width: calc(100% / 12 * 10);
+        padding: 15px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 0;
+    }
+
+    .job-container {
+        width: calc(100% / 12 * 12);
+        padding: 15px;
+        border-radius: 0;
+    }
+
+    .job-header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .job-margin {
+        display: none;
+    }
+
+    .job-image {
+        width:200px;
+        height: 150px;
+        margin-bottom: 20px;
+        padding: 0 20px 0 10px;
+        justify-content: flex-start;
+        border-right: solid;
+        border-right-color: #999999;
+        border-right-width: 2px;
+    }
+
+    .job-image img {
+        margin: 10px 0 10px 0;
+        object-fit: contain;
+    }
+
+    .job-title {
+        padding: 0 10px 0 20px;
+        width: auto;
+    }
+
+    .job-summary-container p {
+        margin-right: 40px;
+    }
+
+    .job-title p, .job-title h4 {
+        text-align: left;
+        padding: 0 0 10px 0;
+    }
+
+}
+
+@media ( min-width: 900px ) {
+
+    .experience-margin{
+        width: calc(100% / 12 * 2);
+    }
+
+    .experience-container {
+        width: calc(100% / 12 * 8);
+    }
+
+}
+
+@media ( min-width: 1280px ) {
+
+    .experience-margin {
+        width: calc(100% / 12 * 3);
+    }
+
+
+    .experience-container {
+        width: calc(100% / 12 * 6);
+    }
+
+}
+
+@media ( min-width: 1700px ) {
+
+    .experience-margin {
+        width: calc(100% / 12 * 3);
+    }
+
+    .experience-container {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        width: calc(100% / 12 * 6);
+    }
+
+    .job-container {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        width: calc(100% / 12 * 9);
+    }
+
+    .job-summary-container {
+        width: calc(100% / 12 * 12)
+    }
+
+
+
+}
