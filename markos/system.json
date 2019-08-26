@@ -1,5 +1,5 @@
 {
-  "directory": [
+  "fileSystem": [
     {
       "type": "folder",
       "folderName": "Projects",

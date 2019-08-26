@@ -29,7 +29,7 @@ define([
 
         startup: function() {
             // Use system.json to load desktop content.
-            let desktopItems = this.system.directory;
+            let desktopItems = this.system.fileSystem;
             if (desktopItems) {
                 this.loadDesktopItems(desktopItems)
             }
