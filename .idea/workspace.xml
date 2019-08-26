@@ -4,7 +4,8 @@
     <list default="true" id="bfa03d46-a13b-4d02-a5f2-c3130bb1fa88" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/markos/Desktop.js" beforeDir="false" afterPath="$PROJECT_DIR$/markos/Desktop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/markos/registry.json" beforeDir="false" afterPath="$PROJECT_DIR$/markos/system.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/markos/Folder.js" beforeDir="false" afterPath="$PROJECT_DIR$/markos/Folder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/markos/_WindowContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/markos/_WindowContainer.js" afterDir="false" />
     </list>
     <list id="2e2c0bea-2e5e-46d3-9222-9bd98b10593c" name="Revert: Changed Dojo from CDN to local build." comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,9 +59,9 @@
           <entry key="css" value="1289" />
           <entry key="gitignore" value="107" />
           <entry key="html" value="2338" />
-          <entry key="js" value="3178" />
+          <entry key="js" value="3224" />
           <entry key="json" value="737" />
-          <entry key="txt" value="1476" />
+          <entry key="txt" value="1580" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -68,8 +69,8 @@
           <entry key="CSS" value="1289" />
           <entry key="HTML" value="2338" />
           <entry key="JSON" value="737" />
-          <entry key="JavaScript" value="3178" />
-          <entry key="PLAIN_TEXT" value="1583" />
+          <entry key="JavaScript" value="3224" />
+          <entry key="PLAIN_TEXT" value="1687" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -109,11 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/markos/Desktop.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="46" column="16" lean-forward="true" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+            <state relative-caret-position="238">
+              <caret line="55" column="33" lean-forward="true" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -121,17 +122,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/markos/Folder.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+            <state relative-caret-position="255">
+              <caret line="42" column="39" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/markos/_WindowContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="81" selection-start-line="10" selection-start-column="81" selection-end-line="10" selection-end-column="81" />
+            <state relative-caret-position="153">
+              <caret line="27" column="44" lean-forward="true" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -194,13 +195,13 @@
         <option value="$PROJECT_DIR$/markos/Folder/templates/Folder.html" />
         <option value="$PROJECT_DIR$/markos/_WindowContainer/css/_WindowContainer.css" />
         <option value="$PROJECT_DIR$/markos/Folder/css/style.css" />
-        <option value="$PROJECT_DIR$/markos/Folder.js" />
         <option value="$PROJECT_DIR$/markos/registry.json" />
-        <option value="$PROJECT_DIR$/markos/_WindowContainer.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/markos/system.json" />
         <option value="$PROJECT_DIR$/markos/Desktop.js" />
+        <option value="$PROJECT_DIR$/markos/Folder.js" />
+        <option value="$PROJECT_DIR$/markos/_WindowContainer.js" />
       </list>
     </option>
   </component>
@@ -261,7 +262,7 @@
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566833135509" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566833394395" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.jscs" value="true" />
@@ -338,7 +339,7 @@
       <workItem from="1566576035291" duration="24656000" />
       <workItem from="1566671166476" duration="2210000" />
       <workItem from="1566701512073" duration="2753000" />
-      <workItem from="1566784001887" duration="3547000" />
+      <workItem from="1566784001887" duration="3806000" />
     </task>
     <task id="LOCAL-00001" summary="updated select by attribute project.">
       <created>1555267281569</created>
@@ -571,11 +572,18 @@
       <option name="project" value="LOCAL" />
       <updated>1566830910615</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Desktop items are now called through switch statement.">
+      <created>1566833257123</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1566833257123</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77815000" />
+    <option name="totallyTimeSpent" value="78074000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -684,8 +692,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adjusted break points and column sizes to achieve line lengths &#10;around 50 characters." />
-    <MESSAGE value="added base folder widget." />
     <MESSAGE value="Added base _WindowContainer" />
     <MESSAGE value="Moved Folder to markos root." />
     <MESSAGE value="A folder can now be assigned a position." />
@@ -709,7 +715,9 @@
     <MESSAGE value="initial commit." />
     <MESSAGE value="updated" />
     <MESSAGE value="Moved Dojo/Dgrid to local build." />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved Dojo/Dgrid to local build." />
+    <MESSAGE value="Renamed registry.json to system.json." />
+    <MESSAGE value="Desktop items are now called through switch statement." />
+    <option name="LAST_COMMIT_MESSAGE" value="Desktop items are now called through switch statement." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/TEST/scripts/experience.js" />
@@ -792,20 +800,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build-report.txt" />
-    <entry file="file://$PROJECT_DIR$/markos/Folder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/markos/_WindowContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="81" selection-start-line="10" selection-start-column="81" selection-end-line="10" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -832,8 +826,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/markos/Desktop.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="46" column="16" lean-forward="true" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+        <state relative-caret-position="238">
+          <caret line="55" column="33" lean-forward="true" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/markos/Folder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="42" column="39" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/markos/_WindowContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="27" column="44" lean-forward="true" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
         </state>
       </provider>
     </entry>

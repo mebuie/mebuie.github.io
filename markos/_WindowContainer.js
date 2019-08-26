@@ -13,7 +13,7 @@ define([
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
         baseClass: "markos-folder-container",
-        content: null,
+        files: null,
 
         postCreate: function () {
             // Get a DOM node reference for the root of our widget
@@ -24,8 +24,8 @@ define([
         },
 
         startup: function() {
-            if (this.content) {
-                this.loadContent(this.content)
+            if (this.files) {
+                this.loadContent(this.files)
             }
         },
 

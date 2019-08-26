@@ -18,7 +18,7 @@ define([
         positionTop: "10px",
         positionLeft: "10px",
         desktop: null,
-        content: null,
+        files: null,
 
         postCreate: function () {
             // Get a DOM node reference for the root of our widget
@@ -39,8 +39,8 @@ define([
 
         openFolder: function () {
             var openedFolder = new _WindowContainer();
-            if (this.content) {
-                openedFolder.set("content", this.content);
+            if (this.files) {
+                openedFolder.set("files", this.files);
             }
             openedFolder.placeAt(this.desktop);
             openedFolder.startup();
