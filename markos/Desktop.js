@@ -35,6 +35,18 @@ define([
             }
         },
 
+        loadDesktopItems: function (items) {
+            array.forEach(items, lang.hitch(this, function(item){
+                switch (item.type){
+                    case "folder":
+                        this.createFolder(item);
+                        break;
+                    case "file":
+                        break;
+                }
+            }));
+        },
+
         createFolder: function(item) {
             let folder = new Folder({
                 folderName: item.folderName,
