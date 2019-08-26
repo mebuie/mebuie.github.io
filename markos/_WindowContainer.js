@@ -25,13 +25,26 @@ define([
 
         startup: function() {
             if (this.configuration) {
+                console.log(this.configuration);
                 this.loadContent(this.configuration)
             }
         },
 
-        loadContent: function(data) {
-            var gridTemplate = ""
+        loadContent: function(config) {
+            if (config.files.headers && config.files.data) {
+                this.loadFileTree(config.files)
+            }
 
+        },
+
+        loadFileTree: function(tree) {
+          let columns = tree.headers;
+          let data = tree.data;
+
+          let grid = new Grid({
+              columns: columns
+          }, this.windowContentNode );
+          grid.renderArray(data);
         },
 
         closeWindow() {
