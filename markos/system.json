@@ -6,7 +6,7 @@
       "folderPath": "desktop",
       "positionTop": "10px",
       "positionLeft": "10px",
-      "configuration": {
+      "files": {
         "headers": [
           {"name": "Name"},
           {"desc": "Description"},
