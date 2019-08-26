@@ -7,8 +7,10 @@ define([
     "dijit/_TemplatedMixin",
     "dojo/text!./_WindowContainer/templates/_WindowContainer.html",
     "dgrid/Grid",
+    "dgrid/Keyboard",
+    "dgrid/Selection",
     "require"
-], function(dom, on, declare, lang, _WidgetBase, _TemplatedMixin, template, Grid, require) {
+], function(dom, on, declare, lang, _WidgetBase, _TemplatedMixin, template, Grid, Keyboard, Selection, require) {
 
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
@@ -40,9 +42,14 @@ define([
         loadFileTree: function(tree) {
           let columns = tree.headers;
           let data = tree.data;
+          let CustomGrid = declare([ Grid, Keyboard, Selection ]);
 
-          let grid = new Grid({
-              columns: columns
+          let grid = new CustomGrid({
+              columns: columns,
+              // for Selection; only select a single row at a time
+              selectionMode: 'single',
+              // for Keyboard; allow only row-level keyboard navigation
+              cellNavigation: false
           }, this.windowContentNode );
           grid.renderArray(data);
         },

@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bfa03d46-a13b-4d02-a5f2-c3130bb1fa88" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/markos/_WindowContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/markos/_WindowContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/markos/_WindowContainer/css/_WindowContainer.css" beforeDir="false" afterPath="$PROJECT_DIR$/markos/_WindowContainer/css/_WindowContainer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/markos/_WindowContainer/templates/_WindowContainer.html" beforeDir="false" afterPath="$PROJECT_DIR$/markos/_WindowContainer/templates/_WindowContainer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/markos/system.json" beforeDir="false" afterPath="$PROJECT_DIR$/markos/system.json" afterDir="false" />
     </list>
     <list id="2e2c0bea-2e5e-46d3-9222-9bd98b10593c" name="Revert: Changed Dojo from CDN to local build." comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,9 +57,9 @@
           <entry key="css" value="1321" />
           <entry key="gitignore" value="107" />
           <entry key="html" value="2404" />
-          <entry key="js" value="3560" />
+          <entry key="js" value="3589" />
           <entry key="json" value="919" />
-          <entry key="txt" value="1858" />
+          <entry key="txt" value="1895" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -71,8 +67,8 @@
           <entry key="CSS" value="1321" />
           <entry key="HTML" value="2404" />
           <entry key="JSON" value="919" />
-          <entry key="JavaScript" value="3560" />
-          <entry key="PLAIN_TEXT" value="1965" />
+          <entry key="JavaScript" value="3589" />
+          <entry key="PLAIN_TEXT" value="2002" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -91,7 +87,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/markos/system.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -130,11 +126,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/markos/_WindowContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+            <state relative-caret-position="-210">
+              <caret line="12" column="102" selection-start-line="12" selection-start-column="102" selection-end-line="12" selection-end-column="102" />
             </state>
           </provider>
         </entry>
@@ -217,11 +213,11 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/markos/Folder.js" />
         <option value="$PROJECT_DIR$/markos/Desktop.js" />
-        <option value="$PROJECT_DIR$/markos/_WindowContainer.js" />
         <option value="$PROJECT_DIR$/markos/_WindowContainer/templates/_WindowContainer.html" />
         <option value="$PROJECT_DIR$/markos/_WindowContainer/css/_WindowContainer.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/markos/system.json" />
+        <option value="$PROJECT_DIR$/markos/_WindowContainer.js" />
       </list>
     </option>
   </component>
@@ -295,7 +291,7 @@
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566838921366" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566839295480" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.jscs" value="true" />
@@ -372,7 +368,7 @@
       <workItem from="1566576035291" duration="24656000" />
       <workItem from="1566671166476" duration="2210000" />
       <workItem from="1566701512073" duration="2753000" />
-      <workItem from="1566784001887" duration="9054000" />
+      <workItem from="1566784001887" duration="9317000" />
     </task>
     <task id="LOCAL-00001" summary="updated select by attribute project.">
       <created>1555267281569</created>
@@ -640,11 +636,25 @@
       <option name="project" value="LOCAL" />
       <updated>1566836859642</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="added working grid displaying data from a simple JavaScript data source">
+      <created>1566838982937</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1566838982937</updated>
+    </task>
+    <task id="LOCAL-00040" summary="added type attribute to files.">
+      <created>1566839023750</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1566839023750</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83322000" />
+    <option name="totallyTimeSpent" value="83585000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -753,8 +763,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Folders are now created in the #desktop container instead of the of the&#10;document body." />
-    <MESSAGE value="Clicking on a folder icon now opens a base folder." />
     <MESSAGE value="Fixed issue with .desktop height." />
     <MESSAGE value="Changed background from solid color to image." />
     <MESSAGE value="Renamed _FolderContainer to _WindowContainer." />
@@ -778,7 +786,9 @@
     <MESSAGE value="Renamed files attribute to configuration." />
     <MESSAGE value="Fixed issue where files attributes was accidently renamed." />
     <MESSAGE value="Renamed directory attribute to fileSystem." />
-    <option name="LAST_COMMIT_MESSAGE" value="Renamed directory attribute to fileSystem." />
+    <MESSAGE value="added working grid displaying data from a simple JavaScript data source" />
+    <MESSAGE value="added type attribute to files." />
+    <option name="LAST_COMMIT_MESSAGE" value="added type attribute to files." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/TEST/scripts/experience.js" />
@@ -868,13 +878,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/markos/_WindowContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/markos/_WindowContainer/templates/_WindowContainer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -903,6 +906,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/markos/_WindowContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-210">
+          <caret line="12" column="102" selection-start-line="12" selection-start-column="102" selection-end-line="12" selection-end-column="102" />
         </state>
       </provider>
     </entry>
