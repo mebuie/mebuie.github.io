@@ -7,24 +7,22 @@
       "positionTop": "10px",
       "positionLeft": "10px",
       "files": {
-        "headers": {
-          "name": "Name",
-          "desc": "Description",
-          "updated": "Last Updated",
-          "type": "Type"
-        },
+        "headers": [
+          {"field": "name", "label": "Name", "unhidable": true, "hidden": false, "width": 150},
+          {"field": "type", "label": "Type", "unhidable": false, "hidden": true, "width": 50},
+          {"field": "desc", "label": "Description", "unhidable": false, "hidden": false, "width": 175}
+
+        ],
         "data": [
           {
             "name": "Multi Criteria Analysis",
-            "desc": "some words",
-            "updated": "10/28/1982",
-            "type": "prj"
+            "desc": "This Story Map details the data-driven process of solving workload imbalance by redistricting the City of Mesquite inspector boundaries based on results from a Multi-CriteriaAnalysis.",
+            "type": "Project"
           },
           {
             "name": "UAS Presentation",
             "desc": "some more words",
-            "updated": "09/10/1990",
-            "type": "prj"
+            "type": "Project"
           }
         ]
       }
