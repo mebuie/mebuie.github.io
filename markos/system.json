@@ -3,9 +3,10 @@
     {
       "type": "folder",
       "folderName": "Projects",
+      "folderPath": "desktop",
       "positionTop": "10px",
       "positionLeft": "10px",
-      "files": {
+      "configuration": {
         "headers": [
           {"name": "Name"},
           {"desc": "Description"},
@@ -29,6 +30,7 @@
     {
       "type": "folder",
       "folderName": "Test",
+      "folderPath": "desktop",
       "positionTop": "100px",
       "positionLeft": "10px"
     }

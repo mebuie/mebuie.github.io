@@ -53,7 +53,7 @@ define([
                 positionTop: item.positionTop,
                 positionLeft: item.positionLeft,
                 desktop: this.desktopNode,
-                files: item.files
+                configuration: item
             });
             folder.placeAt(this.desktopNode)
         }
