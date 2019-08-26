@@ -1,31 +1,33 @@
 {
-  "folders": [
+  "directory": [
     {
+      "type": "folder",
       "folderName": "Projects",
       "positionTop": "10px",
       "positionLeft": "10px",
-      "content": {
+      "files": {
         "headers": [
-          {"field": "name", "name": "Name", "width": "auto"},
-          {"field": "desc", "name": "Description", "width": "auto"},
-          {"field": "update", "name": "Last Updated", "width": "auto"}
+          {"name": "Name"},
+          {"desc": "Description"},
+          {"updated": "Last Updated"}
         ],
         "data": [
           {
             "name": "Multi Criteria Analysis",
             "desc": "some words",
-            "update": "10/28/1982"
+            "updated": "10/28/1982"
           },
           {
             "name": "UAS Presentation",
             "desc": "some more words",
-            "update": "09/10/1990"
+            "updated": "09/10/1990"
           }
         ]
       }
     },
 
     {
+      "type": "folder",
       "folderName": "Test",
       "positionTop": "100px",
       "positionLeft": "10px"

@@ -3,7 +3,7 @@ define([
     "dojo/dom",
     "dojo/dom-style",
     "dojo/json",
-    'dojo/text!markos/registry.json',
+    'dojo/text!markos/system.json',
     "dojo/on",
     "dojo/_base/array",
     "dojo/_base/declare",
@@ -12,12 +12,12 @@ define([
     "dijit/_TemplatedMixin",
     "dojo/text!./Desktop/templates/Desktop.html",
     "require",
-], function(Folder, dom, domStyle, JSON, registry, on, array, declare, lang, _WidgetBase, _TemplatedMixin, template, require) {
+], function(Folder, dom, domStyle, JSON, System, on, array, declare, lang, _WidgetBase, _TemplatedMixin, template, require) {
 
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
         baseClass: "markos",
-        registry: JSON.parse(registry),
+        system: JSON.parse(System),
 
         postCreate: function () {
             // Get a DOM node reference for the root of our widget
@@ -28,16 +28,15 @@ define([
         },
 
         startup: function() {
-            if (this.registry.folders) {
-                var folders = this.registry.folders;
-                array.forEach(folders, lang.hitch(this, function(item){
-                    this.createFolder(item)
-                }));
+            // Use system.json to load desktop content.
+            let desktopItems = this.system.directory;
+            if (desktopItems) {
+                this.loadDesktopItems(desktopItems)
             }
         },
 
         createFolder: function(item) {
-            var folder = new Folder({
+            let folder = new Folder({
                 folderName: item.folderName,
                 positionTop: item.positionTop,
                 positionLeft: item.positionLeft,
