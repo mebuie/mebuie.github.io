@@ -12,13 +12,19 @@ define([
 
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
-        baseClass: "markos-file-manager",
-        softwareTemplate: null,
+        softwareContainerClass: "markos-softwarecontainer",
+        softwareBodyTemplate: null,
+        softwareHeaderTemplate: null,
 
         buildRendering: function () {
 
-            // Used to merger a custom widgit template into this template at data-dojo-attach-point='windowContentNode'
-            this.loadTemplateString(this.softwareTemplate);
+            // Used to merger a custom widget template into this template'
+            if (this.softwareHeaderTemplate) {
+                this.loadTemplateString("softwareContainerHeaderNode", this.softwareHeaderTemplate);
+            }
+            if (this.softwareBodyTemplate) {
+                this.loadTemplateString("softwareContainerBodyNode", this.softwareBodyTemplate);
+            }
 
             this.inherited(arguments);
         },
@@ -33,7 +39,7 @@ define([
             
         },
 
-        loadTemplateString: function(template) {
+        loadTemplateString: function(place, template) {
             let xml = xmlParser.parse(this.templateString);
             let xmlDoc = xml.documentElement;
 
@@ -41,7 +47,7 @@ define([
             let xmlDoc2 = xml2.documentElement;
 
             // Find target node which should be modified
-            let targetNode = query("div[data-dojo-attach-point='windowContentNode']", xmlDoc)[0];
+            let targetNode = query("div[data-dojo-attach-point='" + place + "']", xmlDoc)[0];
 
             // Append content to the xml template
             targetNode.appendChild(xmlDoc2);

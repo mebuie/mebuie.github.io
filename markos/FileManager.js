@@ -19,7 +19,8 @@ define([
 
     return declare([_SoftwareContainer, _WidgetBase, _TemplatedMixin], {
         // For _SoftwareContainer; Merges this template into the _SotwareContainer template.
-        softwareTemplate: template,
+        baseClass: "markos-filemanager",
+        softwareBodyTemplate: template,
         configuration: null,
 
         postCreate: function () {

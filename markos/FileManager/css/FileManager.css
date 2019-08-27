@@ -1,24 +1,28 @@
-.dgrid {
+.markos-filemanager {
+    height: 100%;
+}
+
+.markos-filemanager .dgrid {
     font-family: Arial, sans-serif;
     border: none;
     height: 100%;
 }
 
-.dgrid-scroller {
+.markos-filemanager .dgrid-scroller {
     overflow-x: scroll;
 }
 
-.dgrid-header, .dgrid-row  {
+.markos-filemanager .dgrid-header, .markos-filemanager .dgrid-row  {
     font-size: 14px;
     color: #444444;
 }
 
-.dgrid-header .dgrid-cell {
+.markos-filemanager .dgrid-header .dgrid-cell {
     font-weight: initial !important;
     color: #777777 !important;
 }
 
-.dgrid-row .dgrid-row-table .dgrid-cell {
+.markos-filemanager .dgrid-row .dgrid-row-table .dgrid-cell {
     border: none;
 }
 
@@ -32,7 +36,7 @@
 
 @media ( min-width: 1280px ) {
 
-    .dgrid-row {
+    .markos-filemanager .dgrid-row {
         font-size: 12px;
     }
 }
