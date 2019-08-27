@@ -1,7 +1,7 @@
 @import "markos/Desktop/css/style.css";
 @import "markos/Folder/css/style.css";
 @import "markos/_SoftwareContainer/css/_SoftwareContainer.css";
-@import "markos/FileManager/FolderTree/css/FolderTree.css";
+@import "markos/FileManager/css/FolderTree.css";
 
 html, body {
 	height: 100%;

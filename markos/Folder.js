@@ -7,8 +7,8 @@ define([
     "dijit/_TemplatedMixin",
     "dojo/text!./Folder/templates/Folder.html",
     "require",
-    "markos/FileManager/FolderTree"
-], function(dom, domStyle, on, declare, _WidgetBase, _TemplatedMixin, template, require, FolderTree) {
+    "markos/FileManager"
+], function(dom, domStyle, on, declare, _WidgetBase, _TemplatedMixin, template, require, FileManager) {
 
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
@@ -38,7 +38,7 @@ define([
         startup: function() {},
 
         openFolder: function () {
-            var openedFolder = new FolderTree;
+            var openedFolder = new FileManager;
             if (this.configuration) {
                 openedFolder.set("configuration", this.configuration);
             }

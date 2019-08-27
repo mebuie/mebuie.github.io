@@ -6,7 +6,7 @@ define([
     "dojo/_base/lang",
     "dijit/_WidgetBase",
     "dijit/_TemplatedMixin",
-    "dojo/text!./FolderTree/templates/FolderTree.html",
+    "dojo/text!./FileManager/templates/FileManager.html",
     "dgrid/OnDemandGrid",
     "dgrid/Keyboard",
     "dgrid/Selection",
