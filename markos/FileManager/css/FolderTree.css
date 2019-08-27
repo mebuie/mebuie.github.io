@@ -1,6 +1,7 @@
 .dgrid {
     font-family: Arial, sans-serif;
     border: none;
+    height: 100%;
 }
 
 .dgrid-scroller {
