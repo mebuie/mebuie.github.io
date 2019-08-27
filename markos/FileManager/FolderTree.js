@@ -15,12 +15,12 @@ define([
     "dgrid/extensions/ColumnResizer",
     "dstore/Memory",
     "dojox/xml/parser",
-    "markos/_WindowContainer",
+    "markos/_SoftwareContainer",
     "require"
 ], function(dom, on, query, declare, lang, _WidgetBase, _TemplatedMixin, template, OnDemandGrid, Keyboard, Selection,
-            ColumnHider, DijitRegistry, ColumnResizer, Memory, xmlParser, _WindowContainer, require) {
+            ColumnHider, DijitRegistry, ColumnResizer, Memory, xmlParser, _SoftwareContainer, require) {
 
-    return declare([_WindowContainer, _WidgetBase, _TemplatedMixin], {
+    return declare([_SoftwareContainer, _WidgetBase, _TemplatedMixin], {
         // templateString: template,
         // baseClass: "markos-folder-tree-container",
         configuration: null,

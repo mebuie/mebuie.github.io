@@ -7,9 +7,8 @@ define([
     "dijit/_TemplatedMixin",
     "dojo/text!./Folder/templates/Folder.html",
     "require",
-    "markos/_WindowContainer",
     "markos/FileManager/FolderTree"
-], function(dom, domStyle, on, declare, _WidgetBase, _TemplatedMixin, template, require, _WindowContainer, FolderTree) {
+], function(dom, domStyle, on, declare, _WidgetBase, _TemplatedMixin, template, require, FolderTree) {
 
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,

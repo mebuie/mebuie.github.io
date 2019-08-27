@@ -5,17 +5,9 @@ define([
     "dojo/_base/lang",
     "dijit/_WidgetBase",
     "dijit/_TemplatedMixin",
-    "dojo/text!./_WindowContainer/templates/_WindowContainer.html",
-    "dgrid/OnDemandGrid",
-    "dgrid/Keyboard",
-    "dgrid/Selection",
-    "dgrid/extensions/ColumnHider",
-    "dgrid/extensions/DijitRegistry",
-    "dgrid/extensions/ColumnResizer",
-    "dstore/Memory",
+    "dojo/text!./_SoftwareContainer/templates/_SoftwareContainer.html",
     "require"
-], function(dom, on, declare, lang, _WidgetBase, _TemplatedMixin, template, OnDemandGrid, Keyboard, Selection,
-            ColumnHider, DijitRegistry, ColumnResizer, Memory, require) {
+], function(dom, on, declare, lang, _WidgetBase, _TemplatedMixin, template, require) {
 
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
