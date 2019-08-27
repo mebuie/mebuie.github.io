@@ -1,7 +1,4 @@
-@import "markos/Desktop/css/style.css";
-@import "markos/Folder/css/style.css";
-@import "markos/_SoftwareContainer/css/_SoftwareContainer.css";
-@import "markos/FileManager/css/FileManager.css";
+@import "markos/markos.css";
 
 html, body {
 	height: 100%;
