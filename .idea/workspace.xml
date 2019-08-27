@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfa03d46-a13b-4d02-a5f2-c3130bb1fa88" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/markos/css/markos.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <list id="2e2c0bea-2e5e-46d3-9222-9bd98b10593c" name="Revert: Changed Dojo from CDN to local build." comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,43 +34,47 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="28" />
+          <entry key="css" value="29" />
           <entry key="gitignore" value="4" />
           <entry key="html" value="23" />
           <entry key="jpg" value="1" />
           <entry key="js" value="33" />
           <entry key="json" value="2" />
+          <entry key="md" value="1" />
           <entry key="png" value="1" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="28" />
+          <entry key="CSS" value="29" />
           <entry key="HTML" value="23" />
           <entry key="Image" value="2" />
           <entry key="JSON" value="2" />
           <entry key="JavaScript" value="33" />
+          <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="1801" />
+          <entry key="css" value="1806" />
           <entry key="gitignore" value="107" />
           <entry key="html" value="2593" />
           <entry key="js" value="5072" />
           <entry key="json" value="1165" />
-          <entry key="txt" value="2341" />
+          <entry key="md" value="772" />
+          <entry key="txt" value="2415" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="1801" />
+          <entry key="CSS" value="1806" />
           <entry key="HTML" value="2593" />
           <entry key="JSON" value="1165" />
           <entry key="JavaScript" value="5072" />
-          <entry key="PLAIN_TEXT" value="2448" />
+          <entry key="Markdown" value="772" />
+          <entry key="PLAIN_TEXT" value="2522" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -93,7 +96,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/markos/system.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
+            <state relative-caret-position="204">
               <caret line="12" column="101" selection-start-line="12" selection-start-column="101" selection-end-line="12" selection-end-column="101" />
             </state>
           </provider>
@@ -102,8 +105,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
+            <state relative-caret-position="283">
+              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
               <folding>
                 <element signature="n#style#0;n#iframe#0;n#noscript#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -122,14 +125,30 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.css">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-column="28" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/markos/css/markos.css">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="340">
+                <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/markos/markos.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+            <state relative-caret-position="51">
+              <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -214,9 +233,10 @@
         <option value="$PROJECT_DIR$/markos/FileManager/css/FolderTree.css" />
         <option value="$PROJECT_DIR$/markos/_SoftwareContainer.js" />
         <option value="$PROJECT_DIR$/markos/FileManager.js" />
-        <option value="$PROJECT_DIR$/style.css" />
-        <option value="$PROJECT_DIR$/markos/markos.css" />
         <option value="$PROJECT_DIR$/markos/css/markos.css" />
+        <option value="$PROJECT_DIR$/markos/markos.css" />
+        <option value="$PROJECT_DIR$/style.css" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -264,19 +284,6 @@
               <item name="mebuie.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="markos" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="mebuie.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mebuie.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="markos" type="462c0819:PsiDirectoryNode" />
-              <item name="_SoftwareContainer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mebuie.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mebuie.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="markos" type="462c0819:PsiDirectoryNode" />
-              <item name="_SoftwareContainer" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -290,7 +297,7 @@
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566881063494" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566882077382" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.jscs" value="true" />
@@ -305,9 +312,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\programming_projects\mebuie.github.io\markos" />
       <recent name="D:\programming_projects\mebuie.github.io\markos\css" />
       <recent name="D:\programming_projects\mebuie.github.io\markos\FileManager" />
-      <recent name="D:\programming_projects\mebuie.github.io\markos" />
       <recent name="D:\programming_projects\mebuie.github.io\markos\_WindowContainer\templates" />
       <recent name="D:\programming_projects\mebuie.github.io\markos\_WindowContainer\css" />
     </key>
@@ -368,14 +375,7 @@
       <workItem from="1566671166476" duration="2210000" />
       <workItem from="1566701512073" duration="2753000" />
       <workItem from="1566784001887" duration="16328000" />
-      <workItem from="1566860844012" duration="14423000" />
-    </task>
-    <task id="LOCAL-00001" summary="updated select by attribute project.">
-      <created>1555267281569</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1555267281570</updated>
+      <workItem from="1566860844012" duration="15648000" />
     </task>
     <task id="LOCAL-00002" summary="initial commit.">
       <created>1555267298939</created>
@@ -713,11 +713,18 @@
       <option name="project" value="LOCAL" />
       <updated>1566880729495</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Consolidated all module css in markos.css">
+      <created>1566881134757</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1566881134757</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105019000" />
+    <option name="totallyTimeSpent" value="106244000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -730,7 +737,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21946308" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -826,7 +832,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changed Dojo from CDN to local build." />
     <MESSAGE value="Removed from git" />
     <MESSAGE value="Removed from git." />
     <MESSAGE value="Removed" />
@@ -851,7 +856,8 @@
     <MESSAGE value="Added attribute to .dgrid." />
     <MESSAGE value="Merging of software templates are now handled by _SoftwareContainer." />
     <MESSAGE value="Renamed FolderTree to FileManager." />
-    <option name="LAST_COMMIT_MESSAGE" value="Renamed FolderTree to FileManager." />
+    <MESSAGE value="Consolidated all module css in markos.css" />
+    <option name="LAST_COMMIT_MESSAGE" value="Consolidated all module css in markos.css" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/TEST/scripts/experience.js" />
@@ -927,13 +933,6 @@
     <entry file="file://$PROJECT_DIR$/dgrid/css/skins/images/row_back.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/markos/system.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="101" selection-start-line="12" selection-start-column="101" selection-end-line="12" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/markos/Files/Project.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -943,16 +942,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/markos/FileManager/templates/FileManager.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
-          <folding>
-            <element signature="n#style#0;n#iframe#0;n#noscript#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/markos/_SoftwareContainer.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -989,9 +978,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/markos/_SoftwareContainer/css/_SoftwareContainer.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -999,10 +985,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/markos/css/markos.css">
+    <entry file="file://$PROJECT_DIR$/markos/markos.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+        <state relative-caret-position="51">
+          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+          <folding>
+            <element signature="n#style#0;n#iframe#0;n#noscript#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/markos/system.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="101" selection-start-line="12" selection-start-column="101" selection-end-line="12" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="340">
+            <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
