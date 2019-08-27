@@ -1,0 +1,41 @@
+.dgrid {
+    font-family: Arial, sans-serif;
+    border: none;
+}
+
+.dgrid-scroller {
+    overflow-x: scroll;
+}
+
+.dgrid-header, .dgrid-row  {
+    font-size: 14px;
+    color: #444444;
+}
+
+.dgrid-header .dgrid-cell {
+    font-weight: initial !important;
+    color: #777777 !important;
+}
+
+.dgrid-row .dgrid-row-table .dgrid-cell {
+    border: none;
+}
+
+@media (min-width: 550px ) {
+
+}
+
+@media ( min-width: 900px ) {
+
+}
+
+@media ( min-width: 1280px ) {
+
+    .dgrid-row {
+        font-size: 12px;
+    }
+}
+
+@media ( min-width: 1700px ) {
+
+}

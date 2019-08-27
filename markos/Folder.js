@@ -8,7 +8,8 @@ define([
     "dojo/text!./Folder/templates/Folder.html",
     "require",
     "markos/_WindowContainer",
-], function(dom, domStyle, on, declare, _WidgetBase, _TemplatedMixin, template, require, _WindowContainer) {
+    "markos/FileManager/FolderTree"
+], function(dom, domStyle, on, declare, _WidgetBase, _TemplatedMixin, template, require, _WindowContainer, FolderTree) {
 
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
@@ -38,7 +39,7 @@ define([
         startup: function() {},
 
         openFolder: function () {
-            var openedFolder = new _WindowContainer();
+            var openedFolder = new FolderTree;
             if (this.configuration) {
                 openedFolder.set("configuration", this.configuration);
             }
