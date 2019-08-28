@@ -15,6 +15,8 @@ define([
         softwareContainerClass: "markos-softwarecontainer",
         softwareBodyTemplate: null,
         softwareHeaderTemplate: null,
+        fileSystemStore: null,
+        widgetStore: null,
 
         buildRendering: function () {
 
@@ -31,11 +33,15 @@ define([
 
         postCreate: function () {
 
+            this.fileSystemStore = window.markos.fileSystemStore;
+            this.widgetStore = window.markos.widgetStore;
+
             // Run any parent postCreate processes - can be done at any point
             this.inherited(arguments);
         },
 
         startup: function() {
+
             
         },
 

@@ -13,12 +13,11 @@ define([
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
         baseClass: "markos-folder",
-        folderName: "Untitled",
+        folderName: null,
         folderImage: require.toUrl("./Folder/images/default.png"),
         positionTop: "10px",
         positionLeft: "10px",
         desktop: null,
-        configuration: null,
 
         postCreate: function () {
             // Get a DOM node reference for the root of our widget
@@ -38,7 +37,9 @@ define([
         startup: function() {},
 
         openFolder: function () {
-            var openedFolder = new FileManager;
+            var openedFolder = new FileManager({
+                folderId: this.folderName
+            });
             if (this.configuration) {
                 openedFolder.set("configuration", this.configuration);
             }

@@ -1,39 +1,31 @@
 {
   "fileSystem": [
-    {
-      "type": "folder",
-      "folderName": "Projects",
-      "folderPath": "desktop",
-      "positionTop": "10px",
-      "positionLeft": "10px",
-      "files": {
-        "headers": [
-          {"field": "name", "label": "Name", "unhidable": true, "hidden": false, "width": 150},
-          {"field": "type", "label": "Type", "unhidable": false, "hidden": true, "width": 50},
-          {"field": "desc", "label": "Description", "unhidable": false, "hidden": false, "width": 175}
-
-        ],
-        "data": [
-          {
-            "name": "Multi Criteria Analysis",
-            "desc": "This Story Map details the data-driven process of solving workload imbalance by redistricting the City of Mesquite inspector boundaries based on results from a Multi-CriteriaAnalysis.",
-            "type": "Project"
+    {"id": "Projects", "type": "folder", "positionTop": "10px", "positionLeft": "10px", "parent": null, "hasChildren": true},
+    {"id": "Test", "type": "folder", "positionTop": "100px", "positionLeft": "10px", "parent": null, "hasChildren": true},
+    {"id": "Multi Criteria Analysis", "type": "Project", "parent": "Projects", "hasChildren": false, "desc": "This Story Map details the data-driven process of solving workload imbalance by redistricting the City of Mesquite inspector boundaries based on results from a Multi-CriteriaAnalysis."},
+    {"id": "UAS Presentation", "type": "Project", "parent": "Projects", "hasChildren": false, "desc": "some more words"},
+    {"id": "Resume", "type": "File", "parent": "Test", "hasChildren": false, "desc": "hire me"}
+  ],
+  "registry": {
+    "widgets": [
+      { "name": "Project", "type": "Project", "extension": "prj", "uri": "markos/Files/Project"},
+      { "name": "FileManager", "type": "Folder", "uri": "markos/FileManager",
+        "properties": {
+          "tree": {
+            "headers": {
+              "id": { "label": "Name", "renderExpando": true }
+            }
           },
-          {
-            "name": "UAS Presentation",
-            "desc": "some more words",
-            "type": "Project"
-          }
-        ]
-      }
-    },
+          "grid": {
+            "headers": [
+              {"field": "id", "label": "Name", "unhidable": true, "hidden": false, "width": 150},
+              {"field": "type", "label": "Type", "unhidable": false, "hidden": true, "width": 50},
+              {"field": "desc", "label": "Description", "unhidable": false, "hidden": false, "width": 175}
 
-    {
-      "type": "folder",
-      "folderName": "Test",
-      "folderPath": "desktop",
-      "positionTop": "100px",
-      "positionLeft": "10px"
-    }
-  ]
+            ]
+          }
+        }
+      }
+    ]
+  }
 }
