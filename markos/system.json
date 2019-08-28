@@ -2,9 +2,21 @@
   "fileSystem": [
     {"id": "Projects", "type": "folder", "positionTop": "10px", "positionLeft": "10px", "parent": null, "hasChildren": true},
     {"id": "Test", "type": "folder", "positionTop": "100px", "positionLeft": "10px", "parent": null, "hasChildren": true},
-    {"id": "Multi Criteria Analysis", "type": "Project", "parent": "Projects", "hasChildren": false, "desc": "This Story Map details the data-driven process of solving workload imbalance by redistricting the City of Mesquite inspector boundaries based on results from a Multi-CriteriaAnalysis."},
-    {"id": "UAS Presentation", "type": "Project", "parent": "Projects", "hasChildren": false, "desc": "some more words"},
-    {"id": "Resume", "type": "File", "parent": "Test", "hasChildren": false, "desc": "hire me"}
+    {"id": "multicriteria", "label": "Multi Criteria Analysis", "type": "Project", "parent": "Projects",
+      "hasChildren": false, "desc": "This Story Map details the data-driven process of solving workload imbalance by redistricting the City of Mesquite inspector boundaries based on results from a Multi-CriteriaAnalysis.",
+      "parameters": {
+        "baseClass": "multicriteria",
+        "softwareBodyTemplate":"<div style='height: 100%; width: 100%; background-color: blue;' data-dojo-attach-point='testNode'></div>",
+        "iframe": [{
+          "link":"<iframe src='https://www.arcgis.com/apps/Cascade/index.html?appid=ccaedef781f54b23a3da11bd0557f4bc' width='100%' height='100%' frameborder='0' allowfullscreen></iframe>",
+          "attachPoint": "testNode"
+        }],
+
+        "css": ""
+      }
+    },
+    {"id": "uaspresentation", "label": "UAS Presentation", "type": "Project", "parent": "Projects", "hasChildren": false, "desc": "some more words" },
+    {"id": "resume", "label": "Resume", "type": "File", "parent": "Test", "hasChildren": false, "desc": "hire me"}
   ],
   "registry": {
     "widgets": [

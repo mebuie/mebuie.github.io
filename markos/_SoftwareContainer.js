@@ -25,8 +25,11 @@ define([
                 this.loadTemplateString("softwareContainerHeaderNode", this.softwareHeaderTemplate);
             }
             if (this.softwareBodyTemplate) {
+                console.log(this.softwareBodyTemplate);
                 this.loadTemplateString("softwareContainerBodyNode", this.softwareBodyTemplate);
             }
+
+            console.log("finale template", this.templateString)
 
             this.inherited(arguments);
         },

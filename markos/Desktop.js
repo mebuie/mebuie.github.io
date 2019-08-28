@@ -43,6 +43,10 @@ define([
 
             this.loadDesktop();
 
+            // Set references to desktop and hotbar so that
+            lang.setObject("window.markos.desktopNode", this.desktopNode);
+            lang.setObject("window.markos.hotbarNode", this.hotbarNode);
+
 
         },
 

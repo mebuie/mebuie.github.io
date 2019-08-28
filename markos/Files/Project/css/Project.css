@@ -1,0 +1,23 @@
+.markos-project {
+    height: 100%;
+    background-color: #3333CC;
+}
+
+@media (min-width: 550px ) {
+
+}
+
+@media ( min-width: 900px ) {
+
+}
+
+@media ( min-width: 1280px ) {
+
+    .dgrid-row {
+        font-size: 12px;
+    }
+}
+
+@media ( min-width: 1700px ) {
+
+}

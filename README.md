@@ -63,3 +63,6 @@ Go over file structure and how js, html, css should be named the same thing
 Go over system.json and uri should match widget name. 
 
 CSS should start with baseClass to provide isolation. 
+
+Need to discuss how you can FileViewer works. What arguments are required. 
+How you can embed iframes using attachepoints. 

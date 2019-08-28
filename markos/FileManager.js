@@ -13,9 +13,10 @@ define([
     "dgrid/extensions/DijitRegistry",
     "dgrid/extensions/ColumnResizer",
     "dstore/Filter",
-    "markos/_SoftwareContainer"
+    "markos/_SoftwareContainer",
+    "require"
 ], function(dom, on, declare, lang, _WidgetBase, _TemplatedMixin, template, OnDemandGrid, Keyboard, Selection,
-            ColumnHider, DijitRegistry, ColumnResizer, Filter, _SoftwareContainer) {
+            ColumnHider, DijitRegistry, ColumnResizer, Filter, _SoftwareContainer, require) {
 
     return declare([_SoftwareContainer, _WidgetBase, _TemplatedMixin], {
         // For _SoftwareContainer; Merges this template into the _SotwareContainer template.
@@ -63,13 +64,38 @@ define([
             }, this.fileManagerNode );
             grid.startup();
 
-            grid.on('.dgrid-row:click', function (event) {
-                let row = grid.row(event);
-                let file = row.data;
-                console.log('Row clicked:', row);
-            });
+            grid.on('.dgrid-row:click', lang.hitch(this, function (event) {
+                this.openItem(grid.row(event));
+            }));
 
             //TODO: Add event listener for column resize that updates the system file.
+        },
+
+        openItem: function (item) {
+            // Opens a child file or folder on click.
+
+            //Check Widget Registry for file type
+            let result = [];
+            this.widgetStore.filter({type: item.data.type}).forEach( function(e) {
+                result.push(e)
+            });
+
+            // Get parameters from fileSystem
+            let parameters = Object;
+            if (item.data.parameters) {
+                parameters = item.data.parameters
+            }
+
+            require([ result[0].uri ], function(LoadedWidget){
+                let newWidget = new LoadedWidget(parameters);
+                // Run new widget:
+                newWidget.placeAt(window.markos.desktopNode);
+                newWidget.startup();
+            });
+
+
+
+
         }
 
     });
