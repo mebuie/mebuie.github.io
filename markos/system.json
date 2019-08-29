@@ -6,16 +6,24 @@
       "hasChildren": false, "desc": "This Story Map details the data-driven process of solving workload imbalance by redistricting the City of Mesquite inspector boundaries based on results from a Multi-CriteriaAnalysis.",
       "parameters": {
         "baseClass": "multicriteria",
-        "softwareBodyTemplate":"<div style='height: 100%; width: 100%;' data-dojo-attach-point='testNode'></div>",
+        "softwareBodyTemplate":"<div style='height: 100%; width: 100%;' data-dojo-attach-point='iframeNode'></div>",
         "iframe": [{
           "link":"<iframe src='https://www.arcgis.com/apps/Cascade/index.html?appid=ccaedef781f54b23a3da11bd0557f4bc' width='100%' height='100%' frameborder='0' allowfullscreen></iframe>",
-          "attachPoint": "testNode"
+          "attachPoint": "iframeNode"
         }],
-
         "css": ""
       }
     },
-    {"id": "uaspresentation", "label": "UAS Presentation", "type": "Project", "parent": "Projects", "hasChildren": false, "desc": "some more words" },
+    {"id": "uaslocalgovernment", "label": "UAS In Local Government", "type": "Project", "parent": "Projects", "hasChildren": false, "desc": "some more words",
+      "parameters": {
+        "baseClass": "uaslocalgovernment",
+        "softwareBodyTemplate":"<div style='height: 100%; width: 100%;' data-dojo-attach-point='iframeNode'></div>",
+        "iframe": [{
+          "link":"<iframe src='https://www.arcgis.com/apps/MapSeries/index.html?appid=1a8bfaf730724c53bfab8e54f18139b4' width='100%' height='100%' frameborder='0' allowfullscreen></iframe>",
+          "attachPoint": "iframeNode"
+        }],
+        "css": ""
+      }},
     {"id": "resume", "label": "Resume", "type": "File", "parent": "Test", "hasChildren": false, "desc": "hire me"}
   ],
   "registry": {
