@@ -40,9 +40,6 @@ define([
             var openedFolder = new FileManager({
                 folderId: this.folderName
             });
-            if (this.configuration) {
-                openedFolder.set("configuration", this.configuration);
-            }
             openedFolder.placeAt(this.desktop);
             openedFolder.startup();
         }

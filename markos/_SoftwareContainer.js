@@ -1,5 +1,6 @@
 define([
     "dojo/dom",
+    "dojo/dom-class",
     "dojo/on",
     "dojo/query",
     "dojo/_base/declare",
@@ -8,9 +9,10 @@ define([
     "dijit/_TemplatedMixin",
     "dojo/text!./_SoftwareContainer/templates/_SoftwareContainer.html",
     "dojox/xml/parser",
-], function(dom, on, query, declare, lang, _WidgetBase, _TemplatedMixin, template, xmlParser) {
+], function(dom, domClass, on, query, declare, lang, _WidgetBase, _TemplatedMixin, template, xmlParser) {
 
     return declare([_WidgetBase, _TemplatedMixin], {
+        baseClass: null,
         templateString: template,
         softwareContainerClass: "markos-softwarecontainer",
         softwareBodyTemplate: null,
@@ -29,23 +31,21 @@ define([
                 this.loadTemplateString("softwareContainerBodyNode", this.softwareBodyTemplate);
             }
 
-            console.log("finale template", this.templateString)
-
             this.inherited(arguments);
         },
 
         postCreate: function () {
+
+            // Remove baseClass from the top domNode of _SoftwareContainer
+            // For some reason, dojo appends the baseClass of the widget that extends _SoftwareContainer.
+            // This can cause css issues if applied to baseClass.
+            domClass.remove(this.domNode, this.baseClass );
 
             this.fileSystemStore = window.markos.fileSystemStore;
             this.widgetStore = window.markos.widgetStore;
 
             // Run any parent postCreate processes - can be done at any point
             this.inherited(arguments);
-        },
-
-        startup: function() {
-
-            
         },
 
         loadTemplateString: function(place, template) {

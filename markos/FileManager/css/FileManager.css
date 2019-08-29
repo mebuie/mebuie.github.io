@@ -12,6 +12,10 @@
     overflow-x: scroll;
 }
 
+.markos-filemanager .dgrid-hider-toggle {
+    z-index: 0;
+}
+
 .markos-filemanager .dgrid-header, .markos-filemanager .dgrid-row  {
     font-size: 14px;
     color: #444444;
