@@ -14,10 +14,11 @@ define([
         templateString: template,
         baseClass: "markos-folder",
         folderName: null,
-        folderImage: require.toUrl("./Folder/images/default.png"),
+        folderImage: require.toUrl("markos/images/icons/win98_icons/directory_closed.ico"),
         positionTop: "10px",
         positionLeft: "10px",
         desktop: null,
+
 
         postCreate: function () {
             // Get a DOM node reference for the root of our widget
