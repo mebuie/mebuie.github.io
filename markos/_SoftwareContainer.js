@@ -1,6 +1,7 @@
 define([
     "dojo/dom",
     "dojo/dom-class",
+    "dojo/dom-construct",
     "dojo/on",
     "dojo/query",
     "dojo/_base/declare",
@@ -9,7 +10,7 @@ define([
     "dijit/_TemplatedMixin",
     "dojo/text!./_SoftwareContainer/templates/_SoftwareContainer.html",
     "dojox/xml/parser",
-], function(dom, domClass, on, query, declare, lang, _WidgetBase, _TemplatedMixin, template, xmlParser) {
+], function(dom, domClass, domConstruct, on, query, declare, lang, _WidgetBase, _TemplatedMixin, template, xmlParser) {
 
     return declare([_WidgetBase, _TemplatedMixin], {
         baseClass: null,
@@ -27,7 +28,6 @@ define([
                 this.loadTemplateString("softwareContainerHeaderNode", this.softwareHeaderTemplate);
             }
             if (this.softwareBodyTemplate) {
-                console.log(this.softwareBodyTemplate);
                 this.loadTemplateString("softwareContainerBodyNode", this.softwareBodyTemplate);
             }
 
@@ -49,20 +49,14 @@ define([
         },
 
         loadTemplateString: function(place, template) {
-            let xml = xmlParser.parse(this.templateString);
-            let xmlDoc = xml.documentElement;
 
-            let xml2 = xmlParser.parse(template);
-            let xmlDoc2 = xml2.documentElement;
+            let x = domConstruct.toDom(this.softwareBodyTemplate);
+            let y = domConstruct.create("div", {innerHTML: this.templateString});
 
-            // Find target node which should be modified
-            let targetNode = query("div[data-dojo-attach-point='" + place + "']", xmlDoc)[0];
+            let targetNode = query("div[data-dojo-attach-point='" + place + "']", y)[0];
+            targetNode.appendChild(x);
 
-            // Append content to the xml template
-            targetNode.appendChild(xmlDoc2);
-
-            // Re-set the modified template string
-            this.templateString = xmlParser.innerXML(xmlDoc);
+            this.templateString = y.innerHTML;
 
         },
 
