@@ -1,0 +1,37 @@
+.markos-clock{
+    height: 100%;
+    width: 75px;
+    float: right;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.markos-clock p {
+    margin: 2px;
+}
+
+.markos-clock .markos-clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+@media (min-width: 550px ) {
+
+}
+
+@media ( min-width: 900px ) {
+
+}
+
+@media ( min-width: 1280px ) {
+
+}
+
+@media ( min-width: 1700px ) {
+
+}

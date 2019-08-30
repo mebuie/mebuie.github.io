@@ -2,24 +2,16 @@ define([
     "dojo/dom",
     "dojo/on",
     "dojo/_base/declare",
+    "dojo/dom-construct",
     "dojo/_base/lang",
     "dijit/_WidgetBase",
     "dijit/_TemplatedMixin",
     "dojo/text!./Clock/templates/Clock.html",
-    "dgrid/OnDemandGrid",
-    "dgrid/Keyboard",
-    "dgrid/Selection",
-    "dgrid/extensions/ColumnHider",
-    "dgrid/extensions/DijitRegistry",
-    "dgrid/extensions/ColumnResizer",
-    "dstore/Filter",
-    "markos/_SoftwareContainer",
     "require"
-], function(dom, on, declare, lang, _WidgetBase, _TemplatedMixin, template, OnDemandGrid, Keyboard, Selection,
-            ColumnHider, DijitRegistry, ColumnResizer, Filter, _SoftwareContainer, require) {
+], function(dom, on, declare, domConstruct, lang, _WidgetBase, _TemplatedMixin, template, require) {
 
     return declare([_WidgetBase, _TemplatedMixin], {
-        template: template,
+        templateString: template,
         baseClass: "markos-clock",
 
         postCreate: function () {
@@ -30,7 +22,32 @@ define([
         },
 
         startup: function() {
+            this.startTime();
 
+
+        },
+
+        startTime: function () {
+            let today = new Date();
+            let h = today.getHours();
+            let m = today.getMinutes();
+            let s = today.getSeconds();
+            let month = today.getMonth();
+            let d = today.getDate();
+            let y = today.getFullYear();
+            m = this.checkTime(m);
+            s = this.checkTime(s);
+            d = this.checkTime(d);
+            let time = h + ":" + m + ":" + s;
+            let date = month + "/" + d + "/" + y;
+            this.timeNode.innerHTML = time;
+            this.dateNode.innerHTML = date;
+            setTimeout(lang.hitch(this, this.startTime), 500);
+        },
+
+        checkTime: function (i) {
+            if (i < 10) {i = "0" + i}  // add zero in front of numbers < 10
+            return i;
         }
 
     });

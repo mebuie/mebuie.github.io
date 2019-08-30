@@ -51,7 +51,8 @@
             ]
           }
         }
-      }
+      },
+      {"name": "Clock", "type": "Program", "uri": "markos/Clock", "onStart": true, "placeAt":"hotbarNode", "includeInMenu": false, "parameters":{}}
     ]
   }
 }
