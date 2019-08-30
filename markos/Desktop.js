@@ -1,5 +1,6 @@
 define([
     "markos/Folder",
+    "markos/File",
     "dojo/dom",
     "dojo/dom-style",
     "dojo/json",
@@ -15,7 +16,7 @@ define([
     "dstore/Tree",
     "dstore/Memory",
     "require",
-], function(Folder, dom, domStyle, JSON, System, on, array, declare, lang, _WidgetBase, _TemplatedMixin, template, OnDemandGrid, TreeStore, Memory, require) {
+], function(Folder, File, dom, domStyle, JSON, System, on, array, declare, lang, _WidgetBase, _TemplatedMixin, template, OnDemandGrid, TreeStore, Memory, require) {
 
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
@@ -43,11 +44,11 @@ define([
 
             this.loadDesktop();
 
-            // Set references to desktop and hotbar so that
+            // Set golbal references to desktop and hotbar nodes.
+            // Users could access these directly for use in their widgets, but
+            // They will be made available through a widget mixin.
             lang.setObject("window.markos.desktopNode", this.desktopNode);
             lang.setObject("window.markos.hotbarNode", this.hotbarNode);
-
-
         },
 
         createFileSystemStore: function (fileSystem) {
@@ -93,7 +94,8 @@ define([
                     case "folder":
                         this.createFolder(item);
                         break;
-                    case "file":
+                    case "project":
+                        this.createFile(item);
                         break;
                 }
             }));
@@ -108,6 +110,11 @@ define([
                 desktop: this.desktopNode,
             });
             folder.placeAt(this.desktopNode)
+        },
+
+        createFile: function(item) {
+            let file = new File(item);
+            file.placeAt(this.desktopNode)
         }
     });
 

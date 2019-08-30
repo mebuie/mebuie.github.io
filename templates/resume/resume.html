@@ -1,227 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
+    <meta charset='UTF-8'>
     <title>Title</title>
-
-    <style>
-        html, body {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-        }
-
-        ul {
-            margin-top: 8px
-        }
-
-        li {
-            padding-bottom: 7px;
-        }
-
-        p {
-            margin-top: 8px;
-            margin-bottom: 8px;
-        }
-
-        .resume {
-            width: 100%;
-            height: 100%;
-            font-family: "Calibri", sans-serif;
-            font-size: 16px;
-            color: #444444;
-
-        }
-
-        .header {
-            background-color: dimgray;
-            width: 100%;
-            height: 0;
-        }
-
-        .main {
-            display: flex;
-            justify-content: center;
-            background-color: dimgray;
-        }
-
-        .center {
-            max-width: 800px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            background-color: white;
-        }
-
-        .footer {
-            background-color: dimgray;
-            width: 100%;
-            height: 0;
-        }
-
-        .document {
-            max-width: 800px;
-        }
-
-        .margin {
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-
-        .text-right {
-            text-align: right;
-        }
-
-        .content-body {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .content-left {
-        }
-
-        .experience-right {
-            max-width: 60%;
-        }
-
-        .content-space {
-            height: 2px;
-            border-top: 1px solid darkgray;
-        }
-
-
-
-        @media (min-width: 550px ) {
-            .resume {
-
-            }
-
-            .header {
-                height: 25px;
-            }
-
-            .main {
-            }
-
-            .center {
-            }
-
-            .footer {
-                height: 25px;
-            }
-
-        }
-
-        @media ( min-width: 900px ) {
-            .resume {
-
-            }
-
-            .header {
-            }
-
-            .main {
-            }
-
-            .center {
-            }
-
-            .footer {
-            }
-
-        }
-
-        @media ( min-width: 1280px ) {
-            .resume {
-
-            }
-
-            .header {
-                height: 50px;
-            }
-
-            .main {
-            }
-
-            .center {
-            }
-
-            .footer {
-                height: 50px;
-            }
-
-        }
-
-        @media ( min-width: 1700px ) {
-            .resume {
-
-            }
-
-            .header {
-            }
-
-            .main {
-            }
-
-            .center {
-            }
-
-            .footer {
-            }
-
-        }
-
-    </style>
+    <link rel='stylesheet' href='resume.css'>
 </head>
 <body>
 
-<div class="resume">
-    <div class="header"></div>
-    <div class="main">
-        <div class="right"></div>
-        <div class="center">
-            <div class="document">
-                <div class="content-header margin">
+<div class='resume'>
+    <div class='header'></div>
+    <div class='main'>
+        <div class='center'>
+            <div class='document'>
+
+                <div class='flex-center margin text-center'>
+                    <div>
+                        <p class='title'><b>Mark Buie</b></p>
+                        <p>www.markbuie.com</p>
+                    </div>
+                </div>
+
+                <div class='censor-wrapper'>
+                    <div class='censor-message'><p>Please contact for full resume</p></div>
+                    <div class='content-body margin censor'>
+                        <div>
+                            <p>
+                                <b>DID YOU REALLY THINK I WOULD</b><br>
+                                Put my personal infor here?<br>
+                                Come on give me some credit!
+                            </p>
+
+                        </div>
+                        <div class='content-right text-right'>
+                            <p>
+                                Give me a ring at <br>
+                                214 267 8433</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class='content-header margin'>
                     <p><b>EDUCATION</b></p>
                 </div>
-                <div class="content-body margin">
-                    <div class="content-left">
+
+                <div class='content-body margin'>
+                    <div>
                         <p>
                             <b>The University of Edinburgh</b><br>
                             Master of Science (MSc),<br>
-                            GIS & Archaeology
+                            GIS &amp; Archaeology
                         </p>
 
                     </div>
-                    <div class="content-right text-right">
+                    <div class='content-right text-right'>
                         <p>
                             Edinburgh, Scotland, UK<br>
                             2014 – 2015</p>
                     </div>
                 </div>
 
-                <div class="content-body margin">
-                    <div class="content-left">
+                <div class='content-body margin'>
+                    <div>
                         <p>
-                            <b>Texas A&M University</b><br>
+                            <b>Texas A &amp; M University</b><br>
                             Bachelor of Arts (BA), <br>
                             Anthropology
                         </p>
 
                     </div>
-                    <div class="content-right text-right">
+                    <div class='content-right text-right'>
                         <p>
                             College Station, Texas<br>
                             2005 - 2009</p>
                     </div>
                 </div>
 
-                <div class="content-space"></div>
+                <div class='content-space'></div>
 
-                <div class="content-header margin">
+                <div class='content-header margin'>
                     <p><b>EXPERIENCE</b></p>
                 </div>
 
-                <div class="content-body margin">
-                    <div class="content-left">
+                <div class='content-body margin'>
+                    <div>
                         <p>
                             <b>The City of Mesquite</b><br>
                             GIS Coordinator<br>
@@ -230,7 +92,7 @@
                         </p>
 
                     </div>
-                    <div class="experience-right">
+                    <div class='experience-right'>
                         <ul>
                             <li> Managed the GIS Drone Program which has helped departments tell their story, increase productivity, and reduce expenditures. The success of this program has prompted a citywide UAS Department.</li>
                             <li> Developed web GIS applications using the ArcGIS API for JavaScript and extended the functionality of Web AppBuilder with custom Widgets and Python Geoprocessing Tools. </li>
@@ -239,8 +101,8 @@
                     </div>
                 </div>
 
-                <div class="content-body margin">
-                    <div class="content-left">
+                <div class='content-body margin'>
+                    <div>
                         <p>
                             <b>The City of Mesquite</b><br>
                             GIS Technician<br>
@@ -248,7 +110,7 @@
                         </p>
 
                     </div>
-                    <div class="experience-right">
+                    <div class='experience-right'>
                         <ul>
                             <li> Introduced new technologies and analytical methodologies, such as implementing the use of UAS / Drone remote sensing technologies to reduce the cost of engineering project design by 30%. </li>
                             <li> Solved workload imbalance for Environmental Code Officers by performing a Multi-Criteria Analysis, using Python and R, to redistrict patrol areas. </li>
@@ -257,8 +119,8 @@
                     </div>
                 </div>
 
-                <div class="content-body margin">
-                    <div class="content-left">
+                <div class='content-body margin'>
+                    <div>
                         <p>
                             <b>The University of Edinburgh </b><br>
                             Research Assistant<br>
@@ -266,7 +128,7 @@
                         </p>
 
                     </div>
-                    <div class="experience-right">
+                    <div class='experience-right'>
                         <ul>
                             <li> Developed curriculum in Python programming and UAS photogrammetry for a master’s course in Remote Sensing, and taught undergraduates Spatial Analysis and relational databases (MySQL). </li>
                             <li> Awarded Moray Endowment Fund to continue research in UAS Aerial Mapping for archaeological surveys, in Iceland. </li>
@@ -274,8 +136,8 @@
                     </div>
                 </div>
 
-                <div class="content-body margin">
-                    <div class="content-left">
+                <div class='content-body margin'>
+                    <div>
                         <p>
                             <b>HDR and other companies</b><br>
                             Archaeologist / Logistics Coordinator<br>
@@ -283,7 +145,7 @@
                         </p>
 
                     </div>
-                    <div class="experience-right">
+                    <div class='experience-right'>
                         <ul>
                             <li> Supervised teams of archaeologists for multiple surveys and provided logistics for the Deepwater Horizon Coastal Cleanup Effort. </li>
                             <li> Commended for effective communication, problem solving, and quality of scientific reports. </li>
@@ -293,9 +155,8 @@
 
             </div>
         </div>
-        <div class="left"></div>
     </div>
-    <div class="footer"></div>
+    <div class='footer'></div>
 
 
 </div>
