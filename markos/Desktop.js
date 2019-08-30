@@ -24,16 +24,23 @@ define([
         system: JSON.parse(System),
 
         postCreate: function () {
+            // Use system.json to load desktop content.
+            if (this.system) {
+                this.loadMarkos(this.system)
+            }
+
+            // Set golbal references to desktop and hotbar nodes.
+            // Users could access these directly for use in their widgets, but
+            // They will be made available through a widget mixin.
+            lang.setObject("window.markos.desktopNode", this.desktopNode);
+            lang.setObject("window.markos.hotbarNode", this.hotbarNode);
 
             // Run any parent postCreate processes - can be done at any point
             this.inherited(arguments);
         },
 
         startup: function() {
-            // Use system.json to load desktop content.
-            if (this.system) {
-                this.loadMarkos(this.system)
-            }
+
         },
 
         loadMarkos: function (fileSystem) {
@@ -44,11 +51,7 @@ define([
 
             this.loadDesktop();
 
-            // Set golbal references to desktop and hotbar nodes.
-            // Users could access these directly for use in their widgets, but
-            // They will be made available through a widget mixin.
-            lang.setObject("window.markos.desktopNode", this.desktopNode);
-            lang.setObject("window.markos.hotbarNode", this.hotbarNode);
+
         },
 
         createFileSystemStore: function (fileSystem) {
@@ -83,12 +86,20 @@ define([
 
         loadDesktop: function () {
 
+            // Some widgets, such as the Clock in the hotbar, need to be loaded on start.
+            // Search the widget store for any program widgets that need to load on start.
+            this.widgetStore.filter({onStart: true}).forEach( lang.hitch(this, function(program) {
+                this.loadProgram(program);
+            }));
+
+
             // Get all items in the root directory.
             let rootItems = [];
             this.fileSystemStore.getRootCollection().forEach( function(item) {
                 rootItems.push(item)
             });
 
+            // TODO: Switch needs to be replaced with uri lookup.
             array.forEach(rootItems, lang.hitch(this, function(item){
                 switch (item.type.toLowerCase()){
                     case "folder":
@@ -100,6 +111,16 @@ define([
                 }
             }));
 
+        },
+
+        loadProgram: function(program) {
+            let node = this.desktopNode;
+            require([ program.uri ], lang.hitch(this, function(LoadedWidget){
+                let newWidget = new LoadedWidget();
+                // Run new widget:
+                newWidget.placeAt(this[program.placeAt]);
+                newWidget.startup();
+            }));
         },
 
         createFolder: function(item) {
