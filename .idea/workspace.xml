@@ -7,7 +7,6 @@
     <list default="true" id="bfa03d46-a13b-4d02-a5f2-c3130bb1fa88" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/markos/FileManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/markos/FileManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/markos/Files/Project.js" beforeDir="false" afterPath="$PROJECT_DIR$/markos/Files/Project.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/markos/system.json" beforeDir="false" afterPath="$PROJECT_DIR$/markos/system.json" afterDir="false" />
     </list>
     <list id="2e2c0bea-2e5e-46d3-9222-9bd98b10593c" name="Revert: Changed Dojo from CDN to local build." comment="" />
@@ -44,7 +43,7 @@
           <entry key="html" value="59" />
           <entry key="ico" value="4" />
           <entry key="jpg" value="4" />
-          <entry key="js" value="82" />
+          <entry key="js" value="83" />
           <entry key="json" value="4" />
           <entry key="md" value="3" />
           <entry key="png" value="2" />
@@ -59,7 +58,7 @@
           <entry key="HTML" value="59" />
           <entry key="Image" value="10" />
           <entry key="JSON" value="4" />
-          <entry key="JavaScript" value="82" />
+          <entry key="JavaScript" value="83" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="RNG Compact" value="2" />
@@ -71,10 +70,10 @@
           <entry key="css" value="2581" />
           <entry key="gitignore" value="107" />
           <entry key="html" value="5658" />
-          <entry key="js" value="16845" />
+          <entry key="js" value="16846" />
           <entry key="json" value="2839" />
           <entry key="md" value="1318" />
-          <entry key="txt" value="3361" />
+          <entry key="txt" value="3424" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -82,9 +81,9 @@
           <entry key="CSS" value="2581" />
           <entry key="HTML" value="5658" />
           <entry key="JSON" value="2839" />
-          <entry key="JavaScript" value="16845" />
+          <entry key="JavaScript" value="16846" />
           <entry key="Markdown" value="1318" />
-          <entry key="PLAIN_TEXT" value="3468" />
+          <entry key="PLAIN_TEXT" value="3531" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -158,10 +157,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/markos/Files/Project.js">
+        <entry file="file://$PROJECT_DIR$/markos/File.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="54" column="121" selection-start-line="54" selection-start-column="121" selection-end-line="54" selection-end-column="121" />
+            <state relative-caret-position="391">
+              <caret line="40" column="29" lean-forward="true" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -263,7 +262,6 @@
         <option value="$PROJECT_DIR$/markos/resume.html" />
         <option value="$PROJECT_DIR$/markos/File/templates/Folder.html" />
         <option value="$PROJECT_DIR$/markos/File/templates/File.html" />
-        <option value="$PROJECT_DIR$/markos/File.js" />
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/templates/resume/resume.css" />
         <option value="$PROJECT_DIR$/templates/resume/resume.html" />
@@ -280,6 +278,7 @@
         <option value="$PROJECT_DIR$/markos/FileManager.js" />
         <option value="$PROJECT_DIR$/markos/system.json" />
         <option value="$PROJECT_DIR$/markos/Files/Project.js" />
+        <option value="$PROJECT_DIR$/markos/File.js" />
       </list>
     </option>
   </component>
@@ -427,14 +426,7 @@
       <workItem from="1566917741031" duration="39218000" />
       <workItem from="1567035894002" duration="4486000" />
       <workItem from="1567090539126" duration="62556000" />
-      <workItem from="1567379443145" duration="1903000" />
-    </task>
-    <task id="LOCAL-00019" summary="Removed unnecessary id.">
-      <created>1566582587705</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1566582587705</updated>
+      <workItem from="1567379443145" duration="2214000" />
     </task>
     <task id="LOCAL-00020" summary="Refactored creation of desktop to new module that reads registry.">
       <created>1566594252534</created>
@@ -772,7 +764,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567380848820</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Added missing argument to startup()">
+      <created>1567381658368</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1567381658369</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -789,7 +788,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24765101" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -886,7 +884,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FileTree now extends _WindowContainer." />
     <MESSAGE value="Renamed _WindowContainer to _SoftwareContainer." />
     <MESSAGE value="Renamed FileTree to FileManager." />
     <MESSAGE value="Renamed html class from markos-folder-container to &#10;markos-file-manager." />
@@ -911,7 +908,8 @@
     <MESSAGE value="Added ability to maximize/minimize _SoftwareContainer." />
     <MESSAGE value="Added icons." />
     <MESSAGE value="Fixed issue where max min icons were not update on toggle." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed issue where max min icons were not update on toggle." />
+    <MESSAGE value="Added missing argument to startup()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added missing argument to startup()" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/scripts/experience.css" />
@@ -1048,13 +1046,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/markos/File.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255">
-          <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/markos/FileManager/templates/FileManager.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1166,6 +1157,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/markos/Files/Project.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="54" column="121" selection-start-line="54" selection-start-column="121" selection-end-line="54" selection-end-column="121" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/markos/FileManager.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -1173,10 +1171,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/markos/Files/Project.js">
+    <entry file="file://$PROJECT_DIR$/markos/File.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="54" column="121" selection-start-line="54" selection-start-column="121" selection-end-line="54" selection-end-column="121" />
+        <state relative-caret-position="391">
+          <caret line="40" column="29" lean-forward="true" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
         </state>
       </provider>
     </entry>

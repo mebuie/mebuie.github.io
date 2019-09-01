@@ -44,7 +44,7 @@
           },
           "grid": {
             "headers": [
-              {"field": "id", "label": "Name", "unhidable": true, "hidden": false, "width": 150},
+              {"field": "label", "label": "Name", "unhidable": true, "hidden": false, "width": 150},
               {"field": "type", "label": "Type", "unhidable": false, "hidden": true, "width": 50},
               {"field": "desc", "label": "Description", "unhidable": false, "hidden": false, "width": 175}
 
