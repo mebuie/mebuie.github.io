@@ -2,6 +2,8 @@ define([
     "dojo/dom",
     "dojo/dom-class",
     "dojo/dom-construct",
+    "dojo/dom-style",
+    "dojo/dom-attr",
     "dojo/on",
     "dojo/query",
     "dojo/_base/declare",
@@ -9,8 +11,8 @@ define([
     "dijit/_WidgetBase",
     "dijit/_TemplatedMixin",
     "dojo/text!./_SoftwareContainer/templates/_SoftwareContainer.html",
-    "dojox/xml/parser",
-], function(dom, domClass, domConstruct, on, query, declare, lang, _WidgetBase, _TemplatedMixin, template, xmlParser) {
+    "require"
+], function(dom, domClass, domConstruct, domStyle, domAttr, on, query, declare, lang, _WidgetBase, _TemplatedMixin, template, require) {
 
     return declare([_WidgetBase, _TemplatedMixin], {
         baseClass: null,
@@ -20,6 +22,11 @@ define([
         softwareHeaderTemplate: null,
         fileSystemStore: null,
         widgetStore: null,
+        maxImage: require.toUrl("../markos/images/icons/system/max.jpg"),
+        minImage: require.toUrl("../markos/images/icons/system/min.jpg"),
+        isMaximized: false,
+
+        // TODO: Needs refactoring.
 
         buildRendering: function () {
 
@@ -48,6 +55,13 @@ define([
             this.inherited(arguments);
         },
 
+        startup: function() {
+            this.inherited(arguments);
+
+            this.toggleMaxMinIcon();
+
+        },
+
         loadTemplateString: function(place, template) {
 
             let x = domConstruct.toDom(this.softwareBodyTemplate);
@@ -60,8 +74,86 @@ define([
 
         },
 
+        toggleMaxMinIcon: function() {
+            let desktop = query(".markos .markos-desktop")[0];
+
+            let desktopH = desktop.offsetHeight;
+            let desktopW =  desktop.offsetWidth;
+
+            if (this.domNode.offsetHeight === desktopH && this.domNode.offsetWidth === desktopW) {
+                domAttr.set(this.maxminNode, "src", this.minImage);
+
+            } else {
+                domAttr.set(this.maxminNode, "src", this.maxImage);
+            }
+
+        },
+
+        maxminWindow: function() {
+            let desktop = query(".markos .markos-desktop")[0];
+
+            let desktopH = desktop.offsetHeight;
+            let desktopW =  desktop.offsetWidth;
+
+            if (this.domNode.offsetHeight !== desktopH && this.domNode.offsetWidth !== desktopW) {
+
+                this.currentHeight = this.domNode.offsetHeight;
+                this.currentWidth = this.domNode.offsetWidth;
+
+                let positionAbsolute = window.getComputedStyle(this.domNode);
+                this.currentTop = positionAbsolute.top;
+                this.currentLeft = positionAbsolute.left;
+
+                domStyle.set(this.domNode, {
+                        width: "100%",
+                        height: "100%",
+                        top: "0px",
+                        left: "0px"
+                    }
+                );
+
+                this.isMaximized = true;
+
+                domAttr.set(this.maxminNode, "src", this.minImage);
+
+            } else if (this.domNode.offsetHeight === desktopH && this.domNode.offsetWidth === desktopW &&
+                this.isMaximized === false) {
+
+                domStyle.set(this.domNode, {
+                        width: this.domNode.offsetWidth - 20 + "px",
+                        height: this.domNode.offsetHeight - 20 + "px",
+                        top: "10px",
+                        left: "10px"
+                    }
+                );
+
+                this.isMaximized = false;
+
+                domAttr.set(this.maxminNode, "src", this.maxImage);
+
+            } else {
+
+                // TODO: Need to check if window has been resized smaller than currentHeight.
+
+                domStyle.set(this.domNode, {
+                        width: this.currentWidth + "px",
+                        height: this.currentHeight + "px",
+                        top: this.currentTop,
+                        left: this.currentLeft,
+                    }
+                );
+
+                this.isMaximized = false;
+
+                domAttr.set(this.maxminNode, "src", this.maxImage);
+
+            }
+
+            this.toggleMaxMinIcon();
+        },
+
         closeWindow() {
-            this.destroy();
+            this.destroyRecursive();
         }
 
     });
