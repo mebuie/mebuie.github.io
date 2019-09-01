@@ -39,6 +39,7 @@ define([
         },
 
         startup: function() {
+            this.inherited(arguments); //_SoftwareContainer startup() will not fire without this! Position is irrelevant.
         },
 
         openFolder: function () {
