@@ -4,10 +4,9 @@
     <bookmark url="file://$PROJECT_DIR$/markos/system.json" description="    {&quot;id&quot;: &quot;uaslocalgovernment&quot;, &quot;label&quot;: &quot;UAS In ..." line="15" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bfa03d46-a13b-4d02-a5f2-c3130bb1fa88" name="Default Changelist" comment="Added dynamic widget loader for &quot;program&quot;.">
+    <list default="true" id="bfa03d46-a13b-4d02-a5f2-c3130bb1fa88" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/markos/FileManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/markos/FileManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/markos/Folder.js" beforeDir="false" afterPath="$PROJECT_DIR$/markos/Folder.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/markos/_SoftwareContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/markos/_SoftwareContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/markos/_SoftwareContainer/css/_SoftwareContainer.css" beforeDir="false" afterPath="$PROJECT_DIR$/markos/_SoftwareContainer/css/_SoftwareContainer.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/markos/_SoftwareContainer/templates/_SoftwareContainer.html" beforeDir="false" afterPath="$PROJECT_DIR$/markos/_SoftwareContainer/templates/_SoftwareContainer.html" afterDir="false" />
@@ -73,10 +72,10 @@
           <entry key="css" value="2581" />
           <entry key="gitignore" value="107" />
           <entry key="html" value="5630" />
-          <entry key="js" value="16140" />
+          <entry key="js" value="16259" />
           <entry key="json" value="2834" />
           <entry key="md" value="1318" />
-          <entry key="txt" value="3202" />
+          <entry key="txt" value="3277" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -84,9 +83,9 @@
           <entry key="CSS" value="2581" />
           <entry key="HTML" value="5630" />
           <entry key="JSON" value="2834" />
-          <entry key="JavaScript" value="16140" />
+          <entry key="JavaScript" value="16259" />
           <entry key="Markdown" value="1318" />
-          <entry key="PLAIN_TEXT" value="3309" />
+          <entry key="PLAIN_TEXT" value="3384" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -145,11 +144,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/markos/_SoftwareContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="106" column="37" selection-start-line="106" selection-start-column="37" selection-end-line="106" selection-end-column="37" />
+            <state relative-caret-position="283">
+              <caret line="135" column="93" selection-start-line="135" selection-start-column="93" selection-end-line="135" selection-end-column="93" />
             </state>
           </provider>
         </entry>
@@ -172,11 +171,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/markos/FileManager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="41" column="38" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="38" />
+            <state relative-caret-position="289">
+              <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -300,10 +299,10 @@
         <option value="$PROJECT_DIR$/markos/Desktop/css/style.css" />
         <option value="$PROJECT_DIR$/markos/_SoftwareContainer/css/_SoftwareContainer.css" />
         <option value="$PROJECT_DIR$/markos/Folder.js" />
-        <option value="$PROJECT_DIR$/markos/FileManager.js" />
         <option value="$PROJECT_DIR$/markos/Clock.js" />
         <option value="$PROJECT_DIR$/markos/_SoftwareContainer/templates/_SoftwareContainer.html" />
         <option value="$PROJECT_DIR$/markos/_SoftwareContainer.js" />
+        <option value="$PROJECT_DIR$/markos/FileManager.js" />
       </list>
     </option>
   </component>
@@ -414,7 +413,7 @@
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567361260463" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567361376678" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.jscs" value="true" />
@@ -495,14 +494,7 @@
       <workItem from="1566860844012" duration="16535000" />
       <workItem from="1566917741031" duration="39218000" />
       <workItem from="1567035894002" duration="4486000" />
-      <workItem from="1567090539126" duration="58763000" />
-    </task>
-    <task id="LOCAL-00016" summary="Renamed _FolderContainer to _WindowContainer.">
-      <created>1566577750331</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1566577750331</updated>
+      <workItem from="1567090539126" duration="59007000" />
     </task>
     <task id="LOCAL-00017" summary="The Folder module can now open and close a base _WindowContainer.">
       <created>1566582090203</created>
@@ -840,11 +832,18 @@
       <option name="project" value="LOCAL" />
       <updated>1567357310691</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Added ability to maximize/minimize _SoftwareContainer.">
+      <created>1567361350344</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1567361350344</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209598000" />
+    <option name="totallyTimeSpent" value="209842000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -954,7 +953,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added type attribute to files." />
     <MESSAGE value="Extended grid." />
     <MESSAGE value="Dgrid now uses Memory store." />
     <MESSAGE value="FileTree now extends _WindowContainer." />
@@ -979,7 +977,8 @@
     <MESSAGE value="Added Clock widget." />
     <MESSAGE value="Added dynamic widget loader for &quot;program&quot;." />
     <MESSAGE value="Fixed issue with month returning wrong number." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed issue with month returning wrong number." />
+    <MESSAGE value="Added ability to maximize/minimize _SoftwareContainer." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added ability to maximize/minimize _SoftwareContainer." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/TEST/index.html" />
@@ -1222,13 +1221,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/markos/FileManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="41" column="38" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/markos/Desktop.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="802">
@@ -1259,8 +1251,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/markos/_SoftwareContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="106" column="37" selection-start-line="106" selection-start-column="37" selection-end-line="106" selection-end-column="37" />
+        <state relative-caret-position="283">
+          <caret line="135" column="93" selection-start-line="135" selection-start-column="93" selection-end-line="135" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/markos/FileManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
         </state>
       </provider>
     </entry>
