@@ -32,7 +32,7 @@ define([
             let h = today.getHours();
             let m = today.getMinutes();
             let s = today.getSeconds();
-            let month = today.getMonth();
+            let month = today.getMonth() + 1;
             let d = today.getDate();
             let y = today.getFullYear();
             m = this.checkTime(m);
