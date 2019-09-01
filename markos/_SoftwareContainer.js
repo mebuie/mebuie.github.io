@@ -148,8 +148,6 @@ define([
                 domAttr.set(this.maxminNode, "src", this.maxImage);
 
             }
-
-            this.toggleMaxMinIcon();
         },
 
         closeWindow() {
