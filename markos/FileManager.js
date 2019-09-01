@@ -28,7 +28,6 @@ define([
 
         postCreate: function () {
 
-
             // Run any parent postCreate processes - can be done at any point
             this.inherited(arguments);
         },
@@ -38,7 +37,6 @@ define([
             this.loadFolderContent();
 
             this.inherited(arguments); //_SoftwareContainer startup() will not fire without this! Position is irrelevant.
-
         },
 
         loadFolderContent: function() {
@@ -46,6 +44,7 @@ define([
             let folderContent = this.fileSystemStore.filter(
                 new Filter().eq('parent', this.folderId));
 
+            // Get the columns from the widget registry.
             let fileManagerRegistry = [];
             this.widgetStore.filter({name: "FileManager"}).forEach( function(e) {
                 fileManagerRegistry.push(e)
