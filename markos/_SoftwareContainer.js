@@ -2,6 +2,7 @@ define([
     "dojo/dom",
     "dojo/dom-class",
     "dojo/dom-construct",
+    "dojo/dnd/Moveable",
     "dojo/dom-style",
     "dojo/dom-attr",
     "dojo/on",
@@ -13,7 +14,7 @@ define([
     "dojo/text!./_SoftwareContainer/templates/_SoftwareContainer.html",
     "require",
     "dojox/layout/ResizeHandle"
-], function(dom, domClass, domConstruct, domStyle, domAttr, on, query, declare, lang, _WidgetBase, _TemplatedMixin, template, require, ResizeHandle) {
+], function(dom, domClass, domConstruct, Moveable, domStyle, domAttr, on, query, declare, lang, _WidgetBase, _TemplatedMixin, template, require, ResizeHandle) {
 
     return declare([_WidgetBase, _TemplatedMixin], {
         baseClass: null,
@@ -44,8 +45,13 @@ define([
 
         postCreate: function () {
 
+            // Add ability to move _SoftwareContainer. 
+            on(this.softwareContainerHeaderNode, "click", lang.hitch(this, function() {
+                let dnd = new Moveable(this.softwareContainer.id);
+            }));
+
             // Add ability to resize _SoftwareContainer.
-            var resizeHandle = new ResizeHandle({
+            let resizeHandle = new ResizeHandle({
                 targetId: this.softwareContainer.id
             }).placeAt(this.resizeContainer);
 

@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bfa03d46-a13b-4d02-a5f2-c3130bb1fa88" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/markos/Files/Project.js" beforeDir="false" afterPath="$PROJECT_DIR$/markos/Files/Project.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/markos/_SoftwareContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/markos/_SoftwareContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/markos/_SoftwareContainer/css/_SoftwareContainer.css" beforeDir="false" afterPath="$PROJECT_DIR$/markos/_SoftwareContainer/css/_SoftwareContainer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/markos/_SoftwareContainer/templates/_SoftwareContainer.html" beforeDir="false" afterPath="$PROJECT_DIR$/markos/_SoftwareContainer/templates/_SoftwareContainer.html" afterDir="false" />
     </list>
     <list id="2e2c0bea-2e5e-46d3-9222-9bd98b10593c" name="Revert: Changed Dojo from CDN to local build." comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,7 +44,7 @@
           <entry key="html" value="60" />
           <entry key="ico" value="4" />
           <entry key="jpg" value="4" />
-          <entry key="js" value="84" />
+          <entry key="js" value="85" />
           <entry key="json" value="4" />
           <entry key="md" value="3" />
           <entry key="png" value="2" />
@@ -62,7 +59,7 @@
           <entry key="HTML" value="60" />
           <entry key="Image" value="10" />
           <entry key="JSON" value="4" />
-          <entry key="JavaScript" value="84" />
+          <entry key="JavaScript" value="85" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="RNG Compact" value="2" />
@@ -71,23 +68,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="2730" />
+          <entry key="css" value="2739" />
           <entry key="gitignore" value="107" />
           <entry key="html" value="5841" />
-          <entry key="js" value="17059" />
+          <entry key="js" value="17159" />
           <entry key="json" value="3401" />
           <entry key="md" value="1318" />
-          <entry key="txt" value="3505" />
+          <entry key="txt" value="3601" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="2730" />
+          <entry key="CSS" value="2739" />
           <entry key="HTML" value="5841" />
           <entry key="JSON" value="3401" />
-          <entry key="JavaScript" value="17059" />
+          <entry key="JavaScript" value="17159" />
           <entry key="Markdown" value="1318" />
-          <entry key="PLAIN_TEXT" value="3612" />
+          <entry key="PLAIN_TEXT" value="3708" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -127,8 +124,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/markos/_SoftwareContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="46" column="57" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
+            <state relative-caret-position="221">
+              <caret line="49" column="16" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -136,8 +133,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/markos/_SoftwareContainer/templates/_SoftwareContainer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+            <state relative-caret-position="17">
+              <caret line="1" column="101" selection-start-line="1" selection-start-column="74" selection-end-line="1" selection-end-column="101" />
             </state>
           </provider>
         </entry>
@@ -145,8 +142,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/markos/_SoftwareContainer/css/_SoftwareContainer.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="58" column="17" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+            <state relative-caret-position="1054">
+              <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -310,44 +307,13 @@
             <path>
               <item name="mebuie.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="mebuie.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="dojox" type="462c0819:PsiDirectoryNode" />
+              <item name="dojo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mebuie.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="mebuie.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="dojox" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mebuie.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mebuie.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="markos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mebuie.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mebuie.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="markos" type="462c0819:PsiDirectoryNode" />
-              <item name="_SoftwareContainer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mebuie.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mebuie.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="markos" type="462c0819:PsiDirectoryNode" />
-              <item name="_SoftwareContainer" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mebuie.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mebuie.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="markos" type="462c0819:PsiDirectoryNode" />
-              <item name="Files" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mebuie.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mebuie.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="markos" type="462c0819:PsiDirectoryNode" />
-              <item name="Files" type="462c0819:PsiDirectoryNode" />
-              <item name="Project" type="462c0819:PsiDirectoryNode" />
+              <item name="dojo" type="462c0819:PsiDirectoryNode" />
+              <item name="dnd" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -445,21 +411,7 @@
       <workItem from="1567090539126" duration="62556000" />
       <workItem from="1567379443145" duration="4233000" />
       <workItem from="1567387706993" duration="2518000" />
-      <workItem from="1567451751352" duration="3175000" />
-    </task>
-    <task id="LOCAL-00023" summary="Changed folder position.">
-      <created>1566595397639</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1566595397639</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Changed Dojo from CDN to local build.">
-      <created>1566617808677</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1566617808677</updated>
+      <workItem from="1567451751352" duration="4023000" />
     </task>
     <task id="LOCAL-00025" summary="updated">
       <created>1566672379127</created>
@@ -790,11 +742,25 @@
       <option name="project" value="LOCAL" />
       <updated>1567389049742</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="_SoftwareContainer can now be resized.">
+      <created>1567454972971</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1567454972972</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Fixed issue with overlap resize icon.">
+      <created>1567455337246</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1567455337246</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223317000" />
+    <option name="totallyTimeSpent" value="224165000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -904,8 +870,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added attribute to .dgrid." />
-    <MESSAGE value="Merging of software templates are now handled by _SoftwareContainer." />
     <MESSAGE value="Renamed FolderTree to FileManager." />
     <MESSAGE value="Consolidated all module css in markos.css" />
     <MESSAGE value="Updated Readme" />
@@ -929,7 +893,9 @@
     <MESSAGE value="Changed header from id to label." />
     <MESSAGE value="Cleaned code." />
     <MESSAGE value="Added project files." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added project files." />
+    <MESSAGE value="_SoftwareContainer can now be resized." />
+    <MESSAGE value="Fixed issue with overlap resize icon." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed issue with overlap resize icon." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/scripts/experience.css" />
@@ -1156,13 +1122,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/markos/Files/Project.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="37" column="62" selection-start-line="37" selection-start-column="62" selection-end-line="37" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/markos/system.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -1177,24 +1136,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/markos/Files/Project.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="37" column="62" selection-start-line="37" selection-start-column="62" selection-end-line="37" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/markos/_SoftwareContainer/css/_SoftwareContainer.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="58" column="17" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+        <state relative-caret-position="1054">
+          <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/markos/_SoftwareContainer/templates/_SoftwareContainer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+        <state relative-caret-position="17">
+          <caret line="1" column="101" selection-start-line="1" selection-start-column="74" selection-end-line="1" selection-end-column="101" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/markos/_SoftwareContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="46" column="57" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
+        <state relative-caret-position="221">
+          <caret line="49" column="16" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
         </state>
       </provider>
     </entry>
