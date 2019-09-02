@@ -47,7 +47,6 @@ Add appropriate css links / imports
  
 # Get Started
 Tutorial for creating your first markos.
-
  
 The Desktop module with the system.json.
 
