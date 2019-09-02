@@ -1,5 +1,5 @@
 .markos-softwarecontainer {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -18,7 +18,7 @@
     max-width: 40%;
 }
 
-.markos-softwarecontainer-header {
+.markos-softwarecontainer .markos-softwarecontainer-header {
     width: 100%;
     height: 40px;
     background-color: whitesmoke;
@@ -29,7 +29,7 @@
     box-sizing: border-box;
 }
 
-.markos-softwarecontainer-header .close-button {
+.markos-softwarecontainer .markos-softwarecontainer-header .close-button {
     width: 40px;
     height: 100%;
     float: right;
@@ -45,10 +45,18 @@
     cursor: pointer;
 }
 
-.markos-softwarecontainer-body {
+.markos-softwarecontainer .markos-softwarecontainer-body {
     width: 100%;
     height: calc(100% - 40px);
     background-color: whitesmoke;
+}
+
+.markos-softwarecontainer .markos-softwarecontainer-resize {
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
 }
 
 @media (min-width: 550px ) {

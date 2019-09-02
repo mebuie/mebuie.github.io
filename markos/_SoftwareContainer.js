@@ -11,8 +11,9 @@ define([
     "dijit/_WidgetBase",
     "dijit/_TemplatedMixin",
     "dojo/text!./_SoftwareContainer/templates/_SoftwareContainer.html",
-    "require"
-], function(dom, domClass, domConstruct, domStyle, domAttr, on, query, declare, lang, _WidgetBase, _TemplatedMixin, template, require) {
+    "require",
+    "dojox/layout/ResizeHandle"
+], function(dom, domClass, domConstruct, domStyle, domAttr, on, query, declare, lang, _WidgetBase, _TemplatedMixin, template, require, ResizeHandle) {
 
     return declare([_WidgetBase, _TemplatedMixin], {
         baseClass: null,
@@ -42,6 +43,11 @@ define([
         },
 
         postCreate: function () {
+
+            // Add ability to resize _SoftwareContainer. 
+            var resizeHandle = new ResizeHandle({
+                targetId: this.softwareContainer.id
+            }).placeAt(this.resizeContainer);
 
             // Remove baseClass from the top domNode of _SoftwareContainer
             // For some reason, dojo appends the baseClass of the widget that extends _SoftwareContainer.

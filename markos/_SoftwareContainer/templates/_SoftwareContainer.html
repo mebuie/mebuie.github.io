@@ -1,4 +1,4 @@
-<div class="${softwareContainerClass}">
+<div class="${softwareContainerClass}" data-dojo-attach-point="softwareContainer">
     <div class="${softwareContainerClass}-header" data-dojo-attach-point="softwareContainerHeaderNode">
         <div class="close-button" data-dojo-attach-event='onclick: closeWindow'>&#10006;</div>
         <div class="close-button" data-dojo-attach-event='onclick: maxminWindow'>
@@ -6,4 +6,5 @@
         </div>
     </div>
     <div class="${softwareContainerClass}-body" data-dojo-attach-point="softwareContainerBodyNode"></div>
+    <div class="${softwareContainerClass}-resize" data-dojo-attach-point="resizeContainer"></div>
 </div>
