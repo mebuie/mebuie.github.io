@@ -13,7 +13,7 @@
         "css": ""
       }
     },
-    {"id": "uaslocalgovernment", "label": "UAS In Local Government", "type": "Project", "parent": "Projects", "hasChildren": false, "desc": "some more words",
+    {"id": "uaslocalgovernment", "label": "UAS In Local Government", "type": "Project", "parent": "Projects", "hasChildren": false, "desc": "A presentation given to the 2018 Texas Public Works Association Education Seminar that details some of the major UAS projects undertaken at the City of Mesquite, such as erosion monitoring, traffic studies, and engineering design.",
       "parameters": {
         "baseClass": "uaslocalgovernment",
         "softwareBodyTemplate":"<div style='height: 100%; width: 100%;' data-dojo-attach-point='iframeNode'></div>",
@@ -21,6 +21,20 @@
           "link":"<iframe src='https://www.arcgis.com/apps/MapSeries/index.html?appid=1a8bfaf730724c53bfab8e54f18139b4' width='100%' height='100%' frameborder='0' allowfullscreen></iframe>",
           "attachPoint": "iframeNode"
         }],
+        "css": ""
+      }
+    },
+    {"id": "webappbuildermulti", "label": "Web AppBuilder Widgets: MultiFilter", "type": "Project", "parent": "Projects", "hasChildren": false, "desc": "The MultiFilter addresses limitations with the native Group Filter Widget by allowing multiple group layer filters to be applied to the web map at one time and allowing the creation of complex queries for each layer within a group.",
+      "parameters": {
+        "baseClass": "webappbuildermulti",
+        "softwareBodyTemplate":"<div style='height: 100%; width: 100%;'>Have a look at this project on <a href='https://github.com/mebuie/WABCustomWidgets/tree/master/widgets/MultiFilter' target='_blank'>Github</a></div>",
+        "css": ""
+      }
+    },
+    {"id": "pythongeoprocess", "label": "Python Geoprocessing Tool: Asbuilt Record Locator", "type": "Project", "parent": "Projects", "hasChildren": false, "desc": "This Python Geoprocessing Tool uses the ArcPy Python library to automate a frequent GIS task - finding and delivering asbuilts for customer requests. When benchmarked against a request that previously took a day's work, this script was able to provide a 30-minute turnaround.",
+      "parameters": {
+        "baseClass": "pythongeoprocess",
+        "softwareBodyTemplate":"<div style='height: 100%; width: 100%;'>Have a look at this project on <a href='https://github.com/mebuie/ArcMap_Tools/tree/master/Engineering' target='_blank'>Github</a></div>",
         "css": ""
       }
     },
