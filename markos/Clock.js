@@ -7,7 +7,8 @@ define([
     "dijit/_WidgetBase",
     "dijit/_TemplatedMixin",
     "dojo/text!./Clock/templates/Clock.html",
-    "require"
+    "require",
+    "dojo/domReady!"
 ], function(dom, on, declare, domConstruct, lang, _WidgetBase, _TemplatedMixin, template, require) {
 
     return declare([_WidgetBase, _TemplatedMixin], {

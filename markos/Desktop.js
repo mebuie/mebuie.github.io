@@ -16,6 +16,7 @@ define([
     "dstore/Tree",
     "dstore/Memory",
     "require",
+    "dojo/domReady!",
 ], function(Folder, File, dom, domStyle, JSON, System, on, array, declare, lang, _WidgetBase, _TemplatedMixin, template, OnDemandGrid, TreeStore, Memory, require) {
 
     return declare([_WidgetBase, _TemplatedMixin], {

@@ -14,7 +14,8 @@ define([
     "dgrid/extensions/ColumnResizer",
     "dstore/Filter",
     "markos/_SoftwareContainer",
-    "require"
+    "require",
+    "dojo/domReady!"
 ], function(dom, on, declare, lang, _WidgetBase, _TemplatedMixin, template, OnDemandGrid, Keyboard, Selection,
             ColumnHider, DijitRegistry, ColumnResizer, Filter, _SoftwareContainer, require) {
 

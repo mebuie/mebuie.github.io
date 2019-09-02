@@ -10,7 +10,8 @@ define([
     "dijit/_TemplatedMixin",
     "dojo/text!./File/templates/File.html",
     "require",
-    "markos/FileManager"
+    "markos/FileManager",
+    "dojo/domReady!"
 ], function(dom, domStyle, domConstruct, on, win, lang, declare, _WidgetBase, _TemplatedMixin, template, require, FileManager) {
 
     return declare([_WidgetBase, _TemplatedMixin], {

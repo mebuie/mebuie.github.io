@@ -13,7 +13,8 @@ define([
     "dijit/_TemplatedMixin",
     "dojo/text!./_SoftwareContainer/templates/_SoftwareContainer.html",
     "require",
-    "dojox/layout/ResizeHandle"
+    "dojox/layout/ResizeHandle",
+    "dojo/domReady!"
 ], function(dom, domClass, domConstruct, Moveable, domStyle, domAttr, on, query, declare, lang, _WidgetBase, _TemplatedMixin, template, require, ResizeHandle) {
 
     return declare([_WidgetBase, _TemplatedMixin], {

@@ -8,7 +8,8 @@ define([
     "dijit/_WidgetBase",
     "dijit/_TemplatedMixin",
     "markos/_SoftwareContainer",
-    "require"
+    "require",
+    "dojo/domReady!"
 ], function(dom, domConstruct, on, array, declare, lang, _WidgetBase, _TemplatedMixin, _SoftwareContainer, require) {
 
     // To create a widget, you need to derive from _SoftwareContainer.

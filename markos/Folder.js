@@ -9,7 +9,8 @@ define([
     "dojo/_base/lang",
     "dojo/text!./Folder/templates/Folder.html",
     "require",
-    "markos/FileManager"
+    "markos/FileManager",
+    "dojo/domReady!"
 ], function(dom, domStyle, on, declare, Moveable, _WidgetBase, _TemplatedMixin, lang, template, require, FileManager) {
 
     return declare([_WidgetBase, _TemplatedMixin], {
