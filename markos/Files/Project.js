@@ -33,11 +33,9 @@ define([
 
         postCreate: function () {
 
-            console.log(this.iframe);
             if (this.iframe) {
                 array.forEach(this.iframe, lang.hitch(this, function(iframe) {
                     let dom = domConstruct.toDom(iframe.link);
-                    console.log(iframe.attachPoint)
                     domConstruct.place(dom, this[iframe.attachPoint]);
                 }))
             }
