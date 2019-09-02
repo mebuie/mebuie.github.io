@@ -44,7 +44,7 @@ define([
 
         postCreate: function () {
 
-            // Add ability to resize _SoftwareContainer. 
+            // Add ability to resize _SoftwareContainer.
             var resizeHandle = new ResizeHandle({
                 targetId: this.softwareContainer.id
             }).placeAt(this.resizeContainer);
