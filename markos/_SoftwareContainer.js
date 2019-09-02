@@ -45,10 +45,10 @@ define([
 
         postCreate: function () {
 
-            // Add ability to move _SoftwareContainer. 
-            on(this.softwareContainerHeaderNode, "click", lang.hitch(this, function() {
-                let dnd = new Moveable(this.softwareContainer.id);
-            }));
+            // Add ability to move _SoftwareContainer.
+            // on(this.softwareContainerHeaderNode, "mousedown", lang.hitch(this, function() {
+            //     let dnd = new Moveable(this.softwareContainer.id);
+            // }));
 
             // Add ability to resize _SoftwareContainer.
             let resizeHandle = new ResizeHandle({
