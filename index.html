@@ -49,19 +49,19 @@
         async: true,
         baseUrl: '.',
         packages: [
-            'dojo',
-            'dijit',
-            'dojox',
-            'dgrid',
-            'dstore',
-            'markos'
+            // {name: 'dojo', location:""},
+            // {name: 'dijit', location: ""},
+            // {namae: 'dojox', location: ""},
+            {name: 'dgrid', location: ""},
+            {name: 'dstore', location: ""},
+            {name: 'markos', location: ""}
         ],
-        parseOnLoad: true
+        parseOnLoad: false
     };
 
 </script>
 <!-- load Dojo -->
-<script src="dojo/dojo.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.14.1/dojo/dojo.js"></script>
 <script>
     require([
         'markos/Desktop',
