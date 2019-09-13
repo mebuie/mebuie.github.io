@@ -37,13 +37,12 @@ define([
             // Assign the thumbnail image to the folder.
             this.folderImageNode.src = this.folderImage;
 
+            // Add ability to move _SoftwareContainer.
+            this.dnd = new Moveable(this.domNode);
+
         },
 
         startup: function() {
-            // Add ability to move _SoftwareContainer.
-            // on(this.folderImageNode, "click", lang.hitch(this, function() {
-            //     let dnd = new Moveable(this.folderContainerNode.id);
-            // }));
         },
 
         openFolder: function () {

@@ -4,6 +4,7 @@ define([
     "dojo/dom-construct",
     "dojo/on",
     "dojo/_base/window",
+    "dojo/dnd/Moveable",
     "dojo/_base/lang",
     "dojo/_base/declare",
     "dijit/_WidgetBase",
@@ -12,7 +13,7 @@ define([
     "require",
     "markos/FileManager",
     "dojo/domReady!"
-], function(dom, domStyle, domConstruct, on, win, lang, declare, _WidgetBase, _TemplatedMixin, template, require, FileManager) {
+], function(dom, domStyle, domConstruct, on, win, Moveable, lang, declare, _WidgetBase, _TemplatedMixin, template, require, FileManager) {
 
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
@@ -37,6 +38,9 @@ define([
 
             // Assign the thumbnail image to the folder.
             this.folderImageNode.src = this.folderImage;
+
+            // Add ability to move _SoftwareContainer.
+            this.dnd = new Moveable(this.domNode);
         },
 
         startup: function() {
