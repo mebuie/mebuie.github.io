@@ -46,11 +46,6 @@ define([
 
         postCreate: function () {
 
-            // Add ability to move _SoftwareContainer.
-            // on(this.softwareContainerHeaderNode, "mousedown", lang.hitch(this, function() {
-            //     let dnd = new Moveable(this.softwareContainer.id);
-            // }));
-
             // Add ability to resize _SoftwareContainer.
             let resizeHandle = new ResizeHandle({
                 targetId: this.softwareContainer.id
@@ -95,14 +90,17 @@ define([
 
             if (this.domNode.offsetHeight === desktopH && this.domNode.offsetWidth === desktopW) {
                 domAttr.set(this.maxminNode, "src", this.minImage);
+                this.isMaximized = true;
 
             } else {
                 domAttr.set(this.maxminNode, "src", this.maxImage);
+                this.isMaximized = false;
             }
 
         },
 
-        maxminWindow: function() {
+        maxminWindow: function(event) {
+
             let desktop = query(".markos .markos-desktop")[0];
 
             let desktopH = desktop.offsetHeight;
@@ -129,8 +127,10 @@ define([
 
                 domAttr.set(this.maxminNode, "src", this.minImage);
 
+                this.dnd.destroy();
+
             } else if (this.domNode.offsetHeight === desktopH && this.domNode.offsetWidth === desktopW &&
-                this.isMaximized === false) {
+                !this.currentHeight ) {
 
                 domStyle.set(this.domNode, {
                         width: this.domNode.offsetWidth - 20 + "px",
@@ -143,6 +143,8 @@ define([
                 this.isMaximized = false;
 
                 domAttr.set(this.maxminNode, "src", this.maxImage);
+
+                this.dnd = new Moveable(this.softwareContainer.id);
 
             } else {
 
@@ -159,6 +161,8 @@ define([
                 this.isMaximized = false;
 
                 domAttr.set(this.maxminNode, "src", this.maxImage);
+
+                this.dnd = new Moveable(this.softwareContainer.id);
 
             }
         },
