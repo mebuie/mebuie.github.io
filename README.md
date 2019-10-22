@@ -1,11 +1,22 @@
 # mebuie.github.io
 Welcome to MarkOS – my personal website and development playground. 
 
-My personal website has always been primarily a medium to learn new skills and, as a result, has gone through many iterations throughout the years. Starting out with Bootstrap 3, the site was rebuilt after learning how to create lightweight responsive websites without relying on bulky libraries. Today’s iteration departs from the usual scrolling website and leverages the Dojo framework to emulate an operating systems.    
+My personal website has always been primarily a medium to learn new skills and as a result, has gone through many iterations throughout the years. Starting out with Bootstrap 3, the site was rebuilt after learning how to create lightweight responsive websites without relying on bulky libraries. Today’s iteration departs from the usual scrolling website and leverages the Dojo framework to emulate an operating systems. 
 
+The vision of this project is to create a web OS framework that anyone can use. 
+
+# Why Dojo?
+While it seems the community has long forgotten Dojo, it remains a prominent framework for GIS applications. Therefore, developing this website using the Dojo framework, will help keep me current in my career. 
 
 # Dependencies
-Include recommended file structure
+[Dojo 1.15](https://dojotoolkit.org)
+[dgrid](https://dgrid.io/)
+[dstore](https://dstorejs.io/)
+
+# Download and Installation
+Clone / Download repository or download dependencies manually. 
+
+## Recommended file structure
     
     dgrid
     dijit
@@ -21,20 +32,12 @@ Include recommended file structure
         - markos.css
         - system.json
 
-
-Include links to all downloads. 
-
-## Why Dojo?
-
-Prominent framework in GIS. 
-
-# Download and Installation
-Clone or Download repository. 
-
-Add appropriate css links / imports
-
+## Setup
+    // Imports all CSS for markOS
     @import "markos/markos.css";
 
+    // References the local instalation of the dependencies and markos root folder.
+    // Assumes you followed recommended file structure. 
     var dojoConfig = {
         async: true,
         baseUrl: '.',
@@ -47,17 +50,18 @@ Add appropriate css links / imports
             'markos'
         ]
     };
- 
-# Get Started
+
+
+# Getting Started (Coming Soon)
 Tutorial for creating your first markos.
  
-The Desktop module with the system.json.
+Explanation of the the Desktop module with the system.json.
 
 How it works now (localStorage) and why (no server) and that it could be used 
 with a server
     
-# Creating Software (Custom Widgets)
-Talk about extending _SoftwareContainer
+# Creating Software (Coming Soon)
+Extending _SoftwareContainer
 - attribute for including template in header.
 - attribute for including template in body.
 
