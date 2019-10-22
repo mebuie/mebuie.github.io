@@ -10,7 +10,9 @@ While it seems the community has long forgotten Dojo, it remains a prominent fra
 
 # Dependencies
 [Dojo 1.15](https://dojotoolkit.org)
+
 [dgrid](https://dgrid.io/)
+
 [dstore](https://dstorejs.io/)
 
 # Download and Installation
