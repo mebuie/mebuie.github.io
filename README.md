@@ -1,5 +1,8 @@
 # mebuie.github.io
-Personal Website
+Welcome to MarkOS – my personal website and development playground. 
+
+My personal website has always been primarily a medium to learn new skills and, as a result, has gone through many iterations throughout the years. Starting out with Bootstrap 3, the site was rebuilt after learning how to create lightweight responsive websites without relying on bulky libraries. Today’s iteration departs from the usual scrolling website and leverages the Dojo framework to emulate an operating systems.    
+
 
 # Dependencies
 Include recommended file structure
