@@ -95,6 +95,35 @@ Extending _SoftwareContainer
 - attribute for including template in header.
 - attribute for including template in body.
 
+        define([
+            "dijit/_WidgetBase",
+            "dijit/_TemplatedMixin",
+            "dojo/text!./FileManager/templates/FileManager.html",
+            "markos/_SoftwareContainer",
+            "require",
+            "dojo/domReady!"
+        ], function(_WidgetBase, _TemplatedMixin, template, _SoftwareContainer, require) {
+
+            return declare([_SoftwareContainer, _WidgetBase, _TemplatedMixin], {
+
+                // For _SoftwareContainer; Merges this template into the _SotwareContainer template.
+                softwareBodyTemplate: template,
+                baseClass: "markos-<widget name>",
+
+                postCreate: function () {
+                    // Run any parent postCreate processes - can be done at any point
+                    this.inherited(arguments);
+                },
+
+                startup: function() {                
+                    // Run any parent postCreate processes - can be done at any point
+                    this.inherited(arguments); 
+                }
+
+            });
+
+        });
+
 Go over file structure and how js, html, css should be named the same thing
 
 Go over system.json and uri should match widget name. 
