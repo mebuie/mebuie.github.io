@@ -35,23 +35,44 @@ Clone / Download repository or download dependencies manually.
         - system.json
 
 ## Setup
-    // Imports all CSS for markOS
-    @import "markos/markos.css";
+Include the following script in index.html to map the markos and dojo local installations. 
 
-    // References the local instalation of the dependencies and markos root folder.
-    // Assumes you followed recommended file structure. 
-    var dojoConfig = {
-        async: true,
-        baseUrl: '.',
-        packages: [
-            'dojo',
-            'dijit',
-            'dojox',
-            'dgrid',
-            'dstore',
-            'markos'
-        ]
-    };
+    <script>
+        // Imports all CSS for markOS
+        @import "markos/markos.css";
+
+        // References the local instalation of the dependencies and markos root folder.
+        // Assumes you followed recommended file structure. 
+        var dojoConfig = {
+            async: true,
+            baseUrl: '.',
+            packages: [
+                'dojo',
+                'dijit',
+                'dojox',
+                'dgrid',
+                'dstore',
+                'markos'
+            ]
+        };
+    </script>
+
+Use the following script to instantiate markos
+
+    <script>
+        require([
+            'markos/Desktop',
+            'dojo/dom',
+            'dojo/domReady!',
+        ], function (
+            Desktop,
+            dom
+        ) {
+            var desktop = new Desktop();
+            desktop.placeAt(document.body);
+            desktop.startup();
+        });
+    </script>
 
 
 # Getting Started (Coming Soon)
