@@ -90,7 +90,7 @@ with a server
 
 [FileManager](https://github.com/mebuie/mebuie.github.io/tree/master/markos/FileManager) : Provides a user interface to manage files and folders
     
-# Creating Software (Coming Soon)
+# Creating Software
 Creating widgets in MarkOS is similar to [creating templated-based widgets](https://dojotoolkit.org/documentation/tutorials/1.10/templated/) in Dojo. The following template can be used to help you get started. 
 
         define([
