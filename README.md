@@ -78,10 +78,35 @@ Use the following script to instantiate markos
 # Getting Started (Coming Soon)
 Tutorial for creating your first markos.
  
-Explanation of the the Desktop module with the system.json.
+Explanation of the the Desktop module
 
-How it works now (localStorage) and why (no server) and that it could be used 
-with a server
+## System.json
+The system.json file is the root of MarkOS. It contains all the information that is needed to instantiate and persist widgets, such as icon locations, widgets types, and directory paths. 
+System.json has two main object properties.
+-	fileSystem
+-	registry
+
+### fileSystem
+The file system contains information about how items are named, their type, and their hierarchy. It can also contain parameters unique to that item, such as save game details or widget content.
+
+When the Desktop module is instantiated, the filesystem objects are loaded into a dstore tree and made globally available. This provides hierarchical querying functionality by defining parent / child relationships for data in the tree.
+
+The Desktop module will first look in local storage for any persisted system files. If none are found, it will then use the system.json in the root markos directory. At the end of a user session, the system.json will be saved to local storage to persist user settings. 
+
+At a minimum, filesystem objects should contain the following information:
+-	id: A unique string identifying the item. Cannot contain spaces.
+-	label: A alias for the id that will be used by the File Manager. May contain spaces. 
+-	type: A string identifying the type of item. The type is used to query the registry to determine which widget should be used to open then item. 
+-	positionTop: Determines the item location on the desktop when the item is in the root directory.
+-	positionLeft: Determines the item location on the desktop when the item is in the root directory.
+-	parent: A Boolean type that identifies the position in the hierarchy. 
+-	hasChildren: A Boolean type that identifies if the item can have children. For example, a folder would have children, but a text file would not. 
+
+### registry
+The registry contains global information about a widget including the name, the type it should be associated with, the widget location, and any properties associated with the widget. 
+
+When the Desktop module is instantiated, the registry objects are loaded into a dstore memory store and made globally available.
+When a user interacts with an item in the filesystem, the type property of the item is used to query the type property in the registry and returns the necessary widget to open that item, along with any additional properties. 
 
 # Widgets
 [Desktop](https://github.com/mebuie/mebuie.github.io/tree/master/markos/Desktop) : The core module for markos.
