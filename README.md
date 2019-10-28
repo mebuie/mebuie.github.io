@@ -91,9 +91,7 @@ with a server
 [FileManager](https://github.com/mebuie/mebuie.github.io/tree/master/markos/FileManager) : Provides a user interface to manage files and folders
     
 # Creating Software (Coming Soon)
-Extending _SoftwareContainer
-- attribute for including template in header.
-- attribute for including template in body.
+Creating widgets in MarkOS is similar to [creating templated-based widgets](https://dojotoolkit.org/documentation/tutorials/1.10/templated/) in Dojo. The following template can be used to help you get started. 
 
         define([
             "dijit/_WidgetBase",
@@ -123,6 +121,25 @@ Extending _SoftwareContainer
             });
 
         });
+
+Note the addition of the SoftwareContainer module in the above widget template. This module is the key to creating MarkOS applications.
+
+## SoftwareContainer module
+
+The SoftwareContainer module provides a consistent user interference for MarkOS software, as well as common functionality such as maximize, minimize, and movability operations.
+
+### Anatomy of SoftwareContainer
+![match](https://github.com/mebuie/mebuie.github.io/blob/master/img/github/Anatomy_SoftwareContainer.png)
+
+The SoftwareContainer user interface contains two sections that are extendable. The header and the body.
+
+- The header is generally used to display descriptive information, such as the app name or file location. 
+- The body is the container for your custom widget. 
+
+### Adding content to SoftwareContainer
+Content can be added to the header and body using the data-dojo-attach-point softwareContainerHeaderNode and softwareContainerBodyNode
+In addition, any template passed to the softwareBodyTemplate property will be added to the SoftwareContainer body. This is the preferred way for adding content, as it ensures that variable substitutions, attach points, and event attachments are honored.  
+
 
 Go over file structure and how js, html, css should be named the same thing
 
