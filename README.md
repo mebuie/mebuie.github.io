@@ -131,12 +131,14 @@ The SoftwareContainer module provides a consistent user interference for MarkOS 
 ### Anatomy of SoftwareContainer
 ![match](https://github.com/mebuie/mebuie.github.io/blob/master/img/github/Anatomy_SoftwareContainer.png)
 
+Note that close button calls this.destroyRecursive() on the SoftwareContainer. 
+
+### Adding content to SoftwareContainer
 The SoftwareContainer user interface contains two sections that are extendable. The header and the body.
 
 - The header is generally used to display descriptive information, such as the app name or file location. 
 - The body is the container for your custom widget. 
 
-### Adding content to SoftwareContainer
 Content can be added to the header and body using the data-dojo-attach-point softwareContainerHeaderNode and softwareContainerBodyNode
 In addition, any template passed to the softwareBodyTemplate property will be added to the SoftwareContainer body. This is the preferred way for adding content, as it ensures that variable substitutions, attach points, and event attachments are honored.  
 
