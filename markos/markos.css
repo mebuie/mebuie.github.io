@@ -3,3 +3,46 @@
 @import "Folder/css/style.css";
 @import "_SoftwareContainer/css/SoftwareContainer.css";
 @import "FileManager/css/FileManager.css";
+
+
+/* CSS for resize handlers */
+.dojoxResizeHandle {
+	float: right;
+	position: absolute;
+	right: 2px;
+	bottom: 2px;
+	width: 13px;
+	height: 13px;
+	z-index: 20;
+	background-image: url('images/icons/resize.png');
+	line-height: 0px;
+}
+.dijitRtl .dojoxResizeHandle {
+        float: right;
+        left: 0px;
+        right: auto;
+	background-image: url('images/icons/resizeRtl.png');
+}
+.dojoxResizeNW {
+	cursor: nw-resize;
+}
+.dijitRtl .dojoxResizeNW {
+        cursor: ne-resize;
+}
+.dojoxResizeNE {
+	cursor: ne-resize; 
+}
+.dijitRtl .dojoxResizeNE {
+        cursor: nw-resize;
+}
+.dojoxResizeW {
+	cursor: w-resize; 
+}
+.dojoxResizeN { 
+	cursor: n-resize; 
+}
+.dojoxResizeHandleClone {
+	position:absolute; top:0; left:0; 
+	border:1px dashed #666; 
+	z-index:999; 
+}
