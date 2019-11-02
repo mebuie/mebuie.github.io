@@ -24,20 +24,8 @@
         "css": ""
       }
     },
-    {"id": "webappbuildermulti", "label": "Web AppBuilder Widgets: MultiFilter", "type": "Project", "parent": "Projects", "hasChildren": false, "desc": "The MultiFilter addresses limitations with the native Group Filter Widget by allowing multiple group layer filters to be applied to the web map at one time and allowing the creation of complex queries for each layer within a group.",
-      "parameters": {
-        "baseClass": "webappbuildermulti",
-        "softwareBodyTemplate":"<div style='height: 100%; width: 100%;'>Have a look at this project on <a href='https://github.com/mebuie/WABCustomWidgets/tree/master/widgets/MultiFilter' target='_blank'>Github</a></div>",
-        "css": ""
-      }
-    },
-    {"id": "pythongeoprocess", "label": "Python Geoprocessing Tool: Asbuilt Record Locator", "type": "Project", "parent": "Projects", "hasChildren": false, "desc": "This Python Geoprocessing Tool uses the ArcPy Python library to automate a frequent GIS task - finding and delivering asbuilts for customer requests. When benchmarked against a request that previously took a day's work, this script was able to provide a 30-minute turnaround.",
-      "parameters": {
-        "baseClass": "pythongeoprocess",
-        "softwareBodyTemplate":"<div style='height: 100%; width: 100%;'>Have a look at this project on <a href='https://github.com/mebuie/ArcMap_Tools/tree/master/Engineering' target='_blank'>Github</a></div>",
-        "css": ""
-      }
-    },
+    {"id": "webappbuildermulti", "label": "${<a target='blank' href='https://github.com/mebuie/WABCustomWidgets/tree/master/widgets/MultiFilter'>Web AppBuilder Widgets: MultiFilter</a>}", "type": "ExternalLink", "parent": "Projects", "hasChildren": false, "desc": "The MultiFilter addresses limitations with the native Group Filter Widget by allowing multiple group layer filters to be applied to the web map at one time and allowing the creation of complex queries for each layer within a group."},
+    {"id": "pythongeoprocess", "label": "${<a target='blank' href='https://github.com/mebuie/ArcMap_Tools/tree/master/Engineering'>Python Geoprocessing Tool: Asbuilt Record Locator</a>}", "type": "ExternalLink", "parent": "Projects", "hasChildren": false, "desc": "This Python Geoprocessing Tool uses the ArcPy Python library to automate a frequent GIS task - finding and delivering asbuilts for customer requests. When benchmarked against a request that previously took a day's work, this script was able to provide a 30-minute turnaround."},
     {"id": "Resume", "label": "Resume", "type": "Project", "positionTop": "100px", "positionLeft": "10px", "parent": null, "hasChildren": false, "desc": "",
       "parameters": {
         "baseClass": "Resume",
@@ -49,6 +37,7 @@
   "registry": {
     "widgets": [
       { "name": "Project", "type": "Project", "extension": "prj", "uri": "markos/Files/Project"},
+      { "name": "ExternalLink", "type": "ExternalLink", "extension": "link"},
       { "name": "FileManager", "type": "Folder", "uri": "markos/FileManager",
         "properties": {
           "tree": {

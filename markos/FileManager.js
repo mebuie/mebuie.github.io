@@ -29,6 +29,12 @@ define([
 
         postCreate: function () {
 
+            this.gridColumns = [
+                {"field": "label", "label": "Name", "unhidable": true, "hidden": false, "width": 150, "formatter": this.gridFormater},
+                {"field": "type", "label": "Type", "unhidable": false, "hidden": true, "width": 50},
+                {"field": "desc", "label": "Description", "unhidable": false, "hidden": false, "width": 175}
+            ]
+
             // Run any parent postCreate processes - can be done at any point
             this.inherited(arguments);
         },
@@ -41,22 +47,22 @@ define([
         },
 
         loadFolderContent: function() {
-            // Display all the child items of this directory.
+            // Get all of the root (Desktop) items in system.json.
             let folderContent = this.fileSystemStore.filter(
                 new Filter().eq('parent', this.folderId));
 
             // Get the columns from the widget registry.
-            let fileManagerRegistry = [];
-            this.widgetStore.filter({name: "FileManager"}).forEach( function(e) {
-                fileManagerRegistry.push(e)
-            });
-            let columns = fileManagerRegistry[0].properties.grid.headers;
+            // let fileManagerRegistry = [];
+            // this.widgetStore.filter({name: "FileManager"}).forEach( function(e) {
+            //     fileManagerRegistry.push(e)
+            // });
+            // let columns = fileManagerRegistry[0].properties.grid.headers;
 
             let CustomGrid = declare([ OnDemandGrid, Keyboard, Selection, DijitRegistry, ColumnResizer , ColumnHider]);
 
             let grid = new CustomGrid({
                 collection: folderContent,
-                columns: columns,
+                columns: this.gridColumns,
                 // for Selection; only select a single row at a time
                 selectionMode: 'single',
                 // for Keyboard; allow only row-level keyboard navigation
@@ -88,17 +94,32 @@ define([
                 parameters = item.data.parameters
             }
 
-            require([ result[0].uri ], function(LoadedWidget){
-                let newWidget = new LoadedWidget(parameters);
-                // Run new widget:
-                newWidget.placeAt(window.markos.desktopNode);
-                newWidget.startup();
-            });
+            if (result[0].uri) {
+                require([ result[0].uri ], function(LoadedWidget){
+                    let newWidget = new LoadedWidget(parameters);
+                    // Run new widget:
+                    newWidget.placeAt(window.markos.desktopNode);
+                    newWidget.startup();
+                });
+            }
+        },
 
+        gridFormater: function(data) {
+            const regex = /\${(.*)}/gm;
+            let m;
+            
+            while ((m = regex.exec(data)) !== null) {
+                // This is necessary to avoid infinite loops with zero-width matches
+                if (m.index === regex.lastIndex) {
+                    regex.lastIndex++;
+                }             
 
+                data = data.replace(m[0], m[1])
+            }
 
-
+            return data
         }
+
 
     });
 
