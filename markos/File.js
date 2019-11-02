@@ -23,6 +23,7 @@ define([
         positionTop: "10px",
         positionLeft: "10px",
         desktop: null,
+        hasMoved: false,
 
 
         postCreate: function () {
@@ -41,6 +42,19 @@ define([
 
             // Add ability to move _SoftwareContainer.
             this.dnd = new Moveable(this.domNode);
+
+            on(this.dnd, "Move", lang.hitch(this, function(){                
+                this.hasMoved = true;
+            }));
+
+            on(this.fileClickNode, "click", lang.hitch(this, function (e) {
+                
+                if(!this.hasMoved) {
+                    this.openItem()
+                }
+
+                this.hasMoved = false;
+            }));
         },
 
         startup: function() {

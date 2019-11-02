@@ -21,6 +21,7 @@ define([
         positionTop: "10px",
         positionLeft: "10px",
         desktop: null,
+        hasMoved: false,
 
 
         postCreate: function () {
@@ -38,11 +39,27 @@ define([
             this.folderImageNode.src = this.folderImage;
 
             // Add ability to move _SoftwareContainer.
-            this.dnd = new Moveable(this.domNode);
+            this.dnd = new Moveable(this.domNode); 
+            
+            on(this.dnd, "Move", lang.hitch(this, function(){
+                this.hasMoved = true;
+            }));
+
+            on(this.folderClickNode, "click", lang.hitch(this, function (e) {
+                
+                if(!this.hasMoved) {
+                    this.openFolder();
+                }
+
+                this.hasMoved = false;
+            }));
 
         },
 
         startup: function() {
+            // Get start x,y
+            this.positionTop = this.domNode.offsetTop
+            this.positionLeft = this.domeNode.offsetLeft
         },
 
         openFolder: function () {

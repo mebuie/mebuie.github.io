@@ -8,6 +8,13 @@
     align-items: center;
 }
 
+.markos-folder .folder-click {
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    position: absolute;
+}
+
 .markos-folder .folder-image {
     height: 50px;
     width: 50px;
