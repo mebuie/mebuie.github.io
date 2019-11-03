@@ -62,13 +62,14 @@ define([
 
         loadSystemFile: function() {
 
-            // Check if system.json exists on localstorage. 
+            // Check if system.json exists on localstorage and load it.
+            // If it doesn't exist, load the default system.json.  
             if (localStorage.system) {
 
                 // Replace local system.json with localstorage system.json.
                 this.system = JSON.parse(localStorage.system)
 
-                console.log("Welcome back. Let's get you back to where you left off.", this.system)
+                console.log("Welcome back. Let's get you back to where you left off.")
 
                 // Load markos. 
                 this.loadMarkos(this.system)
@@ -89,8 +90,12 @@ define([
             this.createWidgetStore(systemObject.registry.widgets);
 
             this.loadDesktop();
+
+            // window.markos.fileSystemStore.add({id: "test"});
+            this.saveSystem();
         },
 
+        // TODO: Create a createStore method. 
         createFileSystemStore: function (fileSystem) {
             let data = fileSystem.fileSystem;
 
@@ -112,10 +117,12 @@ define([
             // Allows all widgets to have access to the file System Store.
             lang.setObject("window.markos.fileSystemStore", this.fileSystemStore);
 
-            // Save the store to localStorage when it changes. 
-            window.markos.fileSystemStore.on('delete, add, update', function(event){
-                console.log("grid updated")
-            });
+            // Update system.json in localStorage when it changes. 
+            // Anytime the store changes save it to local storage so parameters persist.
+            // If store never updates, we can assume no changes need to be updated in local storage. 
+            window.markos.fileSystemStore.on('delete, add, update', lang.hitch(this, function(event){
+                this.saveSystem();
+            }));
         },
 
         createWidgetStore: function(widgets) {
@@ -126,10 +133,12 @@ define([
             // Allows all widgets to have access to the widget store.
             lang.setObject("window.markos.widgetStore", this.widgetStore)
 
-            // Save the store to localStorage when it changes.
-            window.markos.widgetStore.on('delete, add, update', function(event){
-                console.log("grid updated")
-            });
+            // Update system.json in localStorage when it changes. 
+            // Anytime the store changes save it to local storage so parameters persist.
+            // If store never updates, we can assume no changes need to be updated in local storage.
+            window.markos.widgetStore.on('delete, add, update', lang.hitch(this, function(event){
+                this.saveSystem();
+            }));
         },
 
         loadDesktop: function () {
@@ -185,11 +194,44 @@ define([
             file.placeAt(this.desktopNode)
         },
 
-        saveSystem: function() {
-            // TODO: Convert stores to json and save to local storage. 
-            localStorage.system = JSON.parse(this.system);
-            localStorage.test = 1; 
+        /**
+         * Convert stores to json and save to local storage.
+         */
+        saveSystem: async function() {
+            
+            this.systemUpdate = {};
+            this.systemUpdate.registry = {};
+
+            let fileSystem = await this.getStoreAsObject(window.markos.fileSystemStore);
+            let widgets = await this.getStoreAsObject(window.markos.widgetStore);
+
+            this.systemUpdate.fileSystem = fileSystem;
+            this.systemUpdate.registry.widgets = widgets;
+
+            localStorage.system = JSON.stringify(this.systemUpdate);
+            localStorage.time = Date();
+            
+            console.log("system.json save to local storage.")
+        },
+
+        /**
+         * Converts a dojo store to an object.
+         * 
+         * Used to get the contents of a store before passing
+         * to system.json on local storage. 
+         *  
+         * @param  {dojo store} store a dojo store. 
+         * @return {object}      an object with store contents. 
+         */
+        getStoreAsObject: async function(store) {
+            let storeObject = store.fetch().then( function(results) {
+                return results
+            });
+
+            return await storeObject
         }
+
+
 
     });
 
