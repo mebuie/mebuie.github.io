@@ -94,6 +94,7 @@ define([
 
             } else {
                 domAttr.set(this.maxminNode, "src", this.maxImage);
+                this.dnd = new Moveable(this.softwareContainer.id);
                 this.isMaximized = false;
             }
 
