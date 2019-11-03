@@ -66,6 +66,7 @@ define([
         startup: function() {
             this.inherited(arguments);
 
+            // Determine the state of the max min icon on startup. 
             this.toggleMaxMinIcon();
 
         },
