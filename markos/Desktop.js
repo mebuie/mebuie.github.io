@@ -25,9 +25,20 @@ define([
         system: JSON.parse(System),
 
         postCreate: function () {
-            // Use system.json to load desktop content.
-            if (this.system) {
-                this.loadMarkos(this.system)
+            // Check if browser is compatible with local storage. 
+            var hasLocalStorage = this.validateLocalStorage();
+
+            // Load system.json
+            if (hasLocalStorage) {                
+
+                this.loadSystemFile();
+
+            } else {
+                // Sorry! No Web Storage support...load default system.
+                console.log("Local storage is not supported, loading default page")
+                if (this.system) {
+                    this.loadMarkos(this.system)
+                }
             }
 
             // Set golbal references to desktop and hotbar nodes.
@@ -44,15 +55,40 @@ define([
 
         },
 
-        loadMarkos: function (fileSystem) {
+        validateLocalStorage: function() {
+            // Check if browser supports localstorage.
+            return (typeof(Storage) !== "undefined") 
+        },
 
-            this.createFileSystemStore(fileSystem);
+        loadSystemFile: function() {
 
-            this.createWidgetStore(fileSystem.registry.widgets);
+            // Check if system.json exists on localstorage. 
+            if (localStorage.system) {
+
+                // Replace local system.json with localstorage system.json.
+                this.system = JSON.parse(localStorage.system)
+
+                console.log("Welcome back. Let's get you back to where you left off.", this.system)
+
+                // Load markos. 
+                this.loadMarkos(this.system)
+
+            } else {
+                
+                // No system.json from previous session found.
+                // Load markos from default system.json. 
+                console.log("Local storage enabled, but no system.json found.")
+                this.loadMarkos(this.system)                        
+            }
+        },
+
+        loadMarkos: function (systemObject) {
+
+            this.createFileSystemStore(systemObject);
+
+            this.createWidgetStore(systemObject.registry.widgets);
 
             this.loadDesktop();
-
-
         },
 
         createFileSystemStore: function (fileSystem) {
@@ -73,8 +109,13 @@ define([
                 // }
             });
 
-            // Allows all widgets to have access to the fileSystemStore.
+            // Allows all widgets to have access to the file System Store.
             lang.setObject("window.markos.fileSystemStore", this.fileSystemStore);
+
+            // Save the store to localStorage when it changes. 
+            window.markos.fileSystemStore.on('delete, add, update', function(event){
+                console.log("grid updated")
+            });
         },
 
         createWidgetStore: function(widgets) {
@@ -82,7 +123,13 @@ define([
 
             this.widgetStore = new Memory({ idProperty: "name", data: data});
 
+            // Allows all widgets to have access to the widget store.
             lang.setObject("window.markos.widgetStore", this.widgetStore)
+
+            // Save the store to localStorage when it changes.
+            window.markos.widgetStore.on('delete, add, update', function(event){
+                console.log("grid updated")
+            });
         },
 
         loadDesktop: function () {
@@ -92,7 +139,6 @@ define([
             this.widgetStore.filter({onStart: true}).forEach( lang.hitch(this, function(program) {
                 this.loadProgram(program);
             }));
-
 
             // Get all items in the root directory.
             let rootItems = [];
@@ -137,7 +183,14 @@ define([
         createFile: function(item) {
             let file = new File(item);
             file.placeAt(this.desktopNode)
+        },
+
+        saveSystem: function() {
+            // TODO: Convert stores to json and save to local storage. 
+            localStorage.system = JSON.parse(this.system);
+            localStorage.test = 1; 
         }
+
     });
 
 });
