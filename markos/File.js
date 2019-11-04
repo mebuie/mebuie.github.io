@@ -43,7 +43,7 @@ define([
             // Add ability to move _SoftwareContainer.
             this.dnd = new Moveable(this.domNode);
 
-            on(this.dnd, "Move", lang.hitch(this, function(){                
+            on(this.dnd, "Move", lang.hitch(this, function() {                
                 this.hasMoved = true;
             }));
 

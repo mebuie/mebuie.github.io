@@ -16,7 +16,7 @@ define([
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
         baseClass: "markos-folder",
-        folderName: null,
+        id: null,
         folderImage: require.toUrl("markos/images/icons/win98_icons/directory_closed.ico"),
         positionTop: null,
         positionLeft: null,
@@ -41,8 +41,32 @@ define([
             // Add ability to move _SoftwareContainer.
             this.dnd = new Moveable(this.domNode); 
             
+            // If the icon moves, set the hasMoved property to true.
+            // Prevents the icon from opening from the parent element event. 
             on(this.dnd, "Move", lang.hitch(this, function(){
                 this.hasMoved = true;
+            }));
+
+            // Updates the icon position in the file system. 
+            on(this.dnd, "MoveStop", lang.hitch(this, function() {
+
+                // Get the updated position. 
+                this.positionTop = domStyle.get(this.domNode, "top");
+                this.positionLeft = domStyle.get(this.domNode, "left");
+
+                // Get the item from the store.
+                window.markos.fileSystemStore.get(this.id).then( lang.hitch(this, function(result){
+
+                    // update the position. 
+                    result.positionTop = this.positionTop;
+                    result.positionLeft = this.positionLeft;
+
+                    // and store the change
+                    window.markos.fileSystemStore.put(this.id).then(function(){
+                    // confirmation that we have succesfully saved the jim object
+                    });    
+                }));
+
             }));
 
             on(this.folderClickNode, "click", lang.hitch(this, function (e) {
@@ -64,7 +88,7 @@ define([
 
         openFolder: function () {
             var openedFolder = new FileManager({
-                folderId: this.folderName
+                folderId: this.id
             });
             openedFolder.placeAt(this.desktop);
             openedFolder.startup();
