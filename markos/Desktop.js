@@ -182,7 +182,7 @@ define([
 
         createFolder: function(item) {
             let folder = new Folder({
-                folderName: item.id,
+                id: item.id,
                 positionTop: item.positionTop,
                 positionLeft: item.positionLeft,
                 desktop: this.desktopNode,
