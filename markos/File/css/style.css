@@ -1,7 +1,5 @@
 .markos-folder {
     position: absolute;
-    top: 10px;
-    left: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;

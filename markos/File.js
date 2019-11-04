@@ -20,22 +20,22 @@ define([
         baseClass: "markos-folder",
         folderName: null,
         folderImage: require.toUrl("markos/images/icons/win98_icons/file_lines.ico"),
-        positionTop: "10px",
-        positionLeft: "10px",
+        positionTop: null,
+        positionLeft: null,
         desktop: null,
         hasMoved: false,
 
 
         postCreate: function () {
-            // Get a DOM node reference for the root of our widget
-            var domNode = this.domNode;
-            domStyle.set(domNode, {
-                "top": this.positionTop,
-                "left": this.positionLeft
-            });
 
             // Run any parent postCreate processes - can be done at any point
             this.inherited(arguments);
+
+            // Set position on desktop. 
+            domStyle.set(this.domNode, {
+                top: this.positionTop + "px",
+                left: this.positionLeft + "px"
+            });
 
             // Assign the thumbnail image to the folder.
             this.folderImageNode.src = this.folderImage;

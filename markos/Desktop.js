@@ -91,8 +91,9 @@ define([
 
             this.loadDesktop();
 
+            // For development:
             // window.markos.fileSystemStore.add({id: "test"});
-            this.saveSystem();
+            // this.saveSystem();
         },
 
         // TODO: Create a createStore method. 
