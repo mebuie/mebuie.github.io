@@ -47,6 +47,28 @@ define([
                 this.hasMoved = true;
             }));
 
+            // Updates the icon position in the file system. 
+            on(this.dnd, "MoveStop", lang.hitch(this, function() {
+
+                // Get the updated position. 
+                this.positionTop = domStyle.get(this.domNode, "top");
+                this.positionLeft = domStyle.get(this.domNode, "left");
+
+                // Get the item from the store.
+                window.markos.fileSystemStore.get(this.id).then( lang.hitch(this, function(result){
+
+                    // update the position. 
+                    result.positionTop = this.positionTop;
+                    result.positionLeft = this.positionLeft;
+
+                    // and store the change
+                    window.markos.fileSystemStore.put(this.id).then(function(){
+                    // confirmation that we have succesfully saved the jim object
+                    });    
+                }));
+
+            }));
+
             on(this.fileClickNode, "click", lang.hitch(this, function (e) {
                 
                 if(!this.hasMoved) {
