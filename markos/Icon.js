@@ -9,7 +9,7 @@ define([
     "dojo/_base/declare",
     "dijit/_WidgetBase",
     "dijit/_TemplatedMixin",
-    "dojo/text!./File/templates/File.html",
+    "dojo/text!./Icon/templates/Icon.html",
     "require",
     "markos/FileManager",
     "dojo/domReady!"
@@ -19,7 +19,7 @@ define([
         templateString: template,
         baseClass: "markos-folder",
         folderName: null,
-        folderImage: require.toUrl("markos/images/icons/win98_icons/file_lines.ico"),
+        folderImage: null,
         positionTop: null,
         positionLeft: null,
         desktop: null,
@@ -27,9 +27,14 @@ define([
 
 
         postCreate: function () {
-
             // Run any parent postCreate processes - can be done at any point
             this.inherited(arguments);
+            
+            if (this.icon) {
+                this.folderImage = require.toUrl(this.icon);
+            } else {
+                console.log("icon error")
+            }
 
             // Set position on desktop. 
             domStyle.set(this.domNode, {
@@ -72,7 +77,7 @@ define([
             on(this.fileClickNode, "click", lang.hitch(this, function (e) {
                 
                 if(!this.hasMoved) {
-                    this.openItem()
+                    this.openItem(this.params);
                 }
 
                 this.hasMoved = false;
@@ -83,41 +88,28 @@ define([
             this.inherited(arguments); //_SoftwareContainer startup() will not fire without this! Position is irrelevant.
         },
 
-        openFolder: function () {
-            var openedFolder = new FileManager({
-                folderId: this.folderName
-            });
-            openedFolder.placeAt(this.desktop);
-            openedFolder.startup();
-        },
-
-        openItem: function () {
-
-            if (this.parameters.css) {
-                this.loadCSS(this.parameters.css);
-            }
-
-            let widgetStore = window.markos.widgetStore;
-
-            //Check Widget Registry for file type
+        /**
+         * Opens a system.json item displayed in the FileManager widget.  
+         * @param  {Item Object} item An item object from system.json.
+         */
+        openItem: function (item) {
+            // Check Widget Registry for item type
             let result = [];
-            widgetStore.filter({type: this.type}).forEach( function(e) {
+            window.markos.widgetStore.filter({type: item.type}).forEach( function(e) {
                 result.push(e)
             });
 
-            require([ result[0].uri ], lang.hitch(this, function(LoadedWidget){
-                let newWidget = new LoadedWidget(this.parameters);
-                // Run new widget:
-                newWidget.placeAt(window.markos.desktopNode);
-                newWidget.startup();
-            }));
+            // If the item object has an associated widget (uri), then use it to open the widget.
+            // The item properties can be accessed using this.id in the loaded widget. 
+            if (result[0].uri) {
+                require([ result[0].uri ], function(LoadedWidget){
+                    let newWidget = new LoadedWidget({item});
+                    // Run new widget:
+                    newWidget.placeAt(window.markos.desktopNode);
+                    newWidget.startup();
+                });
+            }
         },
-
-        loadCSS: function(css) {
-            let styleElement = domConstruct.create("style", {innerHTML: css}, win.body());
-
-
-        }
 
     });
 });

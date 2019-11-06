@@ -1,6 +1,6 @@
 define([
     "markos/Folder",
-    "markos/File",
+    "markos/Icon",
     "dojo/dom",
     "dojo/dom-style",
     "dojo/json",
@@ -17,7 +17,7 @@ define([
     "dstore/Memory",
     "require",
     "dojo/domReady!",
-], function(Folder, File, dom, domStyle, JSON, System, on, array, declare, lang, _WidgetBase, _TemplatedMixin, template, OnDemandGrid, TreeStore, Memory, require) {
+], function(Folder, Icon, dom, domStyle, JSON, System, on, array, declare, lang, _WidgetBase, _TemplatedMixin, template, OnDemandGrid, TreeStore, Memory, require) {
 
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
@@ -150,23 +150,16 @@ define([
                 this.loadProgram(program);
             }));
 
-            // Get all items in the root directory.
+            // Get all items in the file system root directory.
             let rootItems = [];
-            this.fileSystemStore.getRootCollection().forEach( function(item) {
-                rootItems.push(item)
-            });
+            this.fileSystemStore.getRootCollection().forEach( lang.hitch(this, function(item) {
+                // rootItems.push(item)
+                this.createFile(item);
+            }));
 
             // TODO: Switch needs to be replaced with uri lookup.
-            array.forEach(rootItems, lang.hitch(this, function(item){
-                switch (item.type.toLowerCase()){
-                    case "folder":
-                        this.createFolder(item);
-                        break;
-                    case "project":
-                        this.createFile(item);
-                        break;
-                }
-            }));
+            // 
+            
 
         },
 
@@ -180,18 +173,18 @@ define([
             }));
         },
 
-        createFolder: function(item) {
-            let folder = new Folder({
-                id: item.id,
-                positionTop: item.positionTop,
-                positionLeft: item.positionLeft,
-                desktop: this.desktopNode,
-            });
-            folder.placeAt(this.desktopNode)
-        },
+        // createFolder: function(item) {
+        //     let folder = new Folder({
+        //         id: item.id,
+        //         positionTop: item.positionTop,
+        //         positionLeft: item.positionLeft,
+        //         desktop: this.desktopNode,
+        //     });
+        //     folder.placeAt(this.desktopNode)
+        // },
 
         createFile: function(item) {
-            let file = new File(item);
+            let file = new Icon(item);
             file.placeAt(this.desktopNode)
         },
 
