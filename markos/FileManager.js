@@ -43,7 +43,7 @@ define([
         loadFolderContent: function() {
             // Get all of the root (parent = null) items in system.json.
             let folderContent = this.fileSystemStore.filter(
-                new Filter().eq('parent', this.folderId));
+                new Filter().eq('parent', this.item.id));
 
             // Get the column parameters from the widget registry.
             this.parameters = this.getColumnParameters();
