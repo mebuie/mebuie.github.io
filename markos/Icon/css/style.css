@@ -1,4 +1,4 @@
-.markos-folder {
+.markos-icon {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -6,20 +6,20 @@
     align-items: center;
 }
 
-.markos-folder .folder-click {
+.markos-icon .icon-click {
     height: 100%;
     width: 100%;
     background: transparent;
     position: absolute;
 }
 
-.markos-folder .folder-image {
+.markos-icon .icon-image {
     height: 50px;
     width: 50px;
     cursor: pointer;
 }
 
-.markos-folder .folder-name {
+.markos-icon .icon-name {
     font-family: sans-serif;
     text-align: center;
     word-wrap: break-word;
@@ -35,12 +35,12 @@
 }
 
 @media ( min-width: 1280px ) {
-    .markos-folder {
+    .markos-icon {
         width: 100px;
         display: flex;
     }
 
-    .markos-folder .folder-image {
+    .markos-icon .icon-image {
         height: 50px;
         width: 50px;
     }

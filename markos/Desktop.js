@@ -1,5 +1,4 @@
 define([
-    "markos/Folder",
     "markos/Icon",
     "dojo/dom",
     "dojo/dom-style",
@@ -17,7 +16,7 @@ define([
     "dstore/Memory",
     "require",
     "dojo/domReady!",
-], function(Folder, Icon, dom, domStyle, JSON, System, on, array, declare, lang, _WidgetBase, _TemplatedMixin, template, OnDemandGrid, TreeStore, Memory, require) {
+], function(Icon, dom, domStyle, JSON, System, on, array, declare, lang, _WidgetBase, _TemplatedMixin, template, OnDemandGrid, TreeStore, Memory, require) {
 
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,

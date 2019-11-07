@@ -17,9 +17,9 @@ define([
 
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
-        baseClass: "markos-folder",
-        folderName: null,
-        folderImage: null,
+        baseClass: "markos-icon",
+        iconName: null,
+        iconImage: null,
         positionTop: null,
         positionLeft: null,
         desktop: null,
@@ -31,7 +31,7 @@ define([
             this.inherited(arguments);
             
             if (this.icon) {
-                this.folderImage = require.toUrl(this.icon);
+                this.iconImage = require.toUrl(this.icon);
             } else {
                 console.log("icon error")
             }
@@ -42,8 +42,8 @@ define([
                 left: this.positionLeft + "px"
             });
 
-            // Assign the thumbnail image to the folder.
-            this.folderImageNode.src = this.folderImage;
+            // Assign the thumbnail image to the icon.
+            this.iconImageNode.src = this.iconImage;
 
             // Add ability to move _SoftwareContainer.
             this.dnd = new Moveable(this.domNode);
